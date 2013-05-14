@@ -1,0 +1,60 @@
+/*---------------------------------------------------------
+ * HCP PROFILE
+----------------------------------------------------------- */
+/*--------------------------------------------------------- */
+body {
+  background-color: #f2f2f2; }
+
+#header_banner {
+  background-image: url("/Project/Design/1_Website/Applications/User_Account/Controllers/profile/images/hcp_bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 449px !important;
+  width: 100%; }
+  #header_banner .semi_transparent {
+    width: 1032px;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -516px; }
+
+#page_content {
+  background-color: #FFFFFF;
+  margin: -195px auto 0;
+  padding: 20px;
+  position: relative;
+  width: 1024px;
+  z-index: 100;
+  border: 1px solid #CCCCCC; }
+  #page_content .fcBlue {
+    color: #29ABE2; }
+  #page_content #faq_container {
+    width: 980px;
+    border: 1px solid #ccc;
+    min-height: 583px; }
+    #page_content #faq_container h3 {
+      background-color: #E7E8E8;
+      box-shadow: 0 1px 2px #B9B9B9;
+      padding: 13px 15px;
+      width: 99%;
+      margin: 50px auto 0; }
+      #page_content #faq_container h3:nth-of-type(1) {
+        margin-top: 2px; }
+    #page_content #faq_container ul {
+      padding: 0; }
+    #page_content #faq_container li {
+      margin-bottom: 30px;
+      margin-left: 40px; }
+      #page_content #faq_container li > label, #page_content #faq_container li > strong {
+        cursor: pointer; }
+      #page_content #faq_container li div, #page_content #faq_container li strong {
+        display: none; }
+      #page_content #faq_container li div {
+        margin-top: 15px; }
+      #page_content #faq_container li.activated > label {
+        font-weight: bold; }
+      #page_content #faq_container li.activated > strong {
+        display: inline-block; }

@@ -1,0 +1,72 @@
+<pages>
+<!-- ******************************		ENTERPRISE Primary Navigation    ***************************** -->
+	<navigation_group>
+		<navigation_group_id>primary</navigation_group_id>
+		<!-- ***************************************************************************************** -->
+		<page>
+				<page_id>leads</page_id>
+				<url_name>leads</url_name>
+				<link_title>Leads Manager</link_title>
+				<link_text>Leads Manager</link_text>
+		</page>
+		
+		<!-- ***************************************************************************************** -->
+		<page>
+				<page_id>staff</page_id>
+				<url_name>staff</url_name>
+				<link_title>Staff Manager</link_title>
+				<link_text>Staff Manager</link_text>
+		</page>
+		<!-- ***************************************************************************************** -->
+		<page default="true" >
+				<page_id>dashboard</page_id>
+				<url_name>dashboard</url_name>
+				<link_title>dashboard</link_title>
+				<link_text>Dashboard</link_text>
+		</page>
+		<!-- ***************************************************************************************** -->
+		<page>
+				<page_id>your_leads</page_id>
+				<url_name>your_leads</url_name>
+				<link_title>Your Leads</link_title>
+				<link_text>Your Leads</link_text>
+		</page>
+		<!-- ***************************************************************************************** -->
+		<page>
+				<page_id>hcps</page_id>
+				<url_name>hcps</url_name>
+				<link_title>Health Care Providers</link_title>
+				<link_text>Health Care Providers</link_text>
+		</page>
+		<!-- ***************************************************************************************** -->
+		<page>
+				<page_id>seekers</page_id>
+				<url_name>seekers</url_name>
+				<link_title>Seekers</link_title>
+				<link_text>Seekers</link_text>
+		</page>
+		<!-- ***************************************************************************************** -->
+		<page>
+                <page_id>settings</page_id>
+                <url_name>settings</url_name>
+                <link_title>Edit settings</link_title>
+                <link_text>Settings</link_text>
+        </page>
+		<!-- ***************************************************************************************** -->
+		<page>
+				<page_id>image_library</page_id>
+				<url_name>image_library</url_name>
+				<link_title>Manage the images that are used in your website</link_title>
+				<link_text>Photo Library</link_text>
+		</page>
+		<!-- ***************************************************************************************** -->
+		<page>
+				<page_id>cms</page_id>
+				<url_name>cms</url_name>
+				<link_title>Edit the content of your static pages</link_title>
+				<link_text>Content Manager</link_text>
+		</page>
+        <!-- ***************************************************************************************** -->
+	</navigation_group>
+	
+</pages>

@@ -1,0 +1,20 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper" class="pAm">
+
+	Elder home info:<br>
+	
+	<?$provider = $this->_get('provider');?>
+	
+	<img width="150" src="<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$provider->__get('provider_id').'/'.healthcare_provider_image::selectFilename($provider->__get('image_id'))?>">
+	Home: <?=$provider->__get('name')?><br>
+	Description: <?=$provider->__get('description')?><br>
+	Features: <?=$provider->__get('features')?><br>
+	
+	<?$seeker = seekerSession::getSeekerSession();?>
+	<?=key_exists($provider->__get('provider_id'), $seeker->__get('array_of_homes')) ? '(chosen)' : ''?>
+	
+	<form method="POST" action="/seeker/add_home">
+		<input type="hidden" name="home_id" value="<?=$provider->__get('provider_id')?>">
+		<input type="submit" name="submit" value="add home">
+	</form>
+			
+</div>

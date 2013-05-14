@@ -1,0 +1,6 @@
+Array
+(
+    [0] => Parameters Array - array(0) {
+}
+
+)

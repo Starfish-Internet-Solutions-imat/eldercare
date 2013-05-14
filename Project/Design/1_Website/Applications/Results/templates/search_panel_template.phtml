@@ -1,0 +1,32 @@
+<?php  
+	$search_entry = is_null($this->_get('state'))?"":$this->_get('zipcode')." - ".$this->_get('city').", ".$this->_get('state');
+	$search_entry = ($this->_get('zipcode') == "")?"":$search_entry;
+?>
+<div class = "clearfix mVm" id = "search_panel">
+	<form method = "GET" action ="/health-care-search" id="searchForm">
+		<label class="fleft">
+			<span class="gotham_bold fs-m">Zip Code / Location</span><br />
+			<input type = "text" name = "query" value = "<?php echo $search_entry?>" autocomplete="off" tabindex="1"/>	<input type = "hidden" name = "zipcode_id" value = "<?echo $this->_get('zipcode_id'); ?>"/>
+		</label>
+		<div id = "suggestion_list" ></div>
+		<label class="fleft">
+			<span class="gotham_bold fs-m">Price Range</span><br />
+			<select name="price_range" tabindex="2">
+				<option value="">All</option>
+				<option value = "conservative" <?php echo $this->_get('pricing') == "conservative"? "SELECTED" : "" ;?>>Conservative</option>
+				<option value = "moderate" <?php echo $this->_get('pricing') == "moderate"? "SELECTED" : "" ;?>>Moderate</option>
+				<option value = "expensive" <?php echo $this->_get('pricing') == "expensive"? "SELECTED" : "" ;?>>Exclusive</option>
+			</select>
+		</label>
+		<label class="fleft">
+			<span class="gotham_bold fs-m">Housing Type</span><br />
+			<select name="housing_type" tabindex="3">
+				<option value="Assisted Living" <?php echo $this->_get('housing_type')=="Assisted Living"?"SELECTED":"";?>>Assisted Living </option>
+				<option value="Home Care" <?php echo $this->_get('housing_type')=="Home Care"?"SELECTED":"";?>>Home Care</option>
+				<option value="Residential Care" <?php echo $this->_get('housing_type')=="Residential Care"?"SELECTED":"";?>>Residential Care</option>
+				<option value="Memory Care" <?php echo $this->_get('housing_type')=="Memory Care"?"SELECTED":"";?>>Memory Care</option>
+			</select>
+		</label>
+		<input class="fright sprite refine_search" type = "submit" name = "search_panel" value = "SEARCH" tabindex="4">
+	</form>
+</div>

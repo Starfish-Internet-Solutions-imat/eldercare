@@ -1,0 +1,11 @@
+#page_content > h1 {
+  color: #29ABE2; }
+#page_content > .clearfix > .fleft {
+  border: 1px solid #b3b3b3;
+  background-color: white;
+  width: 735px; }
+  #page_content > .clearfix > .fleft .city {
+    width: 155px;
+    margin-right: 150px; }
+    #page_content > .clearfix > .fleft .city a {
+      color: #4d4d4d; }

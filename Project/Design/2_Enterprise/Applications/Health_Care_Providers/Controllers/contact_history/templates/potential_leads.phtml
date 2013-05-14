@@ -1,0 +1,31 @@
+%%POP_UP_PLACED%%
+
+<?$i = 1;?>
+<?foreach($this->_get('potential_leads') as $lead):?>
+<?
+	$status			= $lead->__get('status');
+	$check_image	= 'checked="checked"';
+?>
+<tr id = "<?=$lead->__get('potential_hcp_id')?>">
+	<td><?=$i++?></td>
+	<td><?=$lead->__get('seeker_name')?></td>
+	<td>
+		<a href="/hcps/profile/contact_history/<?=$lead->__get('hcp_id')?>">[c.hist]</a>
+		<a href="/hcps/profile/view/<?=$lead->__get('hcp_id')?>">[details]</a>
+	</td>
+	
+	<td><input type="checkbox"  name="status" value="contacted" <?=$status == 'contacted' ? $check_image : ''?>> </td>
+	<td><input type="checkbox"  name="status" value="info_sent" <?=$status == 'info_sent' ? $check_image : ''?>> </td>
+	<td>
+		<?php if($status == 'pending_placement'):?>
+			pending
+		<?php elseif($status == 'placed'):?>
+			placed
+		<?php else:?>
+			[<a href = "#" class = "status_link"> yes </a>]
+			[<a href = "#" class = "status_link"> no </a>]
+		<?php endif;?>	
+	</td>
+</tr>
+
+<?endforeach;?>

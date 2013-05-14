@@ -1,0 +1,13 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper" class="pAm">
+
+	<form method="POST">
+		<input type="text" name="zipcode" value="<?=isset($_POST['zipcode']) ? $_POST['zipcode'] : ''?>">
+		<input type="submit" name="search" value="search">
+	</form>
+	
+	<?foreach($this->_get('zipcodes') as $zipcode):?>
+		<a href="/browse/zipcode/<?=$zipcode->__get('zipcode')?>"><?=$zipcode->__get('city')?>, <?=$zipcode->__get('county')?>, <?=$zipcode->__get('state')?></a>
+		<br>
+	<?endforeach;?>
+
+</div>

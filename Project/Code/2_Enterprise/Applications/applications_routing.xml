@@ -1,0 +1,158 @@
+<!-- *******************************	TYPES OF APPLICATIONS	********************************-->
+<!-- <application_type>floating</application_type>    											-->
+<!-- Floating applications aren't connected to a particular Page Controller						-->
+<!-- they are useful for  -->
+
+<!-- *******************************	OPTIONS 	********************************************-->
+<!-- <requires_login>yes</requires_login>														-->
+<!-- Can be set at the <application> level or the <controller> level							-->
+<!-- <has_main_layout>no</has_main_layout>														-->
+<!-- Enterprise (complex) apps will have a main layout and controller to deal with nav,etc  	-->
+<!-- *******************************************************************************************-->
+
+<applications>
+<!-- ******************************	User Account Floating Application     ******************	-->
+<!-- Needed for front end routing of a floating application isnt linked to a page				-->		
+	<application>
+		<application_id>User_Account</application_id>
+		<floating_url_name>user</floating_url_name>
+		<requires_login>yes</requires_login>
+		<has_main_layout>no</has_main_layout>
+				<controller default="true">
+					<controller_id>login</controller_id>
+					<url_name>login</url_name>
+					<link_text>Login</link_text>
+				</controller>
+				<controller>
+					<controller_id>logout</controller_id>
+					<url_name>logout</url_name>
+					<link_text>Logout</link_text>
+				</controller>
+				<controller>
+					<controller_id>registration</controller_id>
+					<url_name>registration</url_name>
+					<link_text>registration</link_text>
+				</controller>
+	</application>
+
+	<application>
+		<application_id>Forgot_Password</application_id>
+		<floating_url_name>recovery</floating_url_name>
+		<requires_login>no</requires_login>
+		<has_main_layout>no</has_main_layout>
+				<controller default="true">
+					<controller_id>forgot_password</controller_id>
+					<url_name>forgot-password</url_name>
+					<link_text>forgot_password</link_text>
+				</controller>
+	</application>
+		
+<!-- ***************************	Dashboard Routing				************************* -->
+	<application>
+		<application_id>Admin_Dashboard</application_id>
+		<floating_url_name>NOTUSED</floating_url_name>
+		<requires_login>yes</requires_login>
+		<has_main_layout>no</has_main_layout>
+				<controller default="true">
+					<controller_id>dashboard</controller_id>
+					<url_name>dashboard</url_name>
+					<link_text>Dashboard</link_text>
+				</controller>
+				
+	</application>
+<!-- *******************	Content Management System Application Routing    ******************* -->		
+	<application>
+		<application_id>Content_Management_System</application_id>
+		<requires_login>yes</requires_login>
+		<has_main_layout>yes</has_main_layout>
+				<controller default="true">
+					<controller_id>pages_editor</controller_id>
+					<url_name>pages_editor</url_name>
+					<link_text>Page Editor</link_text>
+				</controller>
+				<controller>
+					<controller_id>xml_editor</controller_id>
+					<url_name>xml_editor</url_name>
+					<link_text>XML</link_text>
+				</controller>
+	</application>
+<!-- ********************************	Photo Library Routing  ******************************* -->		
+	<application>
+	<application_id>Photo_Library</application_id>
+	<requires_login>yes</requires_login>
+	<has_main_layout>yes</has_main_layout>
+		<controller default="true">
+			<controller_id>photo_library</controller_id>
+			<url_name>photo_library</url_name>
+			<link_text>photo_library</link_text>
+		</controller>
+	</application>
+<!-- ******************************	Leads Routing  ***************************** -->		
+	<application>
+	<application_id>Leads_Manager</application_id>
+	<requires_login>yes</requires_login>
+	<has_main_layout>no</has_main_layout>
+		<controller default="true">
+			<controller_id>leads</controller_id>
+			<url_name>leads</url_name>
+			<link_text>leads</link_text>
+		</controller>
+	</application>
+	
+<!-- ******************************	Staff Routing  ***************************** -->		
+	<application>
+	<application_id>Staff_Manager</application_id>
+	<requires_login>yes</requires_login>
+	<has_main_layout>no</has_main_layout>
+		<controller default="true">
+			<controller_id>search</controller_id>
+			<url_name>search</url_name>
+			<link_text>Search</link_text>
+		</controller>
+	</application>
+<!-- ******************************	Seekers Routing  ***************************** -->		
+	<application>
+	<application_id>Seekers_Manager</application_id>
+	<requires_login>yes</requires_login>
+	<has_main_layout>no</has_main_layout>
+		<controller default="true">
+			<controller_id>search</controller_id>
+			<url_name>search</url_name>
+			<link_text>Search</link_text>
+		</controller>
+		<controller>
+			<controller_id>profile</controller_id>
+			<url_name>profile</url_name>
+			<link_text>profile</link_text>
+		</controller>
+	</application>
+<!-- ******************************	HCP Routing  ***************************** -->		
+	<application>
+	<application_id>Health_Care_Providers</application_id>
+	<requires_login>yes</requires_login>
+	<has_main_layout>no</has_main_layout>
+		<controller default="true">
+			<controller_id>search</controller_id>
+			<url_name>search</url_name>
+			<link_text>Search</link_text>
+		</controller>
+		<controller>
+			<controller_id>profile</controller_id>
+			<url_name>profile</url_name>
+			<link_text>profile</link_text>
+		</controller>
+	</application>
+<!-- ******************************	Settings Routing  ***************************** -->		
+	<application>
+	<application_id>Settings_Manager</application_id>
+	<requires_login>yes</requires_login>
+	<has_main_layout>yes</has_main_layout>
+		<controller default="true">
+			<controller_id>settings</controller_id>
+			<url_name>settings_manager</url_name>
+			<link_text>Settings</link_text>
+		</controller>
+	</application>
+<!-- ***************************************************************************************************************** -->	
+</applications>
+

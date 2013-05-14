@@ -1,0 +1,6 @@
+<div>
+	<h1 class="helvetica77"><small>FIND CARE OPTIONS</small></h1>
+	<?foreach($this->_get('list_of_states') as $state):?>
+		<a href="/assisted-living/<?=str_replace(" ", "-", strtolower($state['state']))?>"><?=$state['state']?></a><br>
+	<?endforeach;?>
+</div>

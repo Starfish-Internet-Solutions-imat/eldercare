@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js ie9" lang="en" xml:lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" xml:lang="en"><![endif]-->
+<!--[if !IE]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	
+		||css_used_on_every_page||
+		||javascript_used_on_every_page_top||	
+		||css_and_javascript_links_for_this_page_only||	
+	
+
+	<script type="text/javascript">
+		||inpage_javascript_top||
+	</script>
+</head>
+<body <?=$this->getIdForPage(); ?>>
+	<div id="popUp_background"></div>
+	<div id="wrapper">
+		<!--[if lt IE 9]><p class="chromeframe btn btn-inverse">"Your version of Internet Explorer is not supported by this website. <a href="http://browsehappy.com/" target="blank" class="btn btn-info">We recommend Firefox.</a> or <a href="http://www.google.com/chromeframe/?redirect=true"  target="blank" class="btn btn-info">install Google Chrome Frame</a>.  Thank you!</p><![endif]-->
+		<?= $this->displayHeader(); ?>
+			%%HEADER_CONTENT%%
+		<div id="container_wrapper">
+			<div id="container">
+					%%MAIN_CONTENT%%
+			</div>
+		</div>
+			<?= $this->displayFooter(); ?>
+			%%FOOTER_CONTENT%%
+	</div>
+	||javascript_used_on_every_page_bottom||
+	%%GLOBAL_SCRIPTS%%
+	<script type="text/javascript">
+	
+	||inpage_javascript_bottom||</script>	
+</body>
+</html>

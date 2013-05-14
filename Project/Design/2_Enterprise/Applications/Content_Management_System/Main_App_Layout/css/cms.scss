@@ -1,0 +1,135 @@
+/*********************************Content Manager *********************************/
+#pageNavigation{
+  background-image: url("/Project/Design/2_Enterprise/Main_Layout/images/enterprise_buttons_and_icons_sprite.png");
+  height: 32px;
+  width:188px;
+  overflow: hidden;
+  background-position: -686px -110px;
+  padding:3px 4px;
+  #pages_editor_nav,#xml_editor_nav{
+    background-image: url("/Project/Design/2_Enterprise/Main_Layout/images/enterprise_buttons_and_icons_sprite.png");
+    height:25px;
+    width: 89px;
+    display:inline-block;
+    float: left;
+    a{
+      opacity:0;
+      -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      display:inline-block;
+      height:25px;
+      width:89px;
+    }
+  }
+  #pages_editor_nav{
+    background-position: -690px -113px;
+    &:active,&.active{
+      background-position: -690px -80px !important;
+    }
+  }
+  #xml_editor_nav{
+    margin-left:1px;
+    background-position: -780px -80px;
+    &:active,&.active{
+      background-position: -780px -113px !important;
+    }
+  }
+}
+#editor_container {
+    min-height: 450px;
+    padding: 0 25px 30px 15px;
+    width: 100%;
+    .element_description{
+      width:130px;
+      display:inline-block;
+      text-transform: capitalize;
+      color: #7E7D82;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .element_content{
+      width:650px;
+      padding-bottom:30px;
+      textarea{
+        width:650px !important;
+        height:250px !important;
+      }
+    }
+}
+#applicationHeader{
+  padding:25px 25px 25px 10px !important;
+  height: 70px !important;
+  #Content_Management_System_nav{
+    margin:0;
+  }
+  h3{
+    max-width:600px !important;
+  }
+}
+#applicationContent{
+  input[type="submit"]{
+    background-position: -903px -40px;
+    float: right;
+    height: 32px;
+    width: 82px;
+    color:transparent;
+    &:active{
+      background-position: -903px -6px;
+    }
+  }
+  .element_description{
+    width:130px;
+    display:inline-block;
+    text-transform: capitalize;
+    color: #7E7D82;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+#cms textarea {
+    width:100%;
+}
+/*********** popUp alert ****************/
+.imageId_error{
+    height:165px;
+  #button_container {
+    width: 70px;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: 35px;
+  }
+}
+/********** XML EDITOR ***********/
+#textareaautogrow{
+  float:right;
+  padding:30px 25px 0;
+  iframe {
+    display:block !important;
+    width: 700px !important;
+    margin: 0 auto !important;
+    overflow: hidden;
+    clear: both;
+  }   
+}
+    
+/*NIC EDITOR*/
+.nicEdit-panelContain{
+    color:black;
+}
+.nicEdit-panelContain span, .nicEdit-panel ,.nicEdit-bottonTips,.nicEdit-panel span,.nicEdit-panel p{
+    color:black;
+    display:block;
+}
+.nicEdit-main {
+    color: #575756 !important;
+    font-size:10px !important;
+    font-weight:normal !important;
+}
+
+
+/*scroll pane*/
+#applicationSideBar {
+    max-width: 270px !important;
+    width: 270px !important;
+}

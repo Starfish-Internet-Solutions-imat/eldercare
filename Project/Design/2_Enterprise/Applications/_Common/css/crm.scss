@@ -1,0 +1,454 @@
+/*****************************************************************************************************************************/
+/*                                              COMMON TO CRM                                                   */
+/*****************************************************************************************************************************/
+
+span.hcp_sprite {
+  background-image: url("/Project/Design/2_Enterprise/Main_Layout/images/hcp_enterprise_buttons.png");
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+@mixin spriteButton($width, $height, $x, $y) {
+  @extend span.hcp_sprite;
+  width: $width !important;
+  height: $height !important;
+  border: none;
+  vertical-align: middle;
+  background-position: $x $y;
+  &:active {
+    background-position: $x $y - $height - 4px;
+  }
+}
+
+@mixin spriteImage($width, $height, $x, $y) {
+  @extend span.hcp_sprite;
+  width: $width !important;
+  height: $height !important;
+  border: none;
+  vertical-align: middle;
+  background-position: $x $y;
+}
+
+@mixin centerElement($width, $height) {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height: $height;
+  width: $width;
+}
+
+/*-------------------------------------------------------------------
+ * 
+ * ----------------------------------------------------------------*/
+
+#outer_wrapper {
+  color: #444;
+  a { color: #666; }
+  .overflowAuto { overflow: auto; }
+  #contentColumn {
+    #applicationSideBar {
+      div.submit_container { width: 100%; }
+    }
+    .division { 
+      height: 1px;
+      width: 903px;
+      margin: 30px 0 20px;
+      left: -28px;
+      border-bottom: 1px solid #CBCBCB;
+    }
+    
+    .scrollbar {
+      background-color: #E5E5E5;
+      float: left;
+      height: 100%;
+    }
+    
+    .scrollbar.vertical { width: 16px; }
+    .scrollbar.horizontal { height: 16px; }
+  }
+  
+  .sprite.greenPlus {
+    background-position: -1246px -113px;
+    height: 15px;
+    width: 15px;
+    vertical-align: text-top;
+    display: inline-block;
+  }
+}
+  
+form {
+  & > div { margin-bottom: 20px; }
+  div.options {
+    width: 200px;
+  }
+  label {
+    font-weight: bold;
+    font-size: 12px;
+    color: #4d4d4d;
+    margin-bottom: 10px;
+    width: 105px;
+    display: inline-block;
+  }
+  
+  input[type=text], input[type=password], select {
+    width: 197px;
+    height: 21px;
+    background-color: #f1f1f1;
+    border: 1px solid #b2b2b2;
+    font-size: 12px;
+  }
+  input[type=submit].sprite {
+    background-position: -904px -40px;
+    height: 31px;
+    width: 81px;
+  }
+}
+
+#leftColumn {
+  font-size: 12px;
+  ul.nav_list {
+    padding: 0;
+    margin-bottom: 20px;
+    a {
+      padding: 5px 0 5px 30px;
+      color: #666;
+      width: 100%;
+      display: block;
+      &:hover, &.active {
+        color: white;
+        background-color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+  select { padding: 0;  }
+}
+
+#table_tabs{
+  margin-left:6px;
+  >div.fleft{
+    cursor:pointer;
+    height:38px;
+    padding:0 5px;
+    position:relative;
+    z-index:1;
+    font-size: 14px;
+    font-weight: bold;
+    div,div:first-child{
+      height: 29px;
+      padding:0 5px;
+      color:#B2B2B2;
+      background-color:#E3E3E3;
+      border:1px solid #B2B2B2;
+      border-bottom:none;
+    }
+    div:first-child{
+      border-radius:5px 5px 0 0;
+      padding-top: 5px;
+      span{
+        display:inline-block;
+        width:22.5px;
+        height:22.5px;
+        background-color:#29AAE1;
+        color:#FFFFFF;
+        font-size:14px;
+        border-radius: 3px;
+        text-align:center;
+        line-height:23px;
+        margin-left:5px;
+      }
+    }
+    div:last-child,.bottom_corner_curve{
+      height:10px;
+      padding:0;
+      border-top:none;
+    }
+    &.active{
+      position:relative;
+      z-index:30;
+      div{
+        background-color:#F1F1F1;
+        color:#1A1A1A;
+      }
+    }
+  }
+}
+    
+.table_container{
+  position:relative;
+  z-index:10;
+  padding: 10px 10px 50px;
+  text-align: center;
+  font-weight: bold;
+  table {  display:none; }
+  .pagination {
+    font-size: 12px;
+    color: #666;
+    height: 20px;
+    width: 1060px;
+    margin-top: 15px;
+    .posAbs {
+      top: 0;
+      right: 0;
+    }
+    .prev, .next { cursor: pointer; }
+  }
+}
+
+table {
+  width:100%;
+  background-color:#FFFFFF;
+  tr{
+    min-height:10px;
+    &.new{
+      td{
+        background-color:#4D4D4D;
+        color:#FFFFFF;
+        font-weight:bold;
+        a{
+          color:#FFFFFF !important;
+        }
+      }
+    }
+    td{
+      vertical-align:middle;
+      height: 30px;
+      text-align: justify;
+      font-weight: normal;
+      span{ cursor:pointer !important; }
+      select { height: 20px; }
+      .underline {
+        text-decoration: underline; 
+        color: #666;
+        cursor:pointer !important;
+      }
+    }
+    &:hover{
+      td,span.staff_name, .underline, .recommend {
+        background-color: #989898;
+        color:#FFFFFF !important;
+        cursor:default;
+      }
+    }
+  }
+  
+  td, th {
+    font-size:12px;
+    min-width: 138px;
+    padding: 2px 5px;
+    display:table-cell;
+    min-height:30px;
+    border: 1px solid #B2B2B2;
+    padding-left: 10px;
+  }
+  th{
+    background-color:#242424;
+    font-weight:bold;
+    text-align:left;
+    height:35px;
+    color:#FFFFFF !important;
+  }
+  &.active{
+    display:table;
+  }
+}
+/*PAGINATION*/
+div#pagination {
+  margin-top: 20px;
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    
+    li {
+      float: left;
+      
+      &:first-child, &:last-child { color: #929497; }
+      &.current { border: 1px solid #929497; }
+      
+      a { 
+        height: 20px;
+        width: 20px;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 12px;
+      }
+      
+      a.previous, a.next { width: 40px; }
+      a.previous { text-align: left; }
+      a.next { text-align: right; }
+    }
+  }
+}
+.profile_info {
+  line-height: 20px;
+  overflow: auto;
+  table {  
+    border: 1px solid #cbcbcb;
+    tr:hover td { color: #333 !important; }
+    tr:hover td:nth-of-type(2) { color: #808080 !important; }
+    td {
+      border: none;
+      min-height: 20px;
+      min-width: auto;
+      height: auto;
+      padding: 1px 5px 2px 10px;
+      vertical-align: middle;
+      &:nth-of-type(1) {
+        border-right: 1px solid #cbcbcb;
+        background-color: #E5E5E5; 
+        width: 105px;
+        color: #333;
+      }
+      &:nth-of-type(2) {
+        background-color: #f7f7f7;
+        width: 250px;
+        margin-left: -1px;
+        color: #808080;
+      }
+    }
+  }
+}
+
+h3.notes { color: #1a1a1a; }
+
+.conversation_history {
+    background-color: #E5E5E5;
+    min-height: 196px;
+    overflow: auto;
+    padding: 5px;
+  > table {
+    float: left;
+    width: 565px;
+    margin-right: 10px;
+  }
+  
+  form {
+    float: left;
+    textarea {
+      height: 144px; 
+      width: 258px;
+      resize: none;
+      font-size: 12px;
+    }
+  }
+}
+
+#applicationSideBar {
+  form > div { margin-bottom: 10px; }
+}
+
+
+.popupDialog {
+  width: 430px;
+  margin-left: -215px;
+  padding: 20px 40px;
+  border-radius: 0;
+  z-index:100000;
+  span{
+    color:#FFFFFF;
+  }
+  &.imageId_error,&.unassignedLeads{
+    #button_container{
+      span{
+        background-position: -2039px -40px !important;
+      }
+    }
+  }
+  h3 {
+    color: #8CC63F;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  label {
+    font-weight: normal;
+    width: 115px;
+    color: white;
+  }
+  input[type=text], input[type=password], select {
+    width: 230px;
+    height: 25px;
+  }
+  form > div {
+    margin-bottom: 15px;
+    &:last-of-type { margin-bottom: 0; }
+  }
+  #button_container {
+    margin: 20px auto 10px;
+    width: 180px;
+    span.sprite {
+      background-position: -373px -40px;
+      height: 31px;
+      width: 81px;
+   }
+    input[type=submit].sprite.yes {
+      background-position: -1862px -40px;
+      height: 31px;
+      width: 79px;
+    }
+    .sprite.cancel {
+      background-position: -1951px -40px;
+      display: inline-block;
+      height: 31px;
+      margin-left: 20px;
+      width: 79px;
+    }
+  }
+}
+
+.popupDialog.addAlarm { 
+  width: 530px;
+  margin-left: -265px;
+  
+  textarea {    
+    height: 200px;
+    width: 230px;
+  }
+}
+
+.hasDatepicker {
+  font-family: arial;
+  font-size: 10px;
+  
+  tr:hover td { background: transparent; }
+
+}
+
+/*-------------------------------------------------------------------
+ * SPRITES
+ * ----------------------------------------------------------------*/
+
+.addHCPBtn    { @include spriteButton(101px, 26px, 0px, 0px); }
+.editBtn      { @include spriteButton(71px, 26px, 0px, -59px); }
+.addStaffBtn  { @include spriteButton(161px, 31px, 0px, -180px); }
+.confirmBtn   { @include spriteButton(82px, 26px, 0px, -250px); }
+.confirmBtn2  { @include spriteButton(82px, 26px, -85px, -180px); }
+.searchBtn    { @include spriteButton(82px, 26px, -0px, -310px); }
+.saveBtn      { @include spriteButton(82px, 26px, -115px, -370px); }
+.saveChangesBtn { @include spriteButton(105px, 30px, -155px, -110px); }
+.addAlarm .cancelBtn    { @include spriteButton(82px, 26px, -0px, -430px); }
+.deleteBtn    { @include spriteButton(82px, 26px, -85px, -430px); }
+.deleteBigBtn   { @include spriteButton(80px, 30px, -265px, -110px); }
+.addSeekerBtn   { @include spriteButton(101px, 26px, -85px, -310px); }
+.viewProfileBtn { @include spriteButton(111px, 27px, -0px, -369px); }
+.addConversationBtn { @include spriteButton(151px, 26px, 0px, -120px); }
+.closeBtn       { @include spriteButton(82px, 26px, -0px, -490px); }
+.reopenBtn      { @include spriteButton(82px, 26px, -0px, -610px); }
+.urgentBtn      { @include spriteButton(82px, 26px, -85px, -490px); }
+.noturgentBtn   { @include spriteButton(152px, 26px, -85px, -610px); }
+.suspendBtn     { @include spriteButton(82px, 26px, -170px, -240px); }
+.unsuspendBtn   { @include spriteButton(82px, 26px, -253px, -240px); }
+.publishBtn     { @include spriteButton(111px, 26px, -190px, -300px); }
+.unpublishBtn   { @include spriteButton(111px, 26px, 0px, -549px); }
+.addAlarmBtn    { @include spriteButton(111px, 26px, -115px, -549px); }
+.contactHistoryBtn  { @include spriteButton(152px, 26px, -165px, -180px); }
+
+.scrollbar > .up    { @include spriteImage(16px, 19px, -105px, -10px); }
+.scrollbar > .down  { @include spriteImage(16px, 19px, -105px, -30px); }
+.scrollbar > .pos   { @include spriteImage(16px, 11px, -105px, -50px); }
+.houseIcon  { @include spriteImage(26px, 25px, -105px, -76px); }
+.downArrow  { @include spriteImage(8px, 7px, -105px, -65px); }
+.upArrow    { @include spriteImage(8px, 7px, -116px, -65px); }
+.recommendArw { @include spriteImage(18px, 8px, -105px, -0px); }

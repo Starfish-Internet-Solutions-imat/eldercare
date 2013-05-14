@@ -1,0 +1,106 @@
+/**************************************/
+/*              HEADER                */
+/**************************************/
+  #header {
+    #welcome_section{
+      margin:20px auto;
+      span{
+        display:inline-block;
+      }
+      a{
+        color:white;
+      }
+      #primary_nav{
+        list-style:none;
+        padding:0;
+        margin:1px 85px 0 0;
+        float:left;
+        li{
+          float:left;
+          line-height:10px;
+          border-right:1px solid #FFFFFF;
+          a{
+            font-size:12px;
+            padding:0 10px;
+          }
+          &.last,&#cms{
+            border:none;
+          }
+          &#settings{
+            span{
+              background:{
+                image:url('/Project/Design/2_Enterprise/Main_Layout/images/enterprise_icons_sprite.png');
+                repeat:no-repeat;
+                position: -13px -115px;
+              }
+              padding-left: 8px;
+            }
+          }
+        }
+      }
+    }
+    #navigation{
+      width:100%;
+      height:64px;
+      border-radius:4px;
+      background:{
+        image:url('/Project/Design/2_Enterprise/Panels/header/images/navigation_background.png');
+      }
+      padding:4px;
+      #slider_container{
+        #primary_nav{
+          margin:0;
+          padding:0;
+          background:{
+              image:url('/Project/Design/2_Enterprise/Panels/header/images/navigation_ul_background.png');
+            }
+            height:56px;
+            width:100%;
+            border-radius:8px;
+            overflow:hidden;
+          li{
+            background:{
+              image:url('/Project/Design/2_Enterprise/Main_Layout/images/enterprise_buttons_and_icons_sprite.png');
+              repeat:no-repeat;
+              color:transparent;
+              position:-997px -82px;
+            }
+            width:114px;
+            height:100%;
+            text-align:center;
+            margin-left:1px;
+            display: inline;
+            float: left;
+            &:active,&.active{
+              background-position: -883px -82px;
+              a{
+                color:#4E4E4E;
+              }
+            }
+            &.last{
+              margin-right:1px;
+            }
+            a{
+              text-decoration:none;
+              padding:19px 0;
+              float: left;
+              color:white;
+              font-size:12px;
+              font-weight:bold;
+              width: 116px;
+              overflow:hidden;
+            }
+            &#hcps{
+              span{
+                a{
+                  line-height: 13px;
+                  padding: 15px 0;
+                  width: 113px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,38 @@
+<div><!-- DIV holds homepage banner -->
+	<h1 title="Looking for Eldercare" class="sprite looking_for_eldercare"></h1>
+	%%GET_STARTED%%
+</div>
+<div class="gray_background"><!-- holds gray background -->
+	<div class="pTxxl"><!-- limits and holds content to 1024px width -->
+		<h1 id="easy_steps" class="sprite fleft mTxl" title="3 easy steps to find care for your loved ones"></h1>
+		<h2 id="health_provider" class="sprite fright mTxl" title="are you a health care provider?"></h2>
+		<?if(userSession::getUserAccountID()):?>	
+			<a id="list_your_home" class="sprite fright mTm" title="list your home now" href="/account/profile"></a>
+		<?else:?>
+			<a id="list_your_home" class="sprite fright mTm" title="list your home now" href="/account/register"></a>
+		<?endif?>
+	
+	</div>
+</div>
+<div class="clearfix">
+	<div class="pVxxl clearfix">
+		<div class="mid_section_columns clearfix US_map">
+			<span class="sprite"></span>
+		</div>
+		<div class="mid_section_columns clearfix">
+			<h2>ASSISTED LIVING TIPS</h2>
+			<img src="/Project/Design/1_Website/Pages/primary/home/images/assisted_living_tips.jpg" alt="assisted living tips" title="advice on choosing homes"/>
+			<h3><a href="/faq">ADVICE ON CHOOSING HOMES</a></h3>
+			<p>Here are some friendly tips from Looking For ElderCare<sup class="fs-xxs">TM</sup> when choosing a home.</p>
+			<!-- <a href="#" class="learn_more sprite"></a> -->
+		</div>
+		<div class="mid_section_columns clearfix">
+			<h2>WHAT SETS US APART</h2>
+			<img src="/Project/Design/1_Website/Pages/primary/home/images/what_sets_us_apart.jpg" alt="what sets us apart" title="learn about our process"/>
+			<h3><a href="/about">LEARN ABOUT OUR PROCESS</a></h3>
+			<p>We aim to make sure the options for your loved one are clearly explained so that you may make an informed and confident choice. </p>
+			<!-- <a href="#" class="learn_more sprite"></a> -->
+		</div>
+	</div>
+</div>
+<div class="gray_background pTxl">%%STATES%%</div>

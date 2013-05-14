@@ -1,0 +1,12 @@
+<?if(count($this->_get('array_of_new_leads')) > 0):?>
+	<?foreach($this->_get('array_of_new_leads') as $lead):?>
+			<tr>
+				<td><?=date('M-d-y h:i:s A',strtotime($lead->__get('date_of_inquiry')))?></td>
+				<td><a href="/seekers/profile/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a></td>
+				<td><?=$lead->__get('areastate')?></td>
+				<td><?=$lead->__get('house_type')?></td>
+				<td><?=$lead->__get('relationship')?></td>
+				<td class="underline"><a href="/seekers/profile/view/<?=$lead->__get('lead_id')?>">View Profile</a></td>
+			</tr>
+	<?endforeach;?>
+<?endif;?>

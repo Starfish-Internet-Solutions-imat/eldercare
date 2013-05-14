@@ -1,0 +1,23 @@
+<div class="popupDialog recommendHCP">
+<form action="/hcps/recommend/" method="post">
+	<h3>
+		<span class="recommendArw mRs"></span>Recommend
+	</h3>
+	<?php 
+	$seeker = 0;
+	if(strlen($this->_get('seeker_id'))>0)
+		$seeker = 1;
+	?>
+	<span id = "hcp_name"></span> to
+	
+	<div>
+		<label>Seeker Name</label>
+		<input type="text" name="seeker" value="<?=$seeker==1 ? $this->_get('seeker_name') : "" ;?>"> <input type="hidden" name="seeker_id" value="<?=$seeker==1 ? $this->_get('seeker_id') : "" ;?>"> <input type="hidden" name="hcp_id" id="hcp_id">
+		<div id = "suggestion_list" class="clearfix"></div>
+	</div>
+	<div id="button_container" class="fright mTs">
+		<input class="confirmBtn mRs recommendSubmit" type="submit" value=" " name="edit_seeker">
+		<span class="cancelBtn pointer cancel recommendSubmit" title="cancel"></span>
+	</div>
+</form>
+</div>

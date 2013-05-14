@@ -1,0 +1,129 @@
+/************************************** MAIN **************************************/
+
+body{
+  color:#F6F6F6;
+  background-color:#242424;
+  #wrapper{
+    width:1200px;
+    margin:0 auto;
+    #container_wrapper{
+      min-height:400px;
+      padding: 1.250em 0;
+      #container{
+        width: 100%;
+      }
+    } 
+  }
+}
+
+.sprite{
+  background:{
+    repeat:no-repeat;
+    color:transparent;
+    image:url('/Project/Design/2_Enterprise/Main_Layout/images/enterprise_buttons_and_icons_sprite.png');
+  }
+}
+
+
+
+.nicEdit-main {
+  font-size: 14px;
+  color: #575756 !important;
+}
+
+div[unselectable="on"]{
+  color:black;
+  font-size:10px !important;
+}
+
+
+
+div.selector, 
+div.selector span, 
+div.checker span,
+div.radio span, 
+div.uploader, 
+div.uploader span.action,
+div.button,
+div.button span {
+  background-image: url('/Project/Design/2_Enterprise/Main_Layout/images/sprite.png');
+}
+
+input.text,
+input.email, 
+input.password,
+textarea.uniform {
+  background: url('/Project/Design/2_Enterprise/Main_Layout/images/bg-input-focus.png') repeat-x 0px 0px white;
+  background: url('/Project/Design/2_Enterprise/Main_Layout/images/bg-input.png') repeat-x 0px 0px white;
+}
+
+input.text:focus,
+input.email:focus,
+input.password:focus,
+textarea.uniform:focus {
+  background: url('/Project/Design/2_Enterprise/Main_Layout/images/bg-input-focus.png') repeat-x 0px 0px white;
+}
+
+div.checker {
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.category_dialog
+{
+  width: 380px;
+  height:175px;
+  margin-left: -190px;
+  padding: 25px 10px 10px;
+}
+.category_dialog,.subcategory_dialog, .product_dialog
+{
+    background-image:url("/Project/Design/2_Enterprise/Applications/Products/Main_App_Layout/images/Enterprise-Pop-ups-add.png");
+}
+.subcategory_dialog, .product_dialog
+{
+  width: 410px;
+  margin-left: -205px;
+  padding: 25px 10px 10px;
+  
+}
+
+ .subcategory_dialog input[type="text"][name="title"],.subcategory_dialog textarea[name="description"],.category_dialog input[type="text"][name="title"],.product_dialog input[type="text"][name="title"],.product_dialog textarea[name="description"],.product_dialog textarea[name="intro"],.product_dialog textarea[name="body"]
+ {
+  width: 230px;
+  margin: -4px 10px 0px 10px;
+  height: 25px;
+  border-radius: 0;
+  }
+  
+.product_dialog textarea[name="intro"],.product_dialog textarea[name="body"]
+{
+  height: 70px;
+  margin-bottom: 15px;
+}
+  
+  
+  .subcategory_dialog textarea[name="description"],.product_dialog textarea[name="description"]
+  {
+    resize:both;
+    height:100px;
+    max-height:200px;
+    max-width:230px;
+  }

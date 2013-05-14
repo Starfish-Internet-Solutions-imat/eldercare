@@ -1,0 +1,26 @@
+<?php $hcp_info = $this->_get('hcp_info');?>
+<?php $provider = $this->_get('provider');?>
+<div class="clearfix">
+	<h2 class="fleft">My Account Details</h2>
+</div>
+<hr class="clearfix">
+<div>
+	<div><label>Fullname</label><input type="text" name="contact_person_name" value="<?php echo $provider->__get('contact_person_name');?>"></div><br />
+	<div><label>Position</label><input type="text" name="contact_person_position" value="<?php echo $provider->__get('contact_person_position');?>"></div><br />
+	<br />
+	<div><label>Mobile</label><input type="text" maxlength="12" onkeypress="return isNumberKey(event)" name="telephone" value="<?php echo $provider->__get('telephone');?>"></div><br />
+	
+	<?if($provider->__get('telephone') == "Invalid Number"):?>
+	<span style="color:red">Your phone number is either already exist or wrong format</span>
+	<?endif?>
+	
+	<div><label>Email</label><input type="text" name="email" value="<?php echo $provider->__get('email');?>"></div><br />
+	<span onclick="slideContent('.passwordField',this.id)" id="changePasswordToggle" class="pointer">Change Password</span>
+	<input type="hidden" name="old_password_hidden" value="<?=$provider->__get('password')?>">
+	<div class="hide passwordField">
+		<div><label>Enter Old Password</label><input  type="password" name="old_password"></div><br/>
+		<div id="wrong_password" class="error"></div>
+		<div><label>New Password</label><input id="password" type="password" name="password"  ></div><br />
+		<div><label>Confirm New Password</label><input id="confirmPassword" type="password" name="confirm"></div>
+	</div>
+</div>

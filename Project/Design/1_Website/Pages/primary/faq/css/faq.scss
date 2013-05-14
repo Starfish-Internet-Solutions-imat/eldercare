@@ -1,0 +1,91 @@
+/*---------------------------------------------------------
+ * HCP PROFILE
+----------------------------------------------------------- */
+
+$imagesDir: '/Project/Design/1_Website/Pages/primary/faq/images/';
+
+/*--------------------------------------------------------- */
+
+body { background-color: #f2f2f2; }
+
+#header_banner {
+	background: {
+		image: url('/Project/Design/1_Website/Applications/User_Account/Controllers/profile/images/hcp_bg.png');
+    repeat:no-repeat;
+    position:center;
+    size:cover;
+    }
+  position:relative;
+  height:449px !important;
+  width:100%;
+  .semi_transparent{
+    width:1032px;
+    height:200px;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    margin-left:-516px;
+  }
+}
+
+#page_content {
+  background-color: #FFFFFF;
+  margin: -195px auto 0;
+  padding: 20px;
+  position: relative;
+  width: 1024px;
+  z-index: 100;
+  border:1px solid #CCCCCC;
+		
+	.fcBlue { color: #29ABE2; }	
+	
+	#faq_container {
+		width: 980px;
+		border: 1px solid #ccc;
+		min-height: 583px;
+		
+		h3 {
+			background-color: #E7E8E8;
+	    box-shadow: 0 1px 2px #B9B9B9;
+	    padding: 13px 15px;
+	    width: 99%;
+	    margin: 50px auto 0;
+	    
+	    &:nth-of-type(1) { margin-top: 2px; }
+		}
+		
+		ul { padding: 0; }
+		
+		li {
+			// background: {
+				// image: url($imagesDir+'blue_arrow.gif');
+				// repeat: no-repeat;
+				// position: left 5px;
+			// }
+			margin-bottom: 30px;
+			margin-left: 40px;
+			
+			> label, > strong {
+				cursor: pointer;
+			}
+			
+			div, strong { display: none; }
+			div { margin-top: 15px; }
+			
+			&.activated{
+				// background: {
+					// image: url($imagesDir+'blue_arrow2.gif');
+				// }
+				 > label { font-weight: bold; }
+				 > strong { display: inline-block; }
+			}
+		}
+	}
+}
+
+
+
+
+
+
+

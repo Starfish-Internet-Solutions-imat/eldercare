@@ -1,0 +1,28 @@
+<div class="sprite clearfix mTl" id="upload"></div>
+<?if(count($this->_get('array_of_images')) > 0):?>
+<div id="images_listing_container" class="clearfix">
+	<?$i = 0; $active = '';?>
+	<?foreach($this->_get('array_of_images') as $image):?>
+		<?if ($image->__get('image_id') == $this->_get('image')->__get('image_id')) $active = 'active';else $active = '';?>
+		<div class="fleft pAxs mBm">
+			<form class="image_details_form" method="POST">
+				<div class="image_holder posRel align_c clearfix mBs">
+					<input type="hidden" name="album_id" value="<?=$image->__get('album_id')?>">
+					<input type="hidden" name="size_id" value="<?=$image->__get('size_id')?>">
+					<input type="hidden" name="image_id" value="<?=$image->__get('image_id')?>">
+					<div class="<?=$active?> posRel">
+						<div id="img" style="background-image:url(/Data/Images/<?=$this->_get('album')->__get('album_folder')?>/<?=$this->_get('size')->__get('dimensions')?>_thumb/<?=$image->__get('filename')?><?=$image->__get('filename_ext')?>)"></div>
+						<input type="submit" name="view_image_info" value=" ">
+					</div>
+				</div>
+				<div class="clear text_container posRel ">
+					<span class="clearfix image_title fc_starfish_gray6 fwB fs-m"><?=str_replace("_"," ", $image->__get('filename'))?></span>
+				</div>
+			</form>	
+		</div>
+		<?$i++;?>
+	<?endforeach;?>	
+</div>
+<?else:?>
+<div id="noImage" class="fwB fc_starfish_gray3 pointer"><span>No photos in this album size. </span></div>
+<?endif;?>

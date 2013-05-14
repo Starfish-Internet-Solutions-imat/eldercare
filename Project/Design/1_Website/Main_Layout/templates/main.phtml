@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">  
+<!--[if IE 9]><html class="no-js ie9" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
+<!--[if !IE]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><!--<![endif]-->
+<head>
+    <link rel="shortcut icon" href="/favicon.png" />
+	<?=metaData::getInstance()->getMetaData(); ?>
+		||css_used_on_every_page|| 	
+		||javascript_used_on_every_page_top||
+		||css_and_javascript_links_for_this_page_only||	
+
+	<script type="text/javascript">||inpage_javascript_top||</script> 
+	
+</head>
+<body <?=$this->getIdForPage(); ?>>
+		<div id="wrapper" class="mAuto">
+		<!--[if lt IE 8]><p class="chromeframe btn btn-inverse">"Your version of Internet Explorer is not supported by this website. <a href="http://browsehappy.com/" target="blank" class="btn btn-info">We recommend Firefox.</a> or <a href="http://www.google.com/chromeframe/?redirect=true"  target="blank" class="btn btn-info">install Google Chrome Frame</a>.  Thank you!</p><![endif]-->
+			
+				<?= $this->displayHeader(); ?>
+				%%HEADER_CONTENT%%
+			<div id="<?=routes::getInstance()->getCurrentTopLevelPageID()?>_container" class="clearfix">
+				%%MAIN_CONTENT%%
+				
+				
+			</div>
+				<?= $this->displayFooter(); ?>
+				%%FOOTER_CONTENT%%
+		</div>
+		||javascript_used_on_every_page_bottom||
+		%%GLOBAL_SCRIPTS%%
+	
+		<script type="text/javascript">
+			<?=$this->displayGoogleAnalytics(); ?>
+			||inpage_javascript_bottom||
+		</script>
+</body>
+</html>

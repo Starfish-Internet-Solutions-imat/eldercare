@@ -1,0 +1,21 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper" class="pAm">
+<?php $seeker = seekerSession::getSeekerSession()?>	
+	<?$provider = $this->_get('health_care_provider_info_array');?>
+	Home: <?=$provider['name']?><br>
+	<img width="150" src="<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$provider['hcp_id'].'/'.hcp_image::selectFilename($provider['image_id'])?>">
+	<br />
+	Description: <?=$provider['description']?><br>
+	
+	<form method="POST" action="/seeker/add_hcp_to_list">
+		<input type="hidden" name="home_id" value="<?=$provider['hcp_id']?>">
+		<input type="hidden" name="name" value="<?=$provider['name']?>">
+		<input type="submit" name="submit" value="add home to list">
+	</form>
+	<br />
+	<form method="POST" action="/seeker/request_hcp_info">
+		<input type="hidden" name="home_id" value="<?=$provider['hcp_id']?>">
+		<input type="submit" name="submit" value="request_info">
+	</form>
+	<a href = "<?//=$seeker->getUri('back_url')?>">Back to Search</a>
+
+</div>

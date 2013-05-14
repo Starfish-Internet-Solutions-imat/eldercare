@@ -1,0 +1,59 @@
+#contentColumn {
+  height:auto;
+  padding:20px;
+  overflow:auto;
+  color:#3C3C3B;
+  border-radius:4px;
+  background-color:white;
+  width: 1200px !important;
+  h4{
+    background-color: white;
+    margin-top: -10px;
+    display:table;
+    padding-right:10px;
+  }
+  span{
+    font:{
+      size:12px;
+      weight:bold;
+    }
+    color:#808080;
+    margin-bottom:15px;
+    display:inline-block;
+  }
+  input{
+    height:25px;
+    width:235px;
+    border-radius:0;
+    padding:0 5px;
+    font-size:12px;
+  }
+  input.sprite{
+    background-position: -904px -40px;
+    height: 31px;
+    width: 81px;
+  }
+  textarea[name="g_analytics"] {
+    width: 805px;
+    border-radius:0;
+    font-size:12px;
+    padding:10px !important;
+  }
+  #smtp{
+    > div:first-child{
+      width:230px;
+    }
+    >div:last-child{
+      width:550px;
+      div.selector {
+        width: 233px;
+      }
+      div.selector span {
+        width: 130px;
+      }
+    }
+  }
+}
+.borderTop{
+  border-top:1px solid #CCCCCC;
+}

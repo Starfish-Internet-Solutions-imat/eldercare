@@ -1,0 +1,111 @@
+<applications>
+<!-- ******************************		User Accounts Routing    ***************************** -->
+	
+	<application>
+		<application_id>User_Account</application_id>
+		<floating_url_name>account</floating_url_name>
+		<requires_login>no</requires_login>
+		<has_main_layout>no</has_main_layout>
+				<controller default="true">
+					<controller_id>login</controller_id>
+					<url_name>login</url_name>
+					<link_text>Login</link_text>
+				</controller>
+				<controller>
+					<controller_id>logout</controller_id>
+					<url_name>logout</url_name>
+					<link_text>Logout</link_text>
+				</controller>
+				<controller>
+					<controller_id>registration</controller_id>
+					<url_name>register</url_name>
+					<link_text>Register</link_text>
+				</controller>
+				<controller>
+					<controller_id>profile</controller_id>
+					<url_name>profile</url_name>
+					<link_text>profile</link_text>
+				</controller>
+				<controller>
+					<controller_id>images</controller_id>
+					<url_name>images</url_name>
+					<link_text>images</link_text>
+				</controller>
+				<controller>
+					<controller_id>forgot_password</controller_id>
+					<url_name>forgot_password</url_name>
+					<link_text>images</link_text>
+				</controller>forgot_password
+	</application>
+	
+	<application>
+	
+		<application_id>Search</application_id>
+		<floating_url_name>health-care-search</floating_url_name>
+		<requires_login>no</requires_login>
+		<has_main_layout>no</has_main_layout>
+				<controller default="true">
+					<controller_id>search</controller_id>
+					<url_name>search</url_name>
+					<link_text>search</link_text>
+				</controller>
+				
+	</application>
+	
+	<application>
+	
+		<application_id>Seeker</application_id>
+		<floating_url_name>seek</floating_url_name>
+		<requires_login>no</requires_login>
+		<has_main_layout>no</has_main_layout>
+				<controller default="true">
+					<controller_id>seeker</controller_id>
+					<url_name>seeker</url_name>
+					<link_text>Seeker</link_text>
+				</controller>
+				
+	</application>
+	
+	<application>
+	
+		<application_id>Results</application_id>
+		<floating_url_name>NOTUSED</floating_url_name>
+		<requires_login>no</requires_login>
+		<has_main_layout>no</has_main_layout>
+				<controller default="true">
+					<controller_id>results</controller_id>
+					<url_name>results</url_name>
+					<link_text>results</link_text>
+				</controller>
+				
+	</application>
+	
+	<application>
+	
+		<application_id>Health_Care_Provider</application_id>
+		<floating_url_name>NOTUSED</floating_url_name>
+		<requires_login>no</requires_login>
+		<has_main_layout>no</has_main_layout>
+				<controller default="true">
+					<controller_id>hcp</controller_id>
+					<url_name>health-care-provider</url_name>
+					<link_text>Health Care Provider</link_text>
+				</controller>
+				
+	</application>
+	
+	<application>
+	
+		<application_id>Browse</application_id>
+		<floating_url_name>assisted-living</floating_url_name>
+		<requires_login>no</requires_login>
+		<has_main_layout>no</has_main_layout>
+				<controller default="true">
+					<controller_id>browse</controller_id>
+					<url_name>browse</url_name>
+					<link_text>browse</link_text>
+				</controller>
+				
+	</application>
+	
+</applications>

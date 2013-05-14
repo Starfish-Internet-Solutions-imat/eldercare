@@ -1,0 +1,3 @@
+<?phprequire_once FILE_ACCESS_CORE_CODE.'/Framework/MVC_superClasses_Core/controllerSuperClass_Core/controllerSuperClass_Core.php';require_once('Model.php');require_once('View.php');require_once FILE_ACCESS_CORE_CODE.'/Objects/Authorization/authorization.php';require_once 'Project/Code/ApplicationsFramework/FrontController/applicationsFrontController.php';
+class controller extends controllerSuperClass_Core{	public function indexAction()	{		$user_role = authorization::getUserSession()->user_role;				if($user_role == 'admin')		{			$applicationsAdminFrontController = new applicationsFrontController();			$applicationsAdminFrontController->runApplicationFromWithinPage('Leads_Manager');		}		else			header('location: /');	}		
+}?>

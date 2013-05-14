@@ -1,0 +1,45 @@
+<?$seeker = seekerSession::getSeekerSession();?>
+<div class="fright clearfix" id="short_list_column">
+	<h3 class="sprite shortlist"></h3>
+		<form>
+			<?if ($this->_get('array_of_homes') != null):?>
+					<ul class="unstyled">
+					<?foreach($this->_get('array_of_homes') as $provider):?>
+					<li class="posRel">
+						<a class="sprite remove_list fright clearfix" href = "/seeker/removeFromList/id/<?=$provider['hcp_id'];?>">Remove From List</a>
+						<div class="clearfix">
+							<!-- -->
+							<?php $filename = hcp_image::selectFilename($provider['image_id'])?>
+							<?php if($filename):?>
+								<div class="fleft" id="shortlist_img" style="background-image:url(<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$provider['hcp_id'].'/'.$filename?>)"></div>
+							<?else:?>
+								<div class="fleft" id="shortlist_img" style="background-image:url('/Project/Design/1_Website/Main_Layout/images/hcp_gallery_image.png')"></div>
+							<?php endif?>
+							
+							<div class="clearfix fright align_l">
+								<h6><span class="fs-m1"><?=$provider['name']?></span></h6>
+								<span><?=ucwords(strtolower($provider['city'])).", ".$provider['state'];?></span><br/>
+								<span>Pricing:</span><?=resultsModule::pricingMarking($provider['pricing'])?>
+							</div>
+						</div>
+						<div class="shortlist_action posAbs view_property_background hide">
+							<ul class="unstyled posRel">
+								<li>
+									<a class="sprite view_property" href = "/health-care-provider/<?=handler::link_builder($provider['name'], $provider['hcp_id']) ?>">View Property</a>
+								</li>
+								<li>
+									<span class="sprite remove_list_text">Are you sure you want to remove this from your shortlist?</span>
+									<a class="sprite yes" href = "/seeker/removeFromList/id/<?=$provider['hcp_id'];?>">Yes</a>
+									<span class="sprite no pointer">No</span>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<?endforeach;?>
+					</ul>
+				<a href = "/seeker/submit_list" class="sprite request_info">Request info and pricing</a>
+			<?else:?>	
+				<span class="helvetica77 fs-b">No properties listed yet.</span>
+			<?endif; ?>	
+		</form>
+</div>

@@ -1,0 +1,31 @@
+<div id="header" class="clearfix">
+	<div id="welcome_section" class="clearfix hAuto overflow">
+		<h1 id="logo" class="fleft">
+			<a href="/"><img alt="Starfish Enterprise V3" title="Web Design Company in the Philippines" src="/Project/Design/2_Enterprise/Panels/header/images/Starfish-Enterprise-V3_logo.png"></a>
+		</h1>
+		
+		<?if(authorization::areWeLoggedIn()){?>
+			<?$user_role = authorization::getUserSession()->user_role;?>
+			
+			<div class="clearfix fright">
+				<?if ($user_role == 'admin'):?>
+					<?=navigation::displayNavigationForPages('primary','','settings,cms,image_library')?>
+				<?endif; ?>
+				
+				<?= $this->displayApplicationBlock('User_Account','show_account_panel');?>
+			</div>
+	</div>
+	<div id='navigation' class="pos_rel">
+		<div id="slider_container" class="fleft">
+			<?
+				if($user_role == 'admin'):
+					echo navigation::displayNavigationForPages('primary','settings,cms,image_library');
+				else:
+					echo navigation::displayNavigationForPages('primary','settings,image_library,staff,cms,leads');
+				endif;
+			?>
+		</div>
+		<div id="navigation_controls" class="fleft hide"><span id="panLeft" title="pan left" class="sprite fleft pointer"></span><span id="panRight" title="pan right" class="sprite fright pointer"></span></div>
+	</div>
+		<?}?>
+</div>

@@ -1,0 +1,7 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+
+	<h3>Browse by State</h3>
+	<?foreach($this->_get('states') as $state):?>
+		<a href="/browse/state/<?=strtolower($state['state'])?>"><?=$state['state']?></a><br>
+	<?endforeach;?>
+</div>

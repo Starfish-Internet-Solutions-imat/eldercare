@@ -1,0 +1,70 @@
+<?$hcp = $this->_get('hcp');?>
+
+<div class="overflowAuto">
+	<div class="profile_info fleft">
+		<h3 class="mBm"><?=$hcp->__get('name')?><a class="viewProfileBtn mLl" href="/hcps/profile/view/<?=$hcp->__get('hcp_id')?>"></a></h3>
+		
+		<input type="hidden" name="hcp_id" value="<?=$hcp->__get('hcp_id')?>">
+		
+		<table class="fs-s">
+			<tr>
+				<td>HCP:</td>
+				<td><?=$hcp->__get('name')?></td>
+			</tr>
+			<tr>
+				<td>Contact:</td>
+				<td><?=$hcp->__get('contact_person_name')?></td>
+			</tr>
+			<tr>
+				<td>Position:</td>
+				<td><?=$hcp->__get('contact_person_position')?></td>
+			</tr>
+			<tr>
+				<td>Telephone:</td>
+				<td><?=$hcp->__get('telephone')?></td>
+			</tr>
+		</table>
+		
+	</div>
+	
+	<div class="fs-s fright">
+		<span class="sprite addAlarmBtn"></span>
+	</div>
+</div>
+
+<div class="posRel division"></div>
+
+<div id="table_tabs" class="clearfix">
+	<div class="fleft active" id="potential_leads">
+		<div>Potential Leads</div>
+		<div class="bottom_corner_curve"></div>
+	</div>
+	<div class="fleft" id="calendar_events">
+		<div>Calendar</div>
+		<div class="bottom_corner_curve"></div>
+	</div>
+</div>
+<div class="table_container">
+
+<!-- POTENTIAL HCPS ----------------------------------------------------------------------------->
+	<table class="potential_leads tablesorter active">
+		<thead>
+			<tr>
+				<th>Likes</th>
+				<th>Seeker Name</th>
+				<th>Details</th>
+				<th>Contact Made</th>
+				<th>Info Sent/Visited</th>
+				<th>Placement</th>
+			</tr>
+		</thead>
+		<tbody>%%POTENTIAL_LEADS%%</tbody>
+		
+	%%CALENDAR%%
+</div>
+
+<div class="posRel division"></div>
+
+%%CONVERSATION%%
+
+<div class="popupDialog addAlarm">%%ADD_ALARM_FORM%%</div>

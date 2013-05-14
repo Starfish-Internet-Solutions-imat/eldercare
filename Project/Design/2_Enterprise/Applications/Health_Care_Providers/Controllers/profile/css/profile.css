@@ -1,0 +1,96 @@
+/*----------------------------------------------------------------------
+		SEEKERS CSS
+----------------------------------------------------------------------*/
+#applicationContent {
+  min-height: 600px; }
+  #applicationContent > .fright {
+    width: 500px; }
+  #applicationContent #button_container {
+    bottom: 20px;
+    right: 20px;
+    text-align: right; }
+
+.table_container table {
+  width: 100%; }
+.table_container td, .table_container th {
+  min-width: 100px; }
+
+table#placements {
+  width: 575px; }
+  table#placements th {
+    height: 30px; }
+  table#placements td {
+    height: 25px;
+    color: #333; }
+  table#placements tr:nth-of-type(odd) td {
+    background-color: #f1f1f1; }
+  table#placements tr:nth-of-type(odd):hover td {
+    background-color: #989898; }
+
+.profile_info table td:nth-of-type(2) div {
+  display: inline-block;
+  width: 33%;
+  text-align: center; }
+
+.profile_info {
+  width: 100%; }
+  .profile_info > div:first-child {
+    width: 100%; }
+  .profile_info > div h3 {
+    display: inline; }
+  .profile_info a {
+    text-decoration: underline;
+    font-size: 12px; }
+  .profile_info table {
+    width: 355px; }
+  .profile_info > div:nth-of-type(2) {
+    background-color: #E5E5E5;
+    width: 188px; }
+    .profile_info > div:nth-of-type(2) span {
+      width: 80px;
+      height: 25px;
+      background-color: #1A1A1A;
+      margin: 7px;
+      padding-top: 2px; }
+
+.image_holder {
+  background-color: #f7f7f7;
+  border: 1px solid #cbcbcb;
+  margin-left: 25px; }
+  .image_holder div {
+    border: 1px solid #cbcbcb;
+    background-size: cover;
+    background-position: center;
+    height: 170px;
+    width: 180px; }
+
+.amenities {
+  display: inline-block;
+  float: left;
+  width: 280px;
+  height: auto; }
+  .amenities .amenity {
+    margin-bottom: 20px;
+    width: 260px; }
+    .amenities .amenity:nth-of-type(3n) {
+      margin-bottom: 0; }
+    .amenities .amenity ul {
+      padding-left: 20px;
+      color: #808080; }
+      .amenities .amenity ul li:first-of-type {
+        margin-top: 10px; }
+
+div.description {
+  height: 190px;
+  width: 582px;
+  border: 1px solid #e5e5e5;
+  background-color: #f7f7f7;
+  color: #808080;
+  overflow-y: scroll; }
+
+.approvePopUp {
+  color: #29AAE1;
+  font-size: 15px; }
+  .approvePopUp .okBtn {
+    width: 80px;
+    height: 25px; }

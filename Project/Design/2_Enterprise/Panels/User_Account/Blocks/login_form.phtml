@@ -1,0 +1,25 @@
+<!-- outer wrapper start-->
+<div id="login_container" class="clearfix mAuto">
+	<div id="form_fields">
+		<h1 id="hello_text"></h1>
+		<form class="pTm" id="login-form" method="post" action="/user/login">
+			<table>
+				<tbody>
+					<tr><td><span class="fwB pTxs fs-m">Username</span></td></tr>
+					<tr><td><input class=" fs-xs fc_starfish_gray5" type="text" name="email" autocomplete="off"></td></tr>
+					
+					<tr><td><span class="fwB pTxs fs-m">Password</span></td></tr>
+					<tr><td><input class=" fs-xs fc_starfish_gray5" type="password" name="password"></td></tr>
+					
+					<tr><td id="login_error"><span class="fs-xs pBxl"><?if($this->getLoginError()):?>Wrong username and password combination<?endif;?></span></td></tr>
+					
+					<tr><td><label class="fleft fc_starfish_gray2 fs-s"><input class="fleft" type="checkbox">Remember me</label></td></tr>
+					<tr><td><input title="Please enable your browser's javascript to continue using this enterprise system." class="fleft sprite" type="submit" name="login" value=" " disabled></td></tr>
+					<tr id="enable_javascript"><td class="align_c"><a class="fs-xs" href="http://enable-javascript.com/" target="_blank"><span>Click here to learn more about enabling javascript</span></a></td></tr>
+					<tr><td><a href="#"><span id="forgot_password" class="fs-s">I can't access my account | Forgot Password?</span></a></td></tr>
+				</tbody>
+			</table>
+		</form>
+	</div>	
+</div>
+<!-- outer  wrapper end-->

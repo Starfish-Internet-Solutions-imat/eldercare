@@ -1,0 +1,51 @@
+<table id="hcp_table" >
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Profile Updated</th>
+			<th>Joined Eldercare</th>
+			<th>State</th>
+			<th>Zip Code</th>
+			<th>Pricing</th>
+			<th>Published/ Unpublished</th>
+			<th>Profile | Contact History</th>
+			<th>Recommend</th>
+		</tr>
+	</thead>
+	<tbody>
+	<?foreach($this->_get('hcps') as $hcp):?>
+		<tr>
+			<td><?=$hcp->__get('name')?></td>
+			<td><?=$hcp->__get('date_updated')!=""?date('M-d-y h:i:s A',strtotime($hcp->__get('date_updated'))):'Never been updated'?></td>
+			<td><?=$hcp->__get('date_created')!=""?date('M-d-y h:i:s A',strtotime($hcp->__get('date_created'))):''?></td>
+			<td><?=$hcp->__get('state')?></td>
+			<td><?=$hcp->__get('zipcode')?></td>
+			<td><?php
+				if(ucfirst($hcp->__get('pricing')) == "Expensive")
+					echo "Exclusive";
+				else
+					echo ucfirst($hcp->__get('pricing'));
+			?></td>
+			<td><?=$hcp->__get('published')=='1'?'Published':'Unpublished'?></td>
+			<td>
+				<a class="underline" href="/hcps/profile/view/<?=$hcp->__get('hcp_id')?>">view</a> |
+				<a class="underline" href="/hcps/profile/contact_history/<?=$hcp->__get('hcp_id')?>">view</a>
+			</td>
+			<td>
+				<?php if($hcp->__get('published') == 1):?>
+				<a class="recommend" href="#" id ="<?=$hcp->__get('name')?>">Recommend</a><input type = "hidden" value = "<?=$hcp->__get('hcp_id')?>">
+				<?php else:?>
+				Can't be recommended
+				<?php endif?>
+			</td>
+		</tr>
+		
+	<?endforeach;?>
+	
+	</tbody>
+</table>
+
+%%PAGINATION%%
+
+%%RECOMMEND_CONTENT%%
+

@@ -1,0 +1,25 @@
+<?
+	$application_id	= routes::getInstance()->getCurrentTopLevelURLName();
+	$controller_id	= applicationsRoutes::getInstance()->getCurrentControllerID();
+?>
+<table class="calendar_events tablesorter">
+	<thead>
+		<tr>
+			<th>Set for Date</th>
+			<th>Action</th>
+			<th></th>
+		</tr>
+	</thead>
+	
+	<tbody>%%CALENDAR_ROW%%</tbody>
+</table>
+	
+<?if($this->_get('pages_calendar_events') > 1):?>
+<div class="pagination calendar_events posAbs  <?=$hide?>">
+	<span class="page">1</span> of <span class="pages"><?=$this->_get('pages_calendar_events')?></span>
+	<div class="posAbs">
+		<span class="fwB mRxxl prev hide">< Previous</span>
+		<span class="fwB next <?=$hide?>">Next ></span>
+	</div>
+</div>
+<?endif;?>

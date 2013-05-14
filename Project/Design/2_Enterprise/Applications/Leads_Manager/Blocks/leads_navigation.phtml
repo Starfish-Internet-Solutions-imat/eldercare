@@ -1,0 +1,142 @@
+<?php
+	$application_id	= routes::getInstance()->getCurrentTopLevelURLName();
+	$controller_id	= applicationsRoutes::getInstance()->getCurrentControllerID();
+?>
+<div class="fleft" id="leftColumn">
+
+	<div class="pAl" id="heading">
+		<h3>YOUR LEADS</h3>
+	</div>
+	
+	<div class="clearfix" id="sideNavigation">
+		<strong class="fs-m mLl">Cold Leads</strong>
+		<ul class="unstyled nav_list">
+		<?php if($this->_get('array_of_leads')!=NULL):?>
+			<?php foreach($this->_get('array_of_leads') as $lead):?>
+				<?if(($lead->__get('status')=="cold_new" || $lead->__get('status')=="cold_read") && $lead->__get('urgent')==0): ?>
+					<li>
+					<?php if ($application_id == 'your_leads'):?>
+						<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/view/<?echo $application_id == 'hcps'?$lead->__get('hcp_id'):$lead->__get('lead_id')?>"><?if($lead->__get('status')=="cold_new") echo "<b>";?><?=$lead->__get('name')?><?if($lead->__get('status')=="cold_new") echo "</b>";?></a>
+					<?php else:?>
+						<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/profile/view/<?echo $application_id == 'hcps'?$lead->__get('hcp_id'):$lead->__get('lead_id')?>"><?if($lead->__get('status')=="cold_new") echo "<b>";?><?=$lead->__get('name')?><?if($lead->__get('status')=="cold_new") echo "</b>";?></a>
+					<?php endif;?>
+					</li>
+				<?php endif;?>
+			<?endforeach;?>
+			<?php else:?>
+			<li>No Leads Yet</li>
+		<?php endif;?>
+		
+	
+		</ul>
+	</div>
+	
+	<div class="clearfix" id="sideNavigation">
+		<strong class="fs-m mLl">Immediate</strong>
+		<ul class="unstyled nav_list">
+			<?php if($this->_get('array_of_leads')!=NULL):?>
+				<?php foreach($this->_get('array_of_leads') as $lead):?>
+					<?if($lead->__get('status')=="immediate" || $lead->__get('urgent')==1):?>
+						<li>
+						<?php if ($application_id == 'your_leads'):?>
+							<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+						<?php else:?>
+							<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/profile/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+						<?php endif;?>
+						</li>
+					<? endif; ?>
+			<?php endforeach; ?>
+			<?php else:?>
+						<li>No Leads Yet</li>
+		<?php endif;?>
+		</ul>
+	</div>
+	
+	<div class="clearfix" id="sideNavigation">
+		<strong class="fs-m mLl">Contact Made</strong>
+		<ul class="unstyled nav_list">
+			<?if($this->_get('array_of_leads')!=NULL):?>
+				<? foreach($this->_get('array_of_leads') as $lead):?>
+					<?if(($lead->__get('status')=='contact_made') && $lead->__get('urgent')==0):?>
+						<li>
+						<?php if ($application_id == 'your_leads'):?>
+							<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/profile/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+						<?php else:?>
+							<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/profile/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+						<?php endif;?>
+						</li>
+					<?endif; ?>
+				<?endforeach;?>	
+				<?php else:?>
+			<li>No Leads Yet</li>
+			<?endif; ?>
+		</ul>
+	</div>
+	
+	<div class="clearfix" id="sideNavigation">
+		<strong class="fs-m mLl">Info Sent</strong>
+		<ul class="unstyled nav_list">
+		<?php if($this->_get('array_of_leads')!=NULL):?>
+			<?php foreach($this->_get('array_of_leads') as $lead):?>
+				<?if(($lead->__get('status')=='info_sent') && $lead->__get('urgent')==0): ?>
+					<li>
+					<?php if ($application_id == 'your_leads'):?>
+						<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+					<?php else:?>
+						<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/profile/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+					<?php endif;?>		
+					</li>
+				<? endif; ?>
+			<?endforeach; ?>
+			<?php else:?>
+			<li>No Leads Yet</li>
+		<? endif; ?>
+		</ul>
+	</div>
+	
+	<div class="clearfix" id="sideNavigation">
+		<strong class="fs-m mLl">Placed</strong>
+		<ul class="unstyled nav_list">
+			<?php if($this->_get('array_of_leads')!=NULL):?>
+				<?php foreach($this->_get('array_of_leads') as $lead):?>
+					<?php if(($lead->__get('status')=='placed') && $lead->__get('urgent')==0):?>
+					<li>
+						<?php if ($application_id == 'your_leads'):?>
+							<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/profile/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+						<?php else:?>
+							<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/profile/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+						<?php endif;?>
+					</li>
+				<?php endif;?>
+			<?php endforeach;?>
+			<?php else:?>
+						<li>No Leads Yet</li>
+		<?php endif;?>
+		</ul>
+	</div>
+	
+	<div class="clearfix" id="sideNavigation">
+		<strong class="fs-m mLl">Closed</strong>
+		<ul class="unstyled nav_list">
+			<?
+			if($this->_get('array_of_leads')!=NULL):?>
+				<?foreach($this->_get('array_of_leads') as $lead):?>
+					<?if(($lead->__get('status')=='closed') && $lead->__get('urgent')==0):?>
+						<li>
+						<?php if ($application_id == 'your_leads'):?>
+							<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+						<?php else:?>
+							<a href="/<?php echo $application_id == 'hcps'?'seekers':$application_id;?>/profile/view/<?=$lead->__get('lead_id')?>"><?=$lead->__get('name')?></a>
+						<?php endif;?>
+						</li>
+					<?endif; ?>
+				<?endforeach; ?>
+				<?php else:?>
+			<li>No Leads Yet</li>
+			<?endif; ?>
+		</ul>
+	</div>
+	
+	
+</div>
+<!-- left hand nav end -->

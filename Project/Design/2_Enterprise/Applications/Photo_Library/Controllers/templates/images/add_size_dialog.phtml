@@ -1,0 +1,17 @@
+<div id="new_size_dialog" class="popupDialog">
+	<h3>Create New Size</h3>
+	<div class="pVm">
+		<form id="new_size_form" method="POST">
+			<input type="hidden" name="album_id" value="<?=$this->_get('album')->__get('album_id')?>">
+			<strong class="fleft">Album Size</strong>
+			<div class="fright mBl">
+				<div class="fleft"><strong class="fs-m">w:</strong><input type="text" name="width" class="fright validate[required,custom[integer],max[1024]]"></div>
+				<div class="fright"><strong class="fs-m">h:</strong><input type="text" name="height" class="fright validate[required,custom[integer],max[1024]]"></div>
+			</div>
+			<div class="fright mRs mVs">
+				<input class="sprite fleft mRs mTs" title="add new size" type="submit" name="add_size" value=" ">
+				<span class="sprite cancelAddsize pointer mTs fleft" title="cancel"></span>
+			</div>
+		</form>
+	</div>
+</div>

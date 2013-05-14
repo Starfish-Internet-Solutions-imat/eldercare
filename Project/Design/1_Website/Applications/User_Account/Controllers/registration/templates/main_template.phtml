@@ -1,0 +1,42 @@
+<?$registration_data = userSession::getTemporarySessionData('reg_second_part'); //var_dump(userSession::getTemporarySessionData('reg_sec_part_error'));?>
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+	<div id="header_banner">
+		<div class="semi_transparent"></div>
+	</div>
+	<div id="page_content" class="clearfix">
+		<a href = "/" class="back sprite"></a>
+		<div class="clearfix pBl">
+			<h1 class="helvetica77 mTxxl fcBlue">Health Care Provider - Create your account</h1>
+			<span class="gotham_book fs-m">To continue your listing, you must provide your basic information.</span>
+			<div id="register_column" class="clearfix fleft mTm">	
+				<h3 class="helvetica77">Basic Information <span class="sprite lock mLxl"></span></h3>
+				<form method="post" action="/account/register" id="hcpRegistrationSecondPhase">
+					<div><label><span class="gotham_bold">Name of Facility</span><br /><input type="text" name="name" value="<?echo isset($registration_data['name'])?$registration_data['name']:''?>"></label></div>
+					<div><label><span class="gotham_bold">Contact Name</span><br /><input type="text" name="contact_person_name" value="<?echo isset($registration_data['contact_person_name'])?$registration_data['contact_person_name']:''?>"></label></div>
+					<div><label><span class="gotham_bold">Job Title</span><br /><input type="text" name="contact_person_position" value="<?echo isset($registration_data['contact_person_position'])?$registration_data['contact_person_position']:''?>"></label></div>
+					
+					<div><label><span class="gotham_bold">Mobile</span><br/><span class="gotham_bold">(xxx-xxx-xxxx, including 3-digit area code)</span><br/><input type="text" maxlength="12" name="telephone" onkeypress="return isNumberKey(event)" value="<?echo isset($registration_data['telephone'])?$registration_data['telephone']:''?>"></label></div>
+					
+					<div><label><span class="gotham_bold">Email Address</span><br /><input type="text" name="email" value="<?echo isset($registration_data['email'])?$registration_data['email']:''?>"></label><p class="error" id="email_checker_response"><?=$this->_get('error');?></p></div>
+					<p id="confirmPasswordError"> <?=$this->_get('error_message')?></p>
+					<div><label><span class="gotham_bold">Password</span><br /><input type="password" name="password"></label></div>
+					<div><label><span class="gotham_bold">Confirm Password</span><br /><input type="password" name="confirm"></label></div>
+					<span class="registration_text mVxl">Our Team will have to verify your facility before your profile gets published. In the meantime, you can fill in your profile details for better chances of getting inquiries.</span>
+					<!-- <div class="clearfix">
+						<label class="gotham_bold"><input type="checkbox" name="agreement"/><p class="fleft">I agree to the <a class="error gotham_bold" href="/privacy_policy" target="_blank">Terms and Conditions</a> stipulated<br/>in the service agreement.</p></label><br/>
+					</div> -->
+					<div class="clearfix">
+						<label class="gotham_bold"><input type="checkbox" name="marketing_agreement"/><p class="fleft">I agree to the <a class="error gotham_bold" href="/Data/1_Website/Content/Pages/secondary/marketing_agreement/Marketing Agreement.pdf" target="_blank">terms and conditions</a> stipulated<br/>in the Marketing Agreement.</p></label>
+					</div>
+					
+					<input type="submit" name="register" value="Register" class="sprite register fright">
+				</form>
+			</div>
+			<div id="faq_column" class="fright clearfix mTm">
+				<a href="/about"><h2 class="fs-b helvetica77 fcBlue">Why does Looking for ElderCare<sup class="fs-xxs">TM</sup> stand out?</h2></a>
+				<p class="gotham_book">Health Care Providers find it more efficient to find potential seekers through Looking for ElderCare<sup class="fs-xxs">TM</sup>'s system.</p>
+			</div>
+		</div>
+		<a href = "/" class="back sprite"></a>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<?php if(count($this->_get('array_of_new_hcp')) > 0):?>	
+	<?php foreach($this->_get('array_of_new_hcp') as $hcp):?>
+		<tr id='<? echo $hcp['hcp_id'];?>' >
+				<td> <a href='/hcps/profile/view/<?echo $hcp['hcp_id'];?>'>  <?php echo $hcp['name'];?></a></td>
+				<td> <?php echo date('M-d-y h:i:s A',strtotime($hcp['date_created'])) ?></td>
+				<td> <?php echo $hcp['city'].', '.$hcp['state'];?> </td>
+				<td> <?php echo $hcp['zipcode'];?> </td>
+				<td> 
+					<?if($hcp['pricing']== 'expensive'): ?>
+						Exclusive
+						<?else:?>
+						<?php echo ucfirst($hcp['pricing']);?> 
+					<?endif?>
+				</td>
+				<td> 
+					<span id='status'>
+						<select>
+							<option value=''>New</option>
+							<option value='2'>Approve</option>
+							<option value='0'>Disapprove</option>
+						</select>
+					</span> 
+				</td>	
+		</tr>
+	<?php endforeach?>
+<?php endif?>
+
+
+%%POP_UP%%
+
+
+		

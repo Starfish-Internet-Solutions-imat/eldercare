@@ -1,0 +1,21 @@
+<?$seeker = seekerSession::getSeekerSession();?>
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+		<?=routes::getInstance()->getCurrentTopLevelURLName();?>
+	<?foreach($this->_get('array_of_homes') as $elder_home):?>
+	<div class="mBm">
+		<form method="POST" action="/seeker/add_home">
+			<img width="150" src="<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$elder_home->__get('provider_id').'/'.healthcare_provider_image::selectFilename($elder_home->__get('image_id'))?>">
+			Home: <?=$elder_home->__get('name')?><br>
+			Description: <?=$elder_home->__get('description')?><br>
+			Features: <?=$elder_home->__get('features')?><br>
+			<input type="hidden" name="home_id" value="<?=$elder_home->__get('provider_id')?>">
+			
+			<?if(key_exists($elder_home->__get('provider_id'), $seeker->__get('array_of_homes'))):?>
+				(chosen)
+			<?endif;?>
+			
+			<a href="/browse/house/<?=$elder_home->__get('provider_id')?>">view home</a>
+		</form>
+	</div>
+	<?endforeach;?>
+</div>

@@ -1,0 +1,130 @@
+<? 
+	$url	= request::getInstance()->getParametersArray();
+	$hcp = $this->_get('hcp');
+	$image = $this->_get('image_filename');
+?>
+
+<div class="overflowAuto">
+	<div class="popupDialog approvePopUp cleafix">
+		<p class="fleft">HCP Profile is now approved.</p>
+		<input type='button' id='closePopUp' value='close' /> 
+	</div>
+	<div class="profile_info fleft">
+		<div class="clearfix mBl">
+			<h3 class="mBm"><span class="houseIcon mRs"></span><?=$hcp->__get('name')?></h3>
+			<a href="/hcps/profile/contact_history/<?=$hcp->__get('hcp_id')?>">View Contact History</a>
+			
+			<div class="fs-s fright">
+				<input type='hidden' value='<?=$hcp->__get('hcp_id')?>' id='hcp_id' />
+				<?$suspend = $hcp->__get('suspended')== 0 ? "suspendBtn": "unsuspendBtn";?>
+				<?$publish = $hcp->__get('published')==0 ?  "publishBtn": "unpublishBtn";?>
+				<a class="<?=$publish?>" href="/hcps/profile/unpublish/<?=$hcp->__get('hcp_id')?>"></a>
+				<a class="deleteBtn" href="/hcps/profile/delete/<?=$hcp->__get('hcp_id')?>"></a>
+				<a class="<?=$suspend?>"href="/hcps/profile/suspend/<?=$hcp->__get('hcp_id')?>"></a>
+			</div>
+		</div>
+		<div class="clearfix mBl fs-s fcW">
+		<?php 	if(authorization::getUserSession()->user_role == 'admin'): ?>
+		<?php if($hcp->__get('approved') == 0 || $hcp->__get('approved') == NULL):?>
+			<span class="approve_btn fleft align_c pointer fwB">Approve</span>
+			<span class="disapprove_btn fleft align_c pointer fwB">Disapprove</span>
+		<?php endif?>
+		<?php endif?>
+		</div>
+		<div class="fleft">
+			<table class="fs-s">
+				<tr>
+					<td>Facility Name:</td>
+					<td><?=$hcp->__get('name')?></td>
+				</tr>
+				<tr>
+					<td>Contact:</td>
+					<td><?=$hcp->__get('contact_person_name')?></td>
+				</tr>
+				<tr>
+					<td>Position:</td>
+					<td><?=$hcp->__get('contact_person_position')?></td>
+				</tr>
+				<tr>
+					<td>Telephone:</td>
+					<td><?=$hcp->__get('telephone')?></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><?=$hcp->__get('email')?></td>
+				</tr>
+				<tr>
+					<td>No. and Street:</td>
+					<td><?=$hcp->__get('location')?></td>
+				</tr>
+				<tr>
+					<td>Zip Code:</td>
+					<td><?=$hcp->__get('zipcode').' '.$hcp->__get('city').', '.$hcp->__get('state')?></td>
+				</tr>
+				<tr>
+					<td>Housing Type:</td>
+					<td><?=implode(', ', house_types::selectHCPHouseTypeName($hcp->__get('hcp_id')))?></td>
+				</tr>
+			</table>
+			
+			<table class="fs-s mTs">
+				<tr>
+					<td>Pricing</td>
+					<td><?=(($hcp->__get('pricing')=='expensive')?'Exclusive':ucfirst($hcp->__get('pricing')))?></td>
+				</tr>
+			</table>
+		</div>
+		<div class="image_holder pAxs fleft">
+			<div style="background-image:url(<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$hcp->__get('hcp_id').'/'.$image?>)"></div>
+		</div>
+	</div>
+</div>
+<div class="posRel division"></div>
+<h3 class="fs-m notes mLxs mBs">Placements</h3>
+<table id="placements">
+	<thead>
+		<th>Seeker/Contact Person</th>
+		<th>Date</th>
+		<th>Status</th>
+	</thead>
+	<tbody>
+	<?foreach($this->_get('placements') as $placement):?>
+	<tr>
+		<td><?=$placement['seekers_name']?> </td>
+		<td><?=$placement['date_and_time']?> </td>
+		<td><?=$placement['status']?> </td>
+	</tr>
+	<?endforeach;?>
+	</tbody>
+</table>
+<div class="posRel division"></div>
+<h3 class="fs-m notes mLxs mBs">House Description</h3>
+<div class="fs-s pHs pVm description"><?=$hcp->__get('description')?></div>
+<div class="posRel division"></div>
+<h3 class="fs-m notes mLxs mBm">Amenities</h3>
+<?php $hasAmeneties= 0;?>
+<?foreach($this->_get('amenities_categories') as $category):?>
+	<?$cat_id = $category['amenities_category_id'];?>
+	<?=($cat_id % 3) == 1 || $cat_id == 1 ? '<div class="amenities">':'';?>
+		<div class="amenity mRm fs-s">
+			<div class="fs-s notes mLxs fwB"><?=$category['amenities_category']?></div>
+			<ul>
+			<?
+				foreach($this->_get('amenities') as $amenity):
+					if($amenity->__get('amenities_category_id') == $category['amenities_category_id']):
+				    $hasAmeneties++;
+			?>		
+						<li class="fs-s"><?=$amenity->__get('amenity')?>
+						</li>
+			<?		endif;
+				endforeach;
+				if($hasAmeneties==0)
+				print 'None';
+				$hasAmeneties = 0;
+			?>
+			
+			</ul>
+		</div>
+	<?$cat_id = $category['amenities_category_id'];?>
+	<?=($cat_id % 3) == 0 || $cat_id == 9 ? '</div>':'';?>
+<?endforeach;?>

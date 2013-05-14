@@ -1,0 +1,16 @@
+<div id="leftColumn" class="fleft">
+	<input type="hidden" id="default_album_id" value="<?=$this->_get('album')->__get('album_id')?>">
+	<div class="pAl" id="heading"><h3>PHOTO ALBUMS</h3></div>
+	<div class="clearfix" id="sideNavigation">
+		<ul class="unstyled" id="nav_list">
+		<?if(count($this->_get('array_of_albums')) > 0):?>
+			<?foreach($this->_get('array_of_albums') as $album):?>
+				<?$class_selected = '';?>
+				<?if($album->__get('album_id') == $this->_get('album')->__get('album_id')) { $class_selected = 'class="active"'; }?>
+				<li <?=$class_selected?>><span class="nav" id="<?=$album->__get('album_id')?>"><?=$album->__get('album_title')?></span></li>
+			<?endforeach;?>
+		<?endif;?>
+		</ul>
+	</div>
+	<div id="heading" class="pLl mVxl"><h3>ALL PHOTOS (<?=images::selectCount()?>)</h3></div>
+</div>

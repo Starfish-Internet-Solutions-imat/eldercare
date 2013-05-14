@@ -1,0 +1,32 @@
+%%POP_UP_DIALOG%%
+<?$i = 1;?>
+
+<?foreach($this->_get('potential_hcps') as $hcp):?>
+
+	<?
+		$status			= $hcp->__get('status');
+		$check_image	= 'checked="checked"';
+	?>
+	<tr id = "<?=$hcp->__get('potential_hcp_id')?>" >
+		<td><?=$i++?></td>
+		<td><?=$hcp->__get('hcp_name')?></td>
+		<td>
+			<a href="/hcps/profile/contact_history/<?=$hcp->__get('hcp_id')?>">[c.hist]</a>
+			<a href="/hcps/profile/view/<?=$hcp->__get('hcp_id')?>">[details]</a>
+		</td>
+		
+		<td><?php if($hcp->__get('hcp_suspend_status') == '1'):?>Suspended<?php else:?><input type="checkbox"  name="status" value="contacted" <?=$status == 'contacted' ? $check_image : ''?>><?php endif;?> </td>
+		<td><?php if($hcp->__get('hcp_suspend_status') == '1'):?>Suspended<?php else:?><input type="checkbox"  name="status" value="info_sent" <?=$status == 'info_sent' ? $check_image : ''?>><?php endif;?> </td>
+		<td class = "xc">
+		<?php if($status == 'pending_placement'):?>
+			pending
+		<?php elseif($status == 'placed'):?>
+			placed
+		<?php else:?>
+			[<a href = "#" class = "status_link"> yes </a>]
+			[<a href = "#" class = "status_link"> no </a>]
+		<?php endif;?>	
+		</td>
+	</tr>
+	
+<?endforeach;?>

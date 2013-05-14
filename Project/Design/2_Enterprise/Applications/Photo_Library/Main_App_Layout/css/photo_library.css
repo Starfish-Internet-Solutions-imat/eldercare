@@ -1,0 +1,321 @@
+/********************************* Photo library *********************************/
+#nav_list {
+  padding: 0 0 0 25px; }
+  #nav_list form span {
+    padding: 6px 23px !important; }
+
+#applicationContent #albums_container > #button_container {
+  width: 232px;
+  height: 216px; }
+  #applicationContent #albums_container > #button_container #add_album {
+    width: 100%;
+    height: 100%;
+    cursor: pointer; }
+    #applicationContent #albums_container > #button_container #add_album span.sprite {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-position: -7px -146px; }
+#applicationContent #albums_container #album_container {
+  padding: 3px;
+  width: 232px;
+  height: 216px;
+  border: 1px solid #ccc;
+  background-position: -243px -146px; }
+  #applicationContent #albums_container #album_container form .image_holder {
+    width: 223px;
+    height: 141px;
+    position: relative; }
+    #applicationContent #albums_container #album_container form .image_holder #img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center; }
+    #applicationContent #albums_container #album_container form .image_holder input[type="submit"][name="view_album"] {
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      position: absolute;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
+  #applicationContent #albums_container #album_container form .text_container {
+    height: 71px;
+    padding: 10px 0;
+    line-height: 10px; }
+    #applicationContent #albums_container #album_container form .text_container > .fleft {
+      max-width: 190px; }
+      #applicationContent #albums_container #album_container form .text_container > .fleft strong {
+        color: #4D4D4D;
+        font-size: 14px;
+        max-width: 170px;
+        font-weight: bold;
+        line-height: 13px;
+        word-wrap: break-word; }
+      #applicationContent #albums_container #album_container form .text_container > .fleft .sprite {
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+        cursor: pointer;
+        display: inline-block;
+        background-position: -1181px -112px; }
+      #applicationContent #albums_container #album_container form .text_container > .fleft .image_quantity {
+        bottom: 10px;
+        left: 0; }
+    #applicationContent #albums_container #album_container form .text_container > .fright {
+      width: 25px; }
+      #applicationContent #albums_container #album_container form .text_container > .fright .sprite {
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        display: inline-block;
+        background-position: -1206px -92px; }
+#applicationContent #imagesColumn {
+  width: 655px; }
+  #applicationContent #imagesColumn #applicationHeader form .box {
+    z-index: 10;
+    width: 380px;
+    padding: 5px;
+    color: #706F6F;
+    position: relative;
+    background-color: white;
+    border: 1px solid #B2B2B2; }
+    #applicationContent #imagesColumn #applicationHeader form .box textarea {
+      height: 58px;
+      width: 368px; }
+    #applicationContent #imagesColumn #applicationHeader form .box input[type="submit"] {
+      width: 81px;
+      height: 31px;
+      background-position: -904px -40px; }
+      #applicationContent #imagesColumn #applicationHeader form .box input[type="submit"]:active {
+        background-position: -904px -6px; }
+    #applicationContent #imagesColumn #applicationHeader form .box span {
+      width: 81px;
+      height: 31px;
+      display: inline-block;
+      background-position: -373px -40px; }
+      #applicationContent #imagesColumn #applicationHeader form .box span:active {
+        background-position: -373px -6px; }
+  #applicationContent #imagesColumn #applicationHeader #header_actions {
+    top: 0;
+    right: 65px;
+    position: absolute; }
+    #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize {
+      width: 156px;
+      height: 31px;
+      background-position: -1378px -40px; }
+      #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize:active {
+        background-position: -1378px -6px; }
+      #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer {
+        top: 29px;
+        z-index: 999;
+        width: 156px;
+        height: auto;
+        overflow: auto;
+        position: relative;
+        background-color: white;
+        border: 1px solid #9D9D9D;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); }
+        #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul {
+          margin: 0;
+          padding: 0; }
+          #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li {
+            width: 100%;
+            height: 30px;
+            padding: 7px;
+            font-size: 12px;
+            font-weight: bold; }
+            #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li span#add_size {
+              font-size: 12px;
+              font-weight: bold; }
+            #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li span.add_size {
+              top: 0;
+              right: 0;
+              width: 29px;
+              height: 30px;
+              position: absolute;
+              background-position: -1140px -94px; }
+            #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li#add_sizeContainer {
+              background-color: #95C11F;
+              color: white; }
+            #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li.sizelist:hover {
+              background-color: #DADADA; }
+              #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li.sizelist:hover .edit_size {
+                top: -1px;
+                width: 40px;
+                position: relative;
+                vertical-align: middle; }
+                #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li.sizelist:hover .edit_size span {
+                  color: #36A9E1; }
+            #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li .delete_size > form input {
+              background: none;
+              box-shadow: none; }
+            #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li.active, #applicationContent #imagesColumn #applicationHeader #header_actions #availableSize #available_sizesContainer ul li:hover {
+              background: #CCC; }
+  #applicationContent #imagesColumn #images_listing_container {
+    height: 428px !important; }
+    #applicationContent #imagesColumn #images_listing_container .image_details_form input[type="submit"][name="view_image_info"] {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: none;
+      position: absolute;
+      border: none !important;
+      border-color: transparent; }
+#applicationContent #upload {
+  height: 31px;
+  width: 161px;
+  cursor: pointer;
+  background-position: -1210px -40px; }
+  #applicationContent #upload:active {
+    background-position: -1210px -5px; }
+
+/* PHOTO LIBRARY POPUP DIALOGS **********************************************************************************************************/
+#new_album_dialog {
+  padding: 15px 20px 10px; }
+  #new_album_dialog h3 {
+    color: #8CC63F;
+    margin-bottom: 20px; }
+  #new_album_dialog #add_album_form {
+    line-height: 20px; }
+    #new_album_dialog #add_album_form input {
+      height: 31px; }
+      #new_album_dialog #add_album_form input[type="text"][name="album_title"] {
+        width: 297px;
+        border-radius: 0; }
+      #new_album_dialog #add_album_form input[type="text"][name="height"], #new_album_dialog #add_album_form input[type="text"][name="width"] {
+        width: 120px;
+        margin: 0 10px;
+        border-radius: 0;
+        text-align: center; }
+      #new_album_dialog #add_album_form input[type="text"][name="height"] {
+        margin-right: 0; }
+      #new_album_dialog #add_album_form input[type="submit"] {
+        width: 108px;
+        background-position: -784px -39px; }
+        #new_album_dialog #add_album_form input[type="submit"]:active {
+          background-position: -784px -6px; }
+    #new_album_dialog #add_album_form span.sprite {
+      top: 0;
+      width: 81px;
+      height: 31px;
+      display: inline-block;
+      background-position: -373px -39px; }
+      #new_album_dialog #add_album_form span.sprite:active {
+        background-position: -373px -6px; }
+
+#upload-dialog {
+  padding: 25px 22px 10px; }
+  #upload-dialog h3 {
+    color: #8CC63F;
+    margin-bottom: 20px; }
+  #upload-dialog #upload_image input[name="image_file[]"] {
+    opacity: 0;
+    float: right;
+    z-index: 998;
+    width: 219px;
+    cursor: pointer;
+    position: relative; }
+  #upload-dialog #upload_image .fakeInputFile {
+    width: 426px;
+    height: 31px;
+    z-index: 997;
+    background-position: -252px -91px;
+    position: relative; }
+    #upload-dialog #upload_image .fakeInputFile #fakeInputFile-text {
+      height: 100%;
+      cursor: text;
+      z-index: 999;
+      width: 346px;
+      padding: 7px 5px;
+      text-align: left;
+      overflow: hidden;
+      position: absolute;
+      border-right: 0 none;
+      border-radius: 0 0 0 0;
+      background: none repeat scroll 0 0 transparent; }
+      #upload-dialog #upload_image .fakeInputFile #fakeInputFile-text span {
+        width: 100%;
+        height: 18px;
+        color: #333333;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+        text-overflow: ellipsis; }
+  #upload-dialog #upload_image input.sprite {
+    width: 81px;
+    height: 31px;
+    background-position: -1121px -40px; }
+    #upload-dialog #upload_image input.sprite:active {
+      background-position: -1121px -6px; }
+  #upload-dialog #upload_image span.sprite {
+    width: 81px;
+    height: 31px;
+    background-position: -373px -40px; }
+    #upload-dialog #upload_image span.sprite:active {
+      background-position: -373px -6px; }
+  #upload-dialog #loader {
+    top: 50%;
+    left: 50%;
+    z-index: 1005;
+    margin-top: -55px;
+    margin-left: -55px; }
+
+#new_size_dialog, #resize_dialog {
+  padding: 25px 22px 10px; }
+  #new_size_dialog h3, #resize_dialog h3 {
+    color: #8CC63F;
+    margin-bottom: 20px; }
+  #new_size_dialog form input[type="text"][name="height"], #new_size_dialog form input[type="text"][name="width"], #resize_dialog form input[type="text"][name="height"], #resize_dialog form input[type="text"][name="width"] {
+    width: 120px;
+    height: 30px;
+    margin: -5px 10px;
+    text-align: center;
+    border-radius: 0; }
+  #new_size_dialog form input[type="text"][name="height"], #resize_dialog form input[type="text"][name="height"] {
+    margin-right: 0; }
+  #new_size_dialog form span.sprite, #resize_dialog form span.sprite {
+    width: 81px;
+    height: 31px;
+    background-position: -373px -40px; }
+    #new_size_dialog form span.sprite:active, #resize_dialog form span.sprite:active {
+      background-position: -373px -6px; }
+
+#new_size_dialog form input.sprite {
+  width: 106px;
+  height: 31px;
+  background-position: -1540px -40px; }
+  #new_size_dialog form input.sprite:active {
+    background-position: -1540px -6px; }
+
+#resize_dialog form input.sprite {
+  width: 106px;
+  height: 31px;
+  background-position: -1744px -40px; }
+  #resize_dialog form input.sprite:active {
+    background-position: -1744px -6px; }
+
+.renameAlbum_popUp {
+  padding: 25px 22px 10px; }
+  .renameAlbum_popUp h3 {
+    color: #8CC63F;
+    margin-bottom: 20px; }
+  .renameAlbum_popUp div.fright input {
+    height: 30px;
+    width: 425px; }
+  .renameAlbum_popUp #button_container {
+    width: 180px; }
+    .renameAlbum_popUp #button_container input.sprite {
+      width: 81px;
+      height: 31px;
+      background-position: -904px -40px; }
+      .renameAlbum_popUp #button_container input.sprite:active {
+        background-position: -904px -6px; }
+    .renameAlbum_popUp #button_container span.sprite {
+      width: 81px;
+      height: 31px;
+      background-position: -373px -40px; }
+      .renameAlbum_popUp #button_container span.sprite:active {
+        background-position: -373px -6px; }

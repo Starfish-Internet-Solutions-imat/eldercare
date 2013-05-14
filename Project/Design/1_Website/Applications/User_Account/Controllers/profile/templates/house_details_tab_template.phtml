@@ -1,0 +1,100 @@
+<?php $hcp_info = $this->_get('hcp_info');?>
+<?php $provider = $this->_get('provider');?>
+<div class="clearfix">
+	<h2 class="fleft">House Details</h2>
+	
+	<input type='submit' name='next' value='amenities' class="next sprite fright" />
+	<input type='submit' name='prev' value='name_description' class="previous sprite fright"/>
+</div>
+<hr class="clearfix">
+
+	<div class="posRel">
+		<label class="posRel lock">Street and House Number</label>
+		<span class="sprite lock mRxs pointer">
+			<div class="posAbs tooltip hide">This will not be displayed on your profile.</div>
+		</span>
+		<input class="field-l" type="text" name="location" value="<?php echo $provider->__get('location')?>">
+	</div>
+	
+	<div>
+		<label>Zipcode</label>
+		<div class="inline-block posRel">
+			<input class="field-l" type="text" name="zipcode" value="<?php echo $this->_get('zipcode');?>" autocomplete=off>
+			<input type="hidden" name="zipcode_id" value="<?php echo $provider->__get('zipcode')?>">
+			<p id="invalidZipcode" class="error"></p>
+			<div id="zipcode_list"></div>
+			<div id="city_state"><?php echo $this->_get('city_state');?></div>
+		</div>
+	</div>
+	
+	<div>
+		<label class="vATop">Housing Type</label>
+		<?$hcp_house_type_id_array = array();?>
+		<?foreach ($this->_get('hcp_house_types_array') as $hcp_house_type_id):?>
+			<?$hcp_house_type_id_array[] = $hcp_house_type_id['house_type_id'];?>
+		<?endforeach;?>
+		<div class="inline-block">
+			<?foreach ($this->_get('house_types') as $house_type): ?>
+				<?if (in_array($house_type['house_type_id'], $hcp_house_type_id_array)):?>
+					<input checked = "checked" type="checkbox" name="house_type[]" value="<?=$house_type['house_type_id'];?>"><span><?=$house_type['house_type'];?></span><br>
+				<?else:?>
+					<input type="checkbox" name="house_type[]" value="<?=$house_type['house_type_id'];?>"><span><?=$house_type['house_type'];?></span><br>
+				<?endif;?>
+			<?endforeach;?>
+		</div>
+	</div>
+	
+	<div>
+		<label>Type of Accommodation</label>
+		<select class="field-l" name="accommodation_type">
+			<option value=""></option>
+			<option value="Small Assisted Living/ Group Homes" <?php echo $provider->__get('accommodation_type') == "Small Assisted Living/ Group Homes"? 'SELECTED': '';?>>Small Assisted Living/ Group Homes</option>
+			<option value="Large Assisted Living Home" <?php echo $provider->__get('accommodation_type') == "Large Assisted Living Home"? 'SELECTED': '';?>>Large Assisted Living Home</option>
+			<option value="Senior Apartments/ Independent Living" <?php echo $provider->__get('accommodation_type') == "Senior Apartments/ Independent Living"? 'SELECTED': '';?>>Senior Apartments/ Independent Living</option>
+			<option value="Senior Communities" <?php echo $provider->__get('accommodation_type') == "Senior Communities"? 'SELECTED': '';?>>Senior Communities</option>
+			<option value="Hospice Units" <?php echo $provider->__get('accommodation_type') == "Hospice Units"? 'SELECTED': '';?>>Hospice Units</option>
+			<option value="In Home Non-Medical Care Giving" <?php echo $provider->__get('accommodation_type') == "In Home Non-Medical Care Giving"? 'SELECTED': '';?>>In Home Non-Medical Care Giving</option>
+		</select>
+	</div>
+	
+	<div>
+		<label>Accommodates</label>
+		<input class="field-m mLs" type="text" name="number_can_accommodate" value="<?php echo $provider->__get('number_can_accommodate');?>"/>
+	</div>
+	
+	<div>
+		<label>Number of Bedrooms</label>
+		<input class="field-m mLs" type="text" name="number_of_bedrooms" value="<?php echo $provider->__get('number_of_bedrooms');?>"/>
+	</div>
+	
+	<div>
+		<label>Pricing Range</label>
+		<select class="field-l" name="pricing">
+			<option value="conservative" <?php echo $provider->__get('pricing') == "conservative"? 'SELECTED': '';?>>Conservative ($900-$2,500)</option>
+			<option value="moderate" <?php echo $provider->__get('pricing') == "moderate"? 'SELECTED': '';?>>Moderate ($2,500-$5,000)</option>
+			<option value="expensive" <?php echo $provider->__get('pricing') == "expensive"? 'SELECTED': '';?>>Exclusive ($5,500-$12,000)</option>
+		</select>
+	</div>
+	
+	<div>
+		<label> </label>
+		<div class="inline-block posRel field-full">
+			<?php 
+			$conservative	= '<div class="posAbs overlay conservative"></div>';
+			$moderate		= '<div class="posAbs overlay moderate"></div>';
+			$expensive		= '<div class="posAbs overlay expensive"></div>';
+			
+			echo $provider->__get('pricing')=='conservative'? $conservative = '':
+				$provider->__get('pricing')=='moderate'? $moderate = '':
+				$provider->__get('pricing')=='expensive'? $expensive = '' : NULL;
+			?>
+			
+			<?//=$conservative.$moderate.$expensive?>
+			<div class="sprite pricing"><?=$conservative.$moderate.$expensive?></div>
+		</div>
+	</div>
+
+	<input type='submit' name='next' value='amenities' class="next sprite fright" />
+	<input type='submit' name='prev' value='name_description' class="previous sprite fright"/>
+	
+	

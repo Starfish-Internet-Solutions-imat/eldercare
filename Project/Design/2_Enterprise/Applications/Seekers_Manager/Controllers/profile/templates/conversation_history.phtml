@@ -1,0 +1,39 @@
+<!-- CONVERSATION HISTORY----------------------------------------------------------------------------->
+<?php $application_id	= routes::getInstance()->getCurrentTopLevelURLName();?>
+<?php $conversations = $this->_get('conversations');?>
+<h3 class="fs-m notes mLxs mBs">Notes</h3>
+
+<div class="conversation_history">	
+<? $staff_name = staffAccount::getUserName(authorization::getUserID()); ?>	
+	
+	<table>
+		<tbody>
+			<tr>
+				<th>Date &amp; Time</th>
+				<th>Conversation Notes</th>
+				<th>Care Consultant</th>
+			</tr>
+		<?if(count($conversations) != 0):?>
+			<?foreach($this->_get('conversations') as $conversation):?>
+				<tr>
+					<td><?=date('M-d-y h:i:s A',strtotime($conversation['timestamp']))?></td>
+					<td><?=$conversation['conversation']?></td>
+					<td><?=$conversation['name']?></td>
+				</tr>
+			<?endforeach;?>
+		<?else:?>
+			<tr>
+				<td class="pAxl" colspan="3"><strong>(No conversation recorded)</strong></td>
+			</tr>
+		<?endif;?>
+		
+		</tbody>
+	</table>
+	
+
+	
+	<form method="POST" action="/<?php echo $application_id."/".($application_id == 'your_leads'?"":"profile/")?>add_conversation/<?=$this->_get('seeker')->__get('seeker_id')?>">
+			<textarea name="conversation"></textarea><br>
+		<input class="addConversationBtn fright mTm" type="submit" name="edit_seeker" value=" ">
+	</form>
+</div>

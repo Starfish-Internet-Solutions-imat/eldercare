@@ -1,0 +1,136 @@
+<?php $seeker = seekerSession::getSeekerSession()?>	
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+	<div id="header_banner">
+		<div class="semi_transparent"></div>
+	</div>
+	<div id="page_content" class="clearfix">
+	
+		<?if(authorization::getUserID() === NULL):?>
+			<a href = "<?=$seeker->getUri('back_url')?>" class="back_to_result sprite"></a>
+		<?else:?>
+			<a href = "/account/profile" class="backtoProfile sprite"></a>
+		<?endif;?>
+		
+		<? if($this->uri):?>
+				%%THANK_YOU%%	
+		<?php endif?>
+		<div class="clearfix pVl">
+			<div id="search_result" class="clearfix fleft">
+				<?$provider = $this->_get('health_care_provider_info_array');?>
+					<div class="clearfix result_heading">
+						<h1 class="helvetica77"><?=$provider['name']?></h1>
+						<input type="hidden" name="home_id" value="<?=$provider['hcp_id']?>">
+						
+						<?if(authorization::getUserID() === NULL):?>
+							<?if(resultsModule::isShortListed($provider['hcp_id'])):?>
+								<span class="sprite shortlisted">Shorlisted</span>
+							<?else:?>
+								<form method="POST" action="/seeker/add_hcp_to_list" class="fright">
+									<input type="hidden" name="home_id" value="<?=$provider['hcp_id']?>">
+									<input type="hidden" name="name" value="<?=$provider['name']?>">
+									<input class="sprite add_home" type="submit" name="submit" value="add home to list">
+								</form>
+							<?endif;?>
+						<?endif;?>
+						
+						<br/><span class="fs-m gotham_book"><?php echo $this->_get('zipcode').' - '.$this->_get('city').", ".$this->_get('state');?></span>
+						<br/><br/><span class="gotham_bold fs-m">Pricing:</span> <?=resultsModule::pricingMarking($provider['pricing'])?><br/><br/>
+					</div>
+					<div class="clearfix pVm">
+					
+						<?if(!empty($provider['image_id'])):?>
+							<div class="fleft" id="img_full" style="background-image:url(<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$provider['hcp_id'].'/'.hcp_image::selectFilename($provider['image_id'])?>)"></div>
+						 <?else:?>
+							<div class="fleft" id="img_full" style="background-image:url('/Project/Design/1_Website/Main_Layout/images/hcp_gallery_image.png	')"></div>
+						<?endif;?>
+						
+						<div id="media_carousel_container" class="pBl">
+							<div class="fleft sprite pointer" id="media_panLeft"></div>
+							<div class="fleft" id="media_thumbnails_container">
+								<ul class="unstyled clearfix">
+								
+									<?foreach($this->_get('hcp_images') as $image):?>
+									<li id="<?=$image->__get('image_id')?>">
+										<span class="overlay"></span>
+										<div style="background-image:url(<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$provider['hcp_id'].'/thumb/'.$image->__get('filename')?>)" class="img"></div>
+									</li>
+									<?endforeach;?>	
+									
+								</ul>
+							</div>
+							<div class="fright sprite pointer" id="media_panRight"></div>
+						</div>
+						
+					</div>
+					<div class="clearfix">
+						<h3 class="helvetica77 result_heading">Description</h3>
+						<p class="pAs gotham_book"><?=$provider['description']?></p>
+					</div>
+					<div class="clearfix pVm">
+						<h3 class="helvetica77 result_heading">Amenities</h3>
+						<?php $pets = 0;?>
+
+						<?foreach($this->_get('amenities_categories') as $category):?>
+							<?$cat_id = $category['amenities_category_id'];?>
+							<?=($cat_id % 5) == 1 || $cat_id == 1 ? '<div class="amenities pAs">':'';?>
+							
+								<div class="amenity mRm fs-s mTs">
+									<div class="fs-s notes mLxs fwB gotham_bold"><?=$category['amenities_category']?></div>
+									<ul class="gotham_book">
+									<?
+										foreach($this->_get('amenities') as $amenity):
+											if($amenity->__get('amenities_category_id') == $category['amenities_category_id']):
+									?>		
+												<li class="fs-s"><?=$amenity->__get('amenity')?></li>
+									<?		endif;
+						
+											if($amenity->__get('amenity_id') == 53)
+											 $pets = 1;
+											
+											if($category['amenities_category_id'] == 6 && $amenity->__get('amenity_id')  != 53 && $pets == 0)
+											{
+												echo '<li class="fs-s">Not Allowed</li>';
+												$pets = 1;
+											}
+										endforeach;
+									?>
+									</ul>
+								</div>
+								
+							<?$cat_id = $category['amenities_category_id'];?>
+							<?=($cat_id % 5) == 0 || $cat_id == 9 ? '</div>':'';?>
+						<?endforeach;?>
+					</div>
+					
+					<div class="clearfix pAm">
+						<?if(authorization::getUserID() === NULL):?>
+							<form method="POST" action="/seeker/request_hcp_info">
+								<input type="hidden" name="home_id" value="<?=$provider['hcp_id']?>">
+								<input class="sprite request_info" id='requestInfo' type="submit" name="submit" value="request_info">
+							</form>
+						
+							<?if(resultsModule::isShortListed($provider['hcp_id'])):?>
+									<span class="sprite shortlisted">Shorlisted</span>
+							<?else:?>
+								<form method="POST" action="/seeker/add_hcp_to_list" class="fright">
+									<input type="hidden" name="home_id" value="<?=$provider['hcp_id']?>">
+									<input type="hidden" name="name" value="<?=$provider['name']?>">
+									<input class="sprite add_home" type="submit" name="submit" value="add home to list">
+								</form>
+							<?endif;?>
+						<?endif;?>
+						
+					</div>
+			</div>
+			<?if(authorization::getUserID() === NULL):?>
+				%%SHORT_LIST%% 
+			<?endif;?>
+		</div>
+	
+		<?if(authorization::getUserID() === NULL):?>
+			<a href = "<?=$seeker->getUri('back_url')?>" class="back_to_result sprite"></a>
+		<?else:?>
+			<a href = "/account/profile" class="backtoProfile sprite"></a>
+		<?endif;?>
+	</div>
+</div>

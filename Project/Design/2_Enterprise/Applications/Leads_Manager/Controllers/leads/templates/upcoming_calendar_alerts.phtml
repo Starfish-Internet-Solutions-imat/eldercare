@@ -1,0 +1,12 @@
+<?foreach($this->_get('calendar_events') as $calendar):?>
+		<tr class="<?=($calendar->__get('status')=='active')?'new':''?>">
+			<td><?=date('M-d-y h:i:s A', strtotime($calendar->__get('set_for_date')))?></td>
+			<td><?=$calendar->__get('staff_name')?></td>
+			<?if($calendar->__get('hcp_id') != NULL):?>
+				<td><a href="/hcps/profile/view/<?=$calendar->__get('hcp_id')?>"><?=$calendar->__get('hcp_name')?></a></td>
+			<?else:?>
+				<td><a href="/your_leads/view/<?=$calendar->__get('lead_id')?>"><?=$calendar->__get('seeker_name')?></a></td>
+			<?endif;?>
+			<td><?=$calendar->__get('action')?></td>
+		</tr>
+<?endforeach;?>

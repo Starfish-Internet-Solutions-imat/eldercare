@@ -1,0 +1,515 @@
+/*****************************************************************************************************************************/
+/*                                              COMMON TO ALL APPLICATIONS                                                   */
+/*****************************************************************************************************************************/
+#outer_wrapper {
+  border-radius: 3px;
+  background-color: white;
+  background-repeat: repeat-y;
+  background-position: top left;
+  background-image: url("/Project/Design/2_Enterprise/Applications/_Common/images/application_sidebar.png"); }
+  #outer_wrapper #leftColumn {
+    width: 296px;
+    float: left;
+    height: auto;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px; }
+    #outer_wrapper #leftColumn #heading h3 {
+      color: #333333;
+      display: table;
+      margin-bottom: 5px; }
+    #outer_wrapper #leftColumn #heading span {
+      width: 17px;
+      height: 17px;
+      margin-bottom: -2px;
+      display: inline-block;
+      background-position: -1245px -93px; }
+    #outer_wrapper #leftColumn #sideNavigation {
+      width: 100%; }
+      #outer_wrapper #leftColumn #sideNavigation #nav_list {
+        width: 100%;
+        list-style: none;
+        margin: 0 0 0 -40px; }
+        #outer_wrapper #leftColumn #sideNavigation #nav_list li {
+          list-style: none; }
+          #outer_wrapper #leftColumn #sideNavigation #nav_list li > span.sprite {
+            margin: 0 0 0 18px; }
+        #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li span.sprite {
+          margin: 5px 0 0 -13px;
+          width: 101px; }
+        #outer_wrapper #leftColumn #sideNavigation #nav_list > li, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li {
+          width: 100%;
+          line-height: 25px;
+          padding: 0pt 15px; }
+          #outer_wrapper #leftColumn #sideNavigation #nav_list > li > span.nav, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form > span.nav, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.nav, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li > span.nav {
+            float: left;
+            left: -15px;
+            width: 296px;
+            color: #4D4D4D;
+            font-size: 12px;
+            line-height: 5px;
+            padding: 12px 23px;
+            position: relative;
+            word-wrap: break-word;
+            -ms-word-wrap: break-word; }
+            #outer_wrapper #leftColumn #sideNavigation #nav_list > li > span.nav:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form > span.nav:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.nav:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li > span.nav:hover {
+              background-color: #B3B3B3;
+              background-repeat: repeat-x; }
+              #outer_wrapper #leftColumn #sideNavigation #nav_list > li > span.nav:hover > a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > span.nav:hover input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li form > span.nav:hover > a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form > span.nav:hover input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.nav:hover > a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.nav:hover input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li > span.nav:hover > a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li > span.nav:hover input[type="submit"][name="view_album"] {
+                color: white !important;
+                text-decoration: none; }
+            #outer_wrapper #leftColumn #sideNavigation #nav_list > li > span.nav a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > span.nav input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li form > span.nav a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form > span.nav input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.nav a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.nav input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li > span.nav a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li > span.nav input[type="submit"][name="view_album"] {
+              border: 0;
+              width: 100%;
+              color: #333333;
+              font-size: 14px;
+              margin-top: 3px;
+              box-shadow: none;
+              font-weight: bold;
+              background: none;
+              text-align: left;
+              white-space: normal;
+              word-wrap: break-word; }
+          #outer_wrapper #leftColumn #sideNavigation #nav_list > li span.article_list, #outer_wrapper #leftColumn #sideNavigation #nav_list > li span.product_list, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form span.article_list, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form span.product_list, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li span.article_list, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li span.product_list, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li span.article_list, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li span.product_list {
+            margin-left: 0px;
+            padding: 6px 23px; }
+            #outer_wrapper #leftColumn #sideNavigation #nav_list > li span.article_list a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li span.product_list a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form span.article_list a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form span.product_list a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li span.article_list a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li span.product_list a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li span.article_list a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li span.product_list a {
+              width: 230px;
+              margin-left: 0px;
+              line-height: 13px;
+              display: inline-block;
+              color: #848484 !important;
+              font-size: 12px !important;
+              font-weight: normal !important; }
+          #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active > span.nav, #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active form span, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active > span.nav, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active form span, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active > span.nav, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active form span, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active > span.nav, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active form span {
+            color: white;
+            background-repeat: repeat-x;
+            background-color: #333333;
+            background-position: left top !important;
+            background-image: url("/Project/Design/2_Enterprise/Applications/_Common/images/side_navigation_background.png"); }
+            #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active > span.nav:hover a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active > span.nav a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active > span.nav input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active form span:hover a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active form span a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active form span input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active > span.nav:hover a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active > span.nav a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active > span.nav input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active form span:hover a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active form span a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active form span input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active > span.nav:hover a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active > span.nav a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active > span.nav input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active form span:hover a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active form span a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active form span input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active > span.nav:hover a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active > span.nav a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active > span.nav input[type="submit"][name="view_album"], #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active form span:hover a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active form span a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active form span input[type="submit"][name="view_album"] {
+              color: white !important; }
+            #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active > span.nav:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li.active form span:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active > span.nav:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li form.active form span:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active > span.nav:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li.active form span:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active > span.nav:hover, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li.active form span:hover {
+              background-color: #333333; }
+        #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li {
+          padding: 0px; }
+          #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.nav {
+            margin-left: -40px;
+            padding: 6px 23px; }
+            #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.nav a {
+              width: 240px;
+              margin-left: 10px;
+              line-height: 13px;
+              display: inline-block;
+              color: #666666 !important;
+              font-size: 12px !important; }
+          #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.article_list a, #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > span.product_list a {
+            color: #848484 !important; }
+          #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li {
+            padding: 0px; }
+            #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li > span.nav {
+              margin-left: -80px;
+              padding: 6px 23px; }
+              #outer_wrapper #leftColumn #sideNavigation #nav_list > li > ul > li > ul > li > span.nav a {
+                width: 230px;
+                margin-left: 20px;
+                line-height: 13px;
+                display: inline-block;
+                color: #848484 !important;
+                font-size: 12px !important;
+                font-weight: normal !important; }
+    #outer_wrapper #leftColumn span.addCategory {
+      width: 115px !important;
+      height: 21px !important;
+      margin-bottom: -2px !important;
+      display: inline-block !important;
+      background-position: -1284px -108px !important; }
+      #outer_wrapper #leftColumn span.addCategory:hover {
+        background-position: -1284px -82px !important; }
+    #outer_wrapper #leftColumn span.addSubCategory {
+      width: 125px !important;
+      height: 21px !important;
+      display: inline-block !important;
+      margin: 5px 0 0 18px !important;
+      background-position: -1408px -108px !important; }
+      #outer_wrapper #leftColumn span.addSubCategory:hover {
+        background-position: -1408px -82px !important; }
+    #outer_wrapper #leftColumn span.addArticle {
+      width: 100px !important;
+      height: 21px !important;
+      margin-bottom: -2px !important;
+      display: inline-block !important;
+      background-position: -1542px -108px !important; }
+      #outer_wrapper #leftColumn span.addArticle:hover {
+        background-position: -1542px -82px !important; }
+    #outer_wrapper #leftColumn span.addProduct {
+      width: 100px !important;
+      height: 21px !important;
+      margin-bottom: -2px !important;
+      display: inline-block !important;
+      background-position: -1651px -108px !important; }
+      #outer_wrapper #leftColumn span.addProduct:hover {
+        background-position: -1651px -82px !important; }
+  #outer_wrapper #contentColumn {
+    float: right;
+    width: 885px;
+    min-height: 600px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px; }
+    #outer_wrapper #contentColumn #applicationHeader {
+      height: 50px;
+      width: 100%;
+      color: #333333;
+      position: relative;
+      padding: 0 25px 0 0; }
+      #outer_wrapper #contentColumn #applicationHeader h3 {
+        color: #333333;
+        max-width: 355px;
+        word-wrap: break-word;
+        text-transform: uppercase; }
+      #outer_wrapper #contentColumn #applicationHeader > span.sprite {
+        width: 20px;
+        height: 20px;
+        margin-top: 4px;
+        margin-left: 5px;
+        background-position: -1180px -91px; }
+    #outer_wrapper #contentColumn #applicationContent {
+      width: 100%; }
+      #outer_wrapper #contentColumn #applicationContent .image_group #image_overflow #img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; }
+    #outer_wrapper #contentColumn #applicationSideBar {
+      width: 229px;
+      height: 600px;
+      padding: 25px 15px;
+      border-radius: 0 4px 4px 0;
+      background-image: url("/Project/Design/2_Enterprise/Applications/_Common/images/content_column_sidebar.png");
+      background-repeat: repeat-y; }
+      #outer_wrapper #contentColumn #applicationSideBar #image_title {
+        background-color: #8CC63F; }
+        #outer_wrapper #contentColumn #applicationSideBar #image_title textarea {
+          max-height: 100px; }
+      #outer_wrapper #contentColumn #applicationSideBar #image_caption {
+        font-size: 12px;
+        font-weight: bold;
+        color: #4D4D4D; }
+        #outer_wrapper #contentColumn #applicationSideBar #image_caption textarea {
+          max-height: 260px; }
+      #outer_wrapper #contentColumn #applicationSideBar textarea {
+        width: 100%;
+        color: #333333;
+        border-radius: 0;
+        padding: 5px !important; }
+      #outer_wrapper #contentColumn #applicationSideBar select {
+        width: 100%; }
+      #outer_wrapper #contentColumn #applicationSideBar table {
+        width: 198px; }
+        #outer_wrapper #contentColumn #applicationSideBar table td {
+          padding: 5px 0 !important; }
+      #outer_wrapper #contentColumn #applicationSideBar .sideBar_actionsContainer {
+        width: 100%; }
+        #outer_wrapper #contentColumn #applicationSideBar .sideBar_actionsContainer input {
+          width: 81px;
+          height: 31px;
+          background-position: -904px -40px; }
+          #outer_wrapper #contentColumn #applicationSideBar .sideBar_actionsContainer input:active {
+            background-position: -904px -6px; }
+        #outer_wrapper #contentColumn #applicationSideBar .sideBar_actionsContainer span {
+          width: 106px;
+          height: 31px;
+          background-position: -555px -40px; }
+          #outer_wrapper #contentColumn #applicationSideBar .sideBar_actionsContainer span:active {
+            background-position: -555px -6px; }
+      #outer_wrapper #contentColumn #applicationSideBar div.selector {
+        width: 199px; }
+        #outer_wrapper #contentColumn #applicationSideBar div.selector span {
+          width: 191px; }
+
+#images_listing_container {
+  height: auto;
+  margin: 30px 0 0;
+  overflow-y: auto; }
+  #images_listing_container > div.fleft {
+    margin-right: 33px;
+    height: 165px; }
+    #images_listing_container > div.fleft .image_holder {
+      width: 160px;
+      height: 103px;
+      border: 1px solid #ccc; }
+      #images_listing_container > div.fleft .image_holder > div {
+        width: 100%;
+        height: 100%;
+        padding: 2px; }
+        #images_listing_container > div.fleft .image_holder > div.active {
+          background-color: #8cc63f; }
+        #images_listing_container > div.fleft .image_holder > div #img {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center center; }
+    #images_listing_container > div.fleft .text_container .image_title {
+      width: 160px;
+      word-wrap: break-word;
+      display: inline-block; }
+
+/************************* PHOTO CHOOSER ************************************/
+#photo_chooser {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: none;
+  display: none;
+  min-height: 100%;
+  border-radius: 3px;
+  padding: 0 0 30px 0;
+  position: absolute;
+  background-color: white;
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-image: url("/Project/Design/2_Enterprise/Applications/_Common/images/application_sidebar.png"); }
+  #photo_chooser #leftColumn span {
+    cursor: pointer; }
+  #photo_chooser #contentColumn {
+    padding: 25px 0; }
+    #photo_chooser #contentColumn #applicationHeader h3 span {
+      font-size: 12px;
+      font-weight: bold;
+      color: #8CC63F;
+      margin-left: 5px; }
+    #photo_chooser #contentColumn #applicationContent span.chosen_image, #photo_chooser #contentColumn #applicationContent span.close_photo_chooser {
+      height: 31px;
+      width: 131px;
+      cursor: pointer;
+      margin-right: 15px;
+      display: inline-block; }
+    #photo_chooser #contentColumn #applicationContent span.chosen_image {
+      background-position: -2131px -40px; }
+      #photo_chooser #contentColumn #applicationContent span.chosen_image:active {
+        background-position: -2131px -6px; }
+    #photo_chooser #contentColumn #applicationContent span.close_photo_chooser {
+      width: 81px;
+      display: inline-block;
+      background-position: -1656px -40px; }
+      #photo_chooser #contentColumn #applicationContent span.close_photo_chooser:active {
+        background-position: -1656px -6px; }
+    #photo_chooser #contentColumn #applicationContent .size_heading {
+      clear: both;
+      height: 25px;
+      border-top: 1px solid #cccccc; }
+      #photo_chooser #contentColumn #applicationContent .size_heading h3 {
+        float: left;
+        font-size: 30px;
+        margin-top: -15px;
+        padding: 0 25px 0 5px;
+        background-color: white; }
+    #photo_chooser #contentColumn #applicationContent #images_listing_container {
+      padding: 15px 30px; }
+
+.transparent_background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 800;
+  height: 100%;
+  position: absolute;
+  background-image: url("/Project/Design/2_Enterprise/Main_Layout/images/Starfish-Enterprise-v3_popUp_background_transparent.png"); }
+
+#editor_container, #product_editor {
+  position: relative; }
+  #editor_container .image_group, #editor_container #product_photos, #product_editor .image_group, #product_editor #product_photos {
+    margin-left: 195px;
+    margin-bottom: 30px; }
+    #editor_container .image_group .image_holder, #editor_container #product_photos .image_holder, #product_editor .image_group .image_holder, #product_editor #product_photos .image_holder {
+      padding: 3px;
+      width: 250px;
+      height: 160px;
+      text-align: center;
+      border: 1px solid #DADADA; }
+      #editor_container .image_group .image_holder #image_overflow, #editor_container #product_photos .image_holder #image_overflow, #product_editor .image_group .image_holder #image_overflow, #product_editor #product_photos .image_holder #image_overflow {
+        width: 242px;
+        height: 152px; }
+        #editor_container .image_group .image_holder #image_overflow #img, #editor_container #product_photos .image_holder #image_overflow #img, #product_editor .image_group .image_holder #image_overflow #img, #product_editor #product_photos .image_holder #image_overflow #img {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center; }
+    #editor_container .image_group .show_photo_chooser, #editor_container #product_photos .show_photo_chooser, #product_editor .image_group .show_photo_chooser, #product_editor #product_photos .show_photo_chooser {
+      bottom: 0;
+      left: 270px;
+      height: 31px;
+      width: 121px;
+      cursor: pointer;
+      display: inline-block;
+      background-position: -992px -39px; }
+      #editor_container .image_group .show_photo_chooser:active, #editor_container #product_photos .show_photo_chooser:active, #product_editor .image_group .show_photo_chooser:active, #product_editor #product_photos .show_photo_chooser:active {
+        background-position: -992px -6px; }
+
+#noImage {
+  font-size: 100px;
+  margin: 110px 0;
+  color: #E6E6E6 !important;
+  line-height: 80px; }
+  #noImage span {
+    float: left; }
+  #noImage:hover span#upload {
+    color: #95C11F; }
+  #noImage:hover .addAPhoto {
+    width: 40px;
+    float: right;
+    height: 40px;
+    background-position: 71px bottom; }
+
+/* pop up dialogs ****************************************************************************************/
+#popUp_background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  display: none;
+  position: fixed;
+  background-image: url("/Project/Design/2_Enterprise/Main_Layout/images/Starfish-Enterprise-v3_popUp_background.png"); }
+
+.popupDialog, .popUp_delete {
+  top: 30%;
+  left: 50%;
+  z-index: 999;
+  display: none;
+  width: 470px;
+  color: #ffffff;
+  font-size: 14px;
+  position: fixed;
+  text-align: left;
+  background: #1A1A1A;
+  border-radius: 4px;
+  margin-left: -235px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  background-repeat: no-repeat;
+  background-position: bottom right; }
+
+.popUp_delete {
+  height: auto;
+  display: none;
+  padding: 25px 22px 25px;
+  text-align: center !important; }
+  .popUp_delete > span {
+    font-size: 19px;
+    margin-top: 25px;
+    display: inline-block; }
+  .popUp_delete #button_container {
+    width: 180px;
+    margin: 40px auto 10px; }
+    .popUp_delete #button_container input.sprite {
+      width: 79px;
+      height: 31px;
+      background-position: -1862px -40px; }
+      .popUp_delete #button_container input.sprite:active {
+        background-position: -1862px -6px; }
+    .popUp_delete #button_container span.sprite {
+      width: 79px;
+      height: 31px;
+      margin-left: 20px;
+      display: inline-block;
+      background-position: -1951px -40px; }
+      .popUp_delete #button_container span.sprite:active {
+        background-position: -1951px -6px; }
+
+.imageId_error {
+  height: auto;
+  overflow: auto;
+  padding: 25px 22px 10px;
+  text-align: center !important; }
+  .imageId_error > span {
+    font-size: 19px;
+    margin-top: 25px;
+    display: inline-block; }
+  .imageId_error #button_container {
+    width: 180px;
+    margin: 40px auto 10px; }
+    .imageId_error #button_container span {
+      width: 79px;
+      height: 31px;
+      display: inline-block;
+      background-position: -2041px -40px; }
+      .imageId_error #button_container span:active {
+        background-position: -2041px -6px; }
+
+.table_dialog {
+  padding: 15px 20px 10px;
+  color: #ffffff;
+  line-height: 30px; }
+  .table_dialog h3 {
+    color: #8CC63F;
+    margin-bottom: 20px; }
+  .table_dialog input {
+    height: 31px; }
+    .table_dialog input[type="text"][name="rows"], .table_dialog input[type="text"][name="columns"] {
+      width: 120px;
+      margin: 0 10px;
+      border-radius: 0;
+      text-align: center; }
+  .table_dialog span.cancel_table {
+    top: 0;
+    width: 81px;
+    height: 31px;
+    display: inline-block;
+    background-position: -373px -39px; }
+    .table_dialog span.cancel_table:active {
+      background-position: -373px -6px; }
+  .table_dialog span.create_table {
+    top: 0;
+    width: 105px;
+    height: 31px;
+    display: inline-block;
+    background-position: -669px -39px; }
+    .table_dialog span.create_table:active {
+      background-position: -669px -6px; }
+
+#product_photos h4 {
+  display: block;
+  font-size: 18px; }
+#product_photos .delete_photo {
+  bottom: 0;
+  left: 400px;
+  width: 30px;
+  height: 31px;
+  cursor: pointer;
+  position: absolute;
+  display: inline-block;
+  background-position: -2651px -40px; }
+  #product_photos .delete_photo:active {
+    background-position: -2651px -6px; }
+
+#add_photos {
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-position: -2386px -41px;
+  width: 121px;
+  height: 30px;
+  z-index: 995; }
+  #add_photos:active {
+    background-position: -2386px -7px; }
+
+select[id*="formats"] {
+  width: 110px;
+  top: -30px !important; }
+
+td[id*='container'] table {
+  border: 1px solid #ccc !important; }
+  td[id*='container'] table td {
+    border: 1px solid #ccc !important; }
+
+textarea.htmlbox {
+  height: 250px !important; }
+
+.table_container {
+  background-color: #F1F1F1;
+  border: 1px solid #B2B2B2;
+  border-radius: 5px; }

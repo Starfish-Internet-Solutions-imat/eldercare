@@ -1,0 +1,65 @@
+<!-- outer wrapper start-->
+<div id="outer_wrapper" class="clearfix">
+	<!-- content column start -->
+	<div id="contentColumn" class="fright">
+		<div id="applicationContainer">
+			<div id="applicationContent" class="pAl pLs fleft">
+				
+				<div id="table_wrapper">
+					<div id="table_tabs" class="clearfix">
+						<div class="fleft active" id="new_leads">
+							<div>Unassigned Leads<span id="unassigned_leads_count"></span></div>
+							<div class="bottom_corner_curve"></div>
+						</div>
+						<div class="fleft" id="calendar_alerts">
+							<div>Upcoming Calendar Alerts<span id="upcoming_calendar_alert_count"></span></div>
+							<div class="bottom_corner_curve"></div>
+						</div>
+						<div class="fleft" id="immediate_leads">
+							<div>New Placements and Payment Status<span id="new_placements_payment_count"></span></div>
+							<div class="bottom_corner_curve"></div>
+						</div>
+					</div>
+					<div class="table_container">
+						%%LEADS%%
+						
+						<?if($this->_get('pages_new_leads') > 1):?>
+						<div class="pagination new_leads posAbs <?=$hide?>">
+							<span class="page">1</span> of <span class="pages"><?=$this->_get('pages_new_leads')?></span>
+							<div class="posAbs">
+								<span class="fwB mRxxl prev hide">< Previous</span>
+								<span class="fwB next <?=$hide?>">Next ></span>
+							</div>
+						</div>
+						<?endif;?>
+						
+						<?if($this->_get('pages_calendar_events') > 1):?>
+						<div class="pagination calendar_alerts posAbs  <?=$hide?>">
+							<span class="page">1</span> of <span class="pages"><?=$this->_get('pages_calendar_events')?></span>
+							<div class="posAbs">
+								<span class="fwB mRxxl prev hide">< Previous</span>
+								<span class="fwB next <?=$hide?>">Next ></span>
+							</div>
+						</div>
+						<?endif;?>
+						
+						<?if($this->_get('pages_new_placements') > 1):?>
+						<div class="pagination new_placements posAbs  <?=$hide?>">
+							<span class="page">1</span> of <span class="pages"><?=$this->_get('pages_new_placements')?></span>
+							<div class="posAbs">
+								<span class="fwB mRxxl prev hide">< Previous</span>
+								<span class="fwB next <?=$hide?>">Next ></span>
+							</div>
+						</div>
+						<?endif;?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content column end -->
+	
+</div>
+<!-- outer wrapper end-->
+
+<div class="transparent_background hide"></div>

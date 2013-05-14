@@ -1,0 +1,64 @@
+/*** Login Module ******************************************************************************************************************************/
+
+#login_container
+{
+  width: 250px;
+  #hello_text{
+    background:{
+      image:url('/Project/Design/2_Enterprise/Applications/User_Account/Main_App_Layout/images/hello_text.png');
+      repeat:no-repeat;
+      position:-7px;
+    }
+    width:200px;
+    height:100px;
+  }
+  #login-form{
+    table{
+      tbody{
+        tr{
+          vertical-align: top;
+          #login_error{
+            line-height: 5px;
+            float: left;
+          }
+          td{
+            input{
+              &[type='text'], &[type='password']{
+                height: 25px;
+                width: 230px;
+                background: #CCCCCC;
+                border-radius: 2px;
+                border: 1px;
+                padding: 0 5px;
+                margin: 12px 0;
+                &:focus{
+                  background: #EDEDED;
+                  outline:#36A9E1;
+                }
+              }
+              &[type='submit']{
+                height:55px;
+                width:230px;
+                margin: 50px 0;
+                background-position: -8px -9px;
+                &:active{
+                  background-position: -8px -76px;
+                }
+              }
+            }
+            span{
+              color:#B1B1B1;
+              display:inline-block;
+              &#forgot_password{
+                color:#35A8E0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+div.checker{
+  margin-top: -2px;
+}

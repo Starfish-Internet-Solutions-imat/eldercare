@@ -1,0 +1,85 @@
+<!-- outer wrapper start-->
+<div class="clearfix">
+	<h2 class="fleft">Photo Album</h2>
+	<a href="/account/profile/tab/my_account_details" class="next sprite fright">next</a>
+	<a href="/account/profile/tab/amenities" class="previous sprite fright">previous</a>
+</div>
+<hr class="clearfix">
+
+<div class="pAm">
+	<?$provider = $this->_get('provider');//var_dump($provider);die;?>
+	<div id="images_container">	
+		<form enctype="multipart/form-data" id="imageform" method="POST" action="/account/profile/photo_upload">
+			<input class="fileInputField" type="file"  name="image_file[]" id="image_file" multiple>
+			<span class="sprite addPhotoBtn fileInput"></span>
+			<span class="sprite starBox mLxl mRxs"></span><span class="fwB gotham_bold">Main Photo</span><span class="gotham_book"> (5MB max)</span>
+		</form>
+		
+		<div class="gotham_book mTm">
+		<?
+			$status = array(
+				"Upload successful.",
+				"File size exceeded 5MB.",
+				"File size exceeded 5MB.",
+				"The uploaded file/s was only partially uploaded.",
+				"No file was uploaded.",
+				"No temporary directory.",
+				"Failed to write file to disk.",
+				"File upload stopped by extension.",
+				"File is empty.",
+				"File format not supported.",
+				"Upload Error."
+			);
+		?>
+		
+		<?php if(isset($_GET['status'])):?>
+			<div class="popupDialog">
+			<span class="close gotham_book pointer">x</span>
+			<p class="gotham_bold fwB"><?=$status[$_GET['status']]?> </p>
+			<form  method='post'> 
+				<span class="gotham_bold"><input type='button' name='proceed' id='proceed' value='Proceed Now' /><span id="close_upload_dialog">Click here to Proceed</span></span>
+			</form>
+			</div>
+		<?php endif?>
+		
+		
+		</div>
+		
+		<div id="preview"></div>
+		<br><br>
+		
+		<?if(count($this->_get('array_of_images')) == 0):?>
+			<div class="image_frame mHm fleft">
+				<div class="image_holder">
+					<img class="sprite house">
+				</div>
+			</div>
+			
+		<?else:?>	
+		
+			<?foreach($this->_get('array_of_images') as $image):?>
+				<div class="image_frame mHm posRel fleft">
+					<div class="image_holder sprite house">
+						<img style="background-image:url(<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.userSession::getUserID().'/'.$image->__get('filename')?>)">
+					</div>
+					<?if($provider->__get('image_id') != $image->__get('image_id')):?>
+						<form class="fleft mRm mTxs" method="POST" action="/account/profile/update_logo">
+							<input type="hidden" name="image_id" value="<?=$image->__get('image_id')?>">
+							<input class="sprite defaultPhotoBtn" type="submit" value=" ">
+						</form>
+					<?else:?>
+						<span class="sprite starBox"></span>
+					<?endif;?>
+					<form method="POST" action="/account/profile/photo_delete" id="delete" class="fleft mTxs">
+						<input type="hidden" name="image_id" value="<?=$image->__get('image_id')?>">
+						<input class="sprite deletePhotoBtn" type="submit" value=" " >
+					</form>
+				</div>
+			<?endforeach;?>
+		<?endif;?>
+		
+	</div>
+	</div>
+<a href="/account/profile/tab/my_account_details" class="next sprite fright">next</a>
+<a href="/account/profile/tab/amenities" class="previous sprite fright">previous</a>
+<!-- outer  wrapper end-->

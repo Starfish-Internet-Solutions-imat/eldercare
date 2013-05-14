@@ -1,0 +1,18 @@
+<div id="new_album_dialog" class="popupDialog">
+	<h3>Create Album</h3>
+	<div class="pVm">
+		<form id="add_album_form" method="POST">
+			<strong>Album Name</strong>
+			<div class="fright mBxs"><input class="validate[required] fright" type="text" name="album_title" maxlength="45"></div>
+			<br /><br /><br />
+			<strong class="fleft">Photo Size</strong>
+			<div class="fright clearfix">
+				<div class="fleft"><strong class="fs-m">w:</strong><input id="" type="text" name="width" class="validate[required,custom[integer],max[1024]] fright"></div>
+				<div class="fright"><strong class="fs-m">h:</strong><input type="text" name="height" class="validate[required,custom[integer],max[1024]] fright"></div>
+			</div>
+			<div class="fright mRs mVs"><input class="fleft mRs sprite mTs" title="create this album" type="submit" name="add_album" value=" ">
+				<span class="sprite cancelAlbum pointer mTs fleft" title="cancel"></span>
+			</div>
+		</form>
+	</div>
+</div>

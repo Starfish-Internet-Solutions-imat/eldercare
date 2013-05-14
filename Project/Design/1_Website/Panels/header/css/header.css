@@ -1,0 +1,76 @@
+/************************************** HEADER **************************************/
+#header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: 80px;
+  min-width: 1024px;
+  position: absolute;
+  background-image: url("/Project/Design/1_Website/Panels/header/images/header_blue_band.png");
+  background-repeat: repeat-x; }
+  #header > div {
+    width: 1024px;
+    margin: 0 auto; }
+  #header .account {
+    height: 70px;
+    width: 178px;
+    cursor: pointer;
+    background-position: -769px -23px; }
+    #header .account:hover {
+      background-position: -769px -107px; }
+  #header #account_panel {
+    margin: 0 4px 0;
+    position: relative;
+    top: 70px;
+    padding: 0;
+    display: none;
+    width: 170px;
+    box-shadow: 0 2px 2px #333333;
+    background-image: url("/Project/Design/1_Website/Panels/header/images/header_blue_band.png");
+    background-repeat: repeat-x;
+    background-size: 100% auto; }
+    #header #account_panel li {
+      min-height: 30px;
+      padding: 2px 7px;
+      color: white;
+      line-height: 35px; }
+      #header #account_panel li:hover {
+        background-image: url("/Project/Design/1_Website/Panels/header/images/navigation_active_background.png");
+        background-repeat: repeat-x;
+        background-size: 100% auto;
+        box-shadow: 0 2px 2px #333333 inset; }
+      #header #account_panel li a {
+        width: 100%;
+        height: 100%;
+        color: #FFFFFF;
+        display: inline-block; }
+
+/************************************** NAVIGATION **************************************/
+#primary_nav {
+  margin: 0;
+  float: right;
+  width: 420px;
+  display: table;
+  padding: 0 25px 0 0;
+  table-layout: fixed; }
+  #primary_nav li {
+    display: table-cell;
+    overflow: hidden;
+    min-width: 90px;
+    width: auto;
+    float: left;
+    height: 70px; }
+    #primary_nav li.last {
+      border: none !important;
+      margin: 0 !important; }
+    #primary_nav li a {
+      display: block;
+      font-weight: bold;
+      padding: 26px 10px;
+      float: none;
+      font-size: 14px;
+      color: #FFFFFF;
+      text-align: center; }
+    #primary_nav li.active, #primary_nav li:hover {
+      background-image: url("/Project/Design/1_Website/Panels/header/images/navigation_active_background.png"); }

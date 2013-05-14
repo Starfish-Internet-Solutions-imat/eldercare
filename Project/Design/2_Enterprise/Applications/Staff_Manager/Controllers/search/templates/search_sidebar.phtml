@@ -1,0 +1,62 @@
+<?$staff_details = $this->_get('staff_detail')?>
+
+<?if(!(is_null($staff_details))):?>
+<form method = "POST" action = "/staff/update" id="staff_update_form">
+	<div>
+		<label>Name</label>
+		<input type = "text" name = "name" value = "<?=$staff_details['name']?>"> 
+	</div>
+	<div>
+		<label>User Role</label>
+		<select name = "role" >
+			<option ></option>
+			<option value = "admin" <?if ($staff_details['role'] == 'admin') echo "SELECTED"?>>Administrator</option>
+			<option value = "consultant" <?if ($staff_details['role'] == 'consultant') echo "SELECTED"?>>Consultant</option>
+		</select>
+	</div>
+	<div>
+		<label>Email</label>
+		<input class="required" type = "text" name = "email" value = "<?=$staff_details['email']?>">
+	</div>
+	<div>
+		<label>Mobile Number</label>
+		<input class="required" type = "text" name = "telephone" value = "<?=$staff_details['telephone']?>">
+		<input type = "hidden" name = "staff_id" value = "<?=$staff_details['staff_id']?>">
+	</div>
+	
+	<div>
+		<?if($staff_details['staff_id'] == authorization::getUserID()):?>
+		<label>Change Password</label><br/>
+		<br />
+		<label>New Password</label>
+		<input type='password' name='password' /> <br />
+		<label>Confirm Password</label>
+		<input type='password' name='verify_password' /> <br />
+		<?endif?>
+	</div>
+	
+	<div class="fright submit_container mTxxl">
+		<input class="fleft saveChangesBtn" type="submit" value=" ">
+		<?if($staff_details['staff_id'] != authorization::getUserID()):?>
+		<span class="sprite pointer fright deleteStaff deleteBigBtn" ></span>
+		<?endif;?>
+	</div>
+	
+</form>
+	
+<div class="popupDialog deleteStaff">
+	<h3>Delete Seeker</h3>
+	<form method="POST" action="/staff/delete" >
+		<div>
+			Are you sure you want to delete <?=$staff_details['role']?> <?=$staff_details['name']?>?
+		</div>
+		<input type="hidden" name="staff_id" value="<?=$staff_details['staff_id']?>">
+		
+		<div id="button_container" class="fright mTs">
+			<input class="sprite yes fleft mTs" type="submit" value=" " title="Delete this <?=$staff_details['role']?>">
+			<span class="sprite cancel fright pointer mTs" title="Keep this <?=$staff_details['role']?>"></span>
+		</div>
+	</form>
+</div>
+
+<?php endif;?>

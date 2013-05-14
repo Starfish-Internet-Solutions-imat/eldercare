@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<data>
+	<!-- <metadata>
+		<page_title_element><![CDATA[Web Design Company in Manila Philippines Servicing SMEs Worldwides<br>]]></page_title_element>
+		<meta_title>Clean, competitively-priced website design and website applications 
+based in Manila, Philippines. We provide a complete service and 
+expertise to our clients worldwide.</meta_title>
+		<meta_keywords>web graphic design, web page design, web designer philippines, web maintenance, website with CMS, online stores, web hosting, intranet, web design projects, quality website</meta_keywords>
+		<meta_description>Starfish Internet Solution, a web design agency in Manila, Philippines 
+that makes affordable business websites. We produce high quality and 
+elegant web designs at a competitive price.</meta_description>
+	</metadata> -->
+	
+	<clients>
+		<title_1>Because our clients come in all shapes and sizes</title_1>
+		<description_1>Our clients include: property developers, retailers, entrepreneurs, manufacturers, restaurants, government departments, security companies, telecoms, fashion designers, musicians, entrepreneurs, consultants, exporters, food industry, technology companies, call centers, publicly listed companies, one man companies, importers and advertising agencies. In other words, just about everyone!</description_1>
+	</clients>
+	
+	<websites>
+		<title_2>...so do our websites</title_2>
+		<description_2>Our quality websites are custom built to tailor the exact needs and budgets of our clients.</description_2>
+		<website_list>
+			 <section>
+				<context_title><![CDATA[elegant <span style="color: rgb(0, 191, 0);">business</span> sites]]></context_title>
+				<context><![CDATA[Achieve real and tangible ROI&nbsp;<br>Stand-out against competition<br>Build loyalty and brand]]></context>
+				<link>business-sites</link>
+				<link_title>About Business Sites</link_title>
+			</section>
+			<section>
+				<context_title><![CDATA[strategic <span style="color: rgb(255, 127, 0);">corporate</span> sites]]></context_title>
+				<context><![CDATA[Designed to increase sales<br>Improve company efficiency<br>Increase brand equity]]></context>
+				<link>corporate-sites</link>
+				<link_title>About Corporate Sites</link_title>
+			</section>
+			<!-- <section>
+				<context_title><![CDATA[custom web <span style="color: rgb(0, 128, 255);">applications</span>]]></context_title>
+				<context><![CDATA[Streamline business process<br>Keep everyone up-to-date<br>Improve B2B/staff <br>communication]]></context>
+				<link>web-applications</link>
+				<link_title>About Web Applications</link_title>
+			</section>  -->
+			<section>
+				<context_title><![CDATA[friendly <span style="color: rgb(0, 191, 0);">consumer</span> sites]]></context_title>
+				<context><![CDATA[Highlight your USPs<br>Strengthen your image<br>Improve client relations]]></context>
+				<link>consumer-sites</link>
+				<link_title>About Consumer Sites</link_title>
+			</section>
+			<section>
+				<context_title><![CDATA[fancy <span style="color: rgb(255, 0, 255);">online store </span>sites<span style="color: rgb(255, 0, 255);"><br></span>]]></context_title>
+				<context><![CDATA[Reach a larger audience<br>Enhance product understanding<br>Increase client purchases]]></context>
+				<link>e-commerce</link>
+				<link_title>About Online Stores</link_title>
+			</section>
+			<section>
+				<context_title><![CDATA[world class <span style="color: rgb(255, 0, 255);">intranets</span>]]></context_title>
+				<context><![CDATA[Empower business partners<br>
+Motivate your people<br>
+Keep your staff up-to-date]]></context>
+				<link>intranets</link>
+				<link_title>About Intranets</link_title>
+			</section>
+		</website_list>
+	</websites>
+	
+	<pricing>
+		<title_3>We&#x2019;re super-flexible on pricing too</title_3>
+		<pricing_list>
+			<section>
+				<title>You dictate the price</title>
+				<description><![CDATA[People&#x2019;s budgets vary enormously.&nbsp; We only charge for actual man hours worked on your website. The more you spend, the more we can do for you. Simple.]]></description>	
+			</section>
+			<section>
+				<title>Flexible payment terms</title>
+				<description>We understand companies need to juggle budgets and cashflow! You can spread payments out over a year to make things easier.</description>	
+			</section>
+			<section>
+				<title>Surprisingly Affordable</title>
+				<description>As a testament to our value, our clients return time and again for extras because they know we&#x2019;re affordable, efficient and we enhance their business.</description>	
+			</section>
+			<section>
+				<title>Open and honest pricing</title>
+				<description>We&#x2018;ll run you through our past projects so you get a good idea of what&#x2019;s possible. Our rule is, the more you spend the higher quality your site will be.</description>	
+			</section>
+		</pricing_list>
+	</pricing>
+	
+	<support>
+		<title_4>Our support is always there</title_4>
+		<description_4>Peace of mind, ethos of care, relax in the knowledge that we&#x2019;re here to support you through out the life time of your site and more.</description_4>
+		<support_list>
+			<section>
+				<title>3 months free maintenance</title>
+				<description>We&#x2019;re committed to giving our clients what they need. That's why we give 3 months free web maintenance to give you piece of 
+mind and to make sure you get the site exactly how you want it.</description>	
+			</section>
+			<section>
+				<title>Free training</title>
+				<description>All our websites come with a content management system. We&#x2019;ll train you and your team for a full hour on how to keep your website up to date (It&#x2019;s really easy!)</description>	
+			</section>
+			<section>
+				<title>Constant Customer Care</title>
+				<description>We&#x2019;ll teach you about websites, we&#x2019;ll remind you of what you need to do, we&#x2019;ll answer any questions you may have. Client car is what makes our web projects a success.</description>	
+			</section>
+		</support_list>
+	</support>
+	
+	<process>
+		<description_5>We'll take care of everything from start to finish. Clients say working with us is a breeze.</description_5>
+		<process_list>
+			<section>
+				<title>Step by step process</title>
+				<description>Our step by step approach will give you an idea of things you should be thinking about and doing.</description>	
+			</section>
+			<section>
+				<title>Expert advice</title>
+				<description>Even though our sites are really easy to maintain on your own, we can still give you our expert opinion.</description>	
+			</section>
+			<section>
+				<title>We explain thing simply</title>
+				<description>We&#x2019;ll advise you on the best way to extend it to online channels.</description>	
+			</section>
+			<section>
+				<title>We do it all</title>
+				<description>From management of shoots, hiring of writers to styling, and editing.</description>	
+			</section>
+			<section>
+				<title>We work to your time frame</title>
+				<description>We give the highest possible quality work in given time.</description>	
+			</section>
+			<section>
+				<title>Constant guidance </title>
+				<description>We set-up and manage web hosting for you and provide a CMS manual.</description>	
+			</section>					
+		</process_list>
+	</process>
+</data>

@@ -1,0 +1,22 @@
+<?foreach($this->_get('placements') as $placement):?>
+	<tr id='<?=$placement['placement_id'] ?>' class="<?=($placement['status'] == 'new')?'new':''?>"><!-- Class="new" - will be used for new listing - replace with placement status -->
+		<td><?=date('M-d-y h:i:s A',strtotime($placement['date_and_time']))?></td>
+		<td><a href="/hcps/profile/view/<?=$placement['lead_id']?>"><?=$placement['seekers_name'] ?></a></td>
+		<td><?=$placement['hcp_name'] ?></td>
+		<td><?=$placement['contact_person_name'] ?></td>
+		
+		<?php if($placement['status'] == 'new'):?>
+		<td><input type="text" class='invoice_number' value="<?=$placement['invoice_number'] ?>" /></td>
+		<td class='status'><?=$placement['status'] ?></td>
+		
+		<?php elseif($placement['status'] == 'pending_payment'):?>
+		<td><input type="text" class='invoice_number' value="<?=$placement['invoice_number'] ?>" /></td>
+		<td> <select class='status'><option value='pending_payment'>pending payment</option><option value='paid'>paid</option></select> </td>
+		
+		<?php elseif($placement['status'] == 'paid'):?>
+		<td><?=$placement['invoice_number'] ?></td>
+		<td><select class='status'><option value='paid'>paid</option><option value='pending_payment'>pending payment</option></select> </td>
+		<?php endif?>	
+	</tr>
+<?endforeach;?>
+

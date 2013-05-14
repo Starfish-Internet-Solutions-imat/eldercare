@@ -1,0 +1,17 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+	<div id="header_banner">
+		<div class="semi_transparent"></div>
+	</div>
+	<div id="page_content" class="clearfix">
+		<a href = "/" class="back sprite"></a>
+		<?$city = !empty($city) ? $this->_get('city').", " : '';?>
+		<h1 class="helvetica77 pVm"><?php echo strtoupper($city.$this->_get('state')." ".$this->_get('housing_type'))?></h1>
+		<p class="gotham_book">Here is a list of senior houses available in your area. You can customize and refine your search with the box below. You can view each property's profile by clicking on the <strong class="gotham_bold">'View Property'</strong> button, or on their name and photo. Click the <strong class="gotham_bold">'Add Home to Shortlist'</strong> link to save any of these senior houses in to your property shortlist where you can review them at any time. </p>
+		<div class="clearfix">
+			%%SEARCH_PANEL%%
+			%%RESULTS%%
+			%%SHORT_LIST%%
+		</div>
+		<a href = "/" class="back sprite"></a>
+	</div>
+</div>

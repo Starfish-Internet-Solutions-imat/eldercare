@@ -1,0 +1,8 @@
+/************************************** TABLESORTER **************************************/
+th.header { 
+    cursor: pointer; 
+    background-repeat: no-repeat; 
+    background-position: center left; 
+    padding-left: 20px; 
+    margin-left: -1px; 
+} 

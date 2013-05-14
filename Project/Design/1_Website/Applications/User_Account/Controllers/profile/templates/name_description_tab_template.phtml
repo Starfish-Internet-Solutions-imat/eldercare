@@ -1,0 +1,15 @@
+<?php $hcp_info = $this->_get('hcp_info');?>
+<?php $provider = $this->_get('provider');?>
+<div class="clearfix">
+	<h2 class="fleft">Name and Description </h2>
+	<input type='submit' name='next' value='house_details' class="next sprite fright" />
+	<!-- <a href="" class="previous sprite fright">previous</a> -->
+</div>
+<hr class="clearfix">
+
+<div>
+	<div><label>Name</label><input type="text" name="name" value="<?php echo $provider->__get('name');?>"></div><br />
+	<div><label>Description</label><textarea name="description" ><?php echo $provider->__get('description');?></textarea></div>
+</div>
+
+<input type='submit' name='next' value='house_details' class="next sprite fright"/>

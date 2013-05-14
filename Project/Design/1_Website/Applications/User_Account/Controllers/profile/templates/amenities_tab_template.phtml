@@ -1,0 +1,52 @@
+<?$amenities_by_category = $this->_get('amenities_by_category');?>
+<?foreach ($this->_get('hcp_amenities') as $hcp_amenity_id):?>
+	<?php is_object($hcp_amenity_id)? $hcp_amenities_id_array[] = $hcp_amenity_id->__get('amenity_id'): $hcp_amenities_id_array[] = $hcp_amenity_id;?>
+<?endforeach;?>
+
+<div class="clearfix">
+	<h2 class="fleft">Amenities</h2>
+	
+	<input type='submit' name='next' value='photos_tab' class="next sprite fright"/>
+	<input type='submit' name='prev' value='house_details' class="previous sprite fright"/>
+	
+</div>
+<hr class="clearfix">
+<div>
+
+	<?$ctr = 0; //put these in the controller?>	
+				
+	<?foreach($this->_get('amenities_categories') as $amenities_category ):?>
+		<?$row = 1; ?>
+		<div>
+			<label class="gotham_bold vATop"><?echo $amenities_category['amenities_category'] . "<br />";?></label>
+			<div class="inline-block field-full">
+				<?$amenities = $amenities_by_category[$amenities_category['amenities_category']];?>
+				<?foreach($amenities as $amenity): ?>
+									
+					<?=($row == 1 || $row % 11 == 0)? '<div class="fleft mBl amenity">': ''?>						
+									
+					<?if (in_array($amenity['amenity_id'], $hcp_amenities_id_array)):?>
+										
+						<input  checked = "checked" type="checkbox" name="amenity_id_<?=$amenity['amenity_id'];?>" value="<?=$amenity['amenity_id'];?>"><span><?=$amenity['amenity'];?></span><br>
+						<?if($ctr < $amenity['amenity_id'])$ctr = $amenity['amenity_id'];?>	
+									
+						<?else:?>
+									
+							<input  type="checkbox" id="amenity_id_<?=$amenity['amenity_id'];?>" name="amenity_id_<?=$amenity['amenity_id'];?>" value="<?=$amenity['amenity_id'];?>"><span><?=$amenity['amenity'];?></span><br>
+						<?if($ctr < $amenity['amenity_id'])$ctr = $amenity['amenity_id'];?>
+									
+						<?endif;?>
+						
+					<?=($row % 10 == 0 || $row >= count($amenities)) ? '</div>': ''?>	
+					<?$row++;?>		
+								
+				<?endforeach;?>	
+			</div>
+		</div>
+	<?endforeach;?>
+	<input type = "hidden" name = "amenity_count" value = "<?=$ctr;?>">
+	
+</div>
+	
+	<input type='submit' name='next' value='photos_tab' class="next sprite fright"/>
+	<input type='submit' name='prev' value='house_details' class="previous sprite fright"/>

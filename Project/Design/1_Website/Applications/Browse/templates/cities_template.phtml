@@ -1,0 +1,35 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+	<div id="header_banner">
+		<div class="semi_transparent"></div>
+	</div>
+	<div id="page_content" class="clearfix">
+		<a href = "/" class="back sprite"></a>
+		<?$city = !empty($city) ? $this->_get('city').", " : '';?>
+		<h1 class="helvetica77 pVm"><?php echo strtoupper($city.$this->_get('state')." ".$this->_get('housing_type'))?></h1>
+		<p class="gotham_book">Offering a wide variety of housing and care options for seniors, 
+		assisted living in Arizona is very popular. Residents enjoy beautiful weather all year
+		in planned communities where support services are provided as needed. Senior care in Arizona
+		features access to premium care, premium golf courses and the comfort of being in a retirement
+		haven. Learn about Regulations for Arizona Assisted Living Program Administration.
+		
+		<div class="clearfix mTxxl">
+			<div class="fleft pHm pVl mVs">
+				<?
+					$ArrayOfcities = $this->_get('array_of_cities');
+				?>
+
+				<?php foreach($ArrayOfcities as $cities):?>
+					<div class="city fleft mBl">
+					<strong><?php $key = key($cities); echo $key[0]?></strong><br>
+					<?foreach($cities as $city):?>
+						<a href="/assisted-living/<?=str_replace(" ", "-", strtolower($this->_get('state')))?>/<?=str_replace(" ", "-", strtolower($city)).'/'?>"> <?php echo $city?> </a><br />					
+					<?endforeach?>
+					</div>
+				<?php endforeach?>
+				
+			</div>
+			%%SHORT_LIST%%
+		</div>
+		<a href = "/" class="back sprite"></a>
+	</div>
+</div>

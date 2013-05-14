@@ -1,0 +1,77 @@
+<!-- outer wrapper start-->
+<div id="content_wrapper" class="pAm">
+	<?$provider = $this->_get('provider');?>
+	
+	<div id="profile_container" class="fleft">	
+	
+		<?if($provider->__get('approved') == 0):?>
+		
+			<h4>Reminder: Profile not yet approved</h4>
+		
+		<?elseif($provider->__get('blocked') == 1):?>
+		
+			<h4>Reminder: Your account is blocked</h4>
+		
+		<?endif; ?>
+		
+		<form method="post" action="/account/profile">
+				<h3>Edit Profile</h3>
+			<div id="form_fields">
+				<div><label>Name</label><input type="text" name="name" value="<?=$provider->__get('name')?>"></div><br />
+				<div><label>Email</label><input type="text" name="email" value="<?=$provider->__get('email')?>"></div><br />
+				<div><label>Password</label><input type="password" name="password"></div><br />
+				<div><label>Confirm Password</label><input type="password" name="confirm"></div><br />
+				<br />
+				<br />
+				<div>
+					<label>House Type</label>
+					
+					<select name = "house_type">
+					
+						<?foreach ($this->_get('house_types') as $house_type): ?>
+							
+							<?if($house_type['house_type'] == $provider->__get('house_type')):?>
+							
+								<option value = "<?=$house_type['house_type'];?>" selected><?=$house_type['house_type'];?></option>
+							
+							<?else:?>
+							
+								<option value = "<?=$house_type['house_type'];?>"><?=$house_type['house_type'];?></option>
+							
+							<?endif;?>
+							
+						<?endforeach;?>
+							
+					</select>
+									
+				</div>
+				<br />
+				<div><label>Pricing</label><input type = "text" name="pricing" value = "<?=$provider->__get('pricing')?>"></div>
+				<br />
+				<br />
+				<div><label>Zip Code</label><input type = "text" name="address" value = ""></div><br />
+				<div><label>Street Address</label><input type = "text" name="address" value = "<?=$provider->__get('address')?>"></div><br />
+				<div><label>Contact Number</label><input type = "text" name="contact_number" value = "<?=$provider->__get('contact_number')?>"></div><br />
+				<div><label>Features</label><textarea name="features"><?=$provider->__get('features')?></textarea></div><br />
+				<div><label>Description</label><textarea name="description"><?=$provider->__get('description')?></textarea></div>
+			</div>	
+			<input type="submit" name="profile" value="Save">
+		</form>
+		
+	</div>
+	
+	<div id="cancel_container" class="fleft mBl">
+		<h3>Photos Manager</h3>
+			<a href="/account/images">Manage photos</a>
+		</form>
+	</div>
+	
+	<div id="cancel_container" class="fleft">
+		<form method="post" action="/account/profile/cancel">
+			<h3>Cancel Account</h3>
+			<p>Are you sure you want to cancel your account?</p>
+			<input type="submit" name="profile" value="Cancel Account">
+		</form>
+	</div>
+</div>
+<!-- outer  wrapper end-->

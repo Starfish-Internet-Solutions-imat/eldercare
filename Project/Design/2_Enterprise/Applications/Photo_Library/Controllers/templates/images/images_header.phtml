@@ -1,0 +1,44 @@
+<h3 class="fc_starfish_gray5 changeTitle  fleft" title="edit <?=$this->_get('album')->__get('album_title')?>"><?=$this->_get('album')->__get('album_title')?></h3>
+<span class="pointer sprite changeTitle fleft posRel" title="edit album title"></span>
+<form method="POST">
+	<div class="hide box clearfix">
+		<textarea class="fs-xl fwB mBm" name="album_title" maxlength="45"><?=$this->_get('album')->__get('album_title')?></textarea>
+		<input type="hidden" name="album_id" value="<?=$this->_get('album')->__get('album_id')?>"><br />
+		<span class="pointer sprite cancel fright mLs" title="cancel"></span>
+		<input class="sprite fright" type="submit" name="rename_album" value=" ">
+	</div>
+</form>
+<div id="header_actions" class="pointer fright">
+	<div class="sprite fright" id="availableSize">
+		<div id="available_sizesContainer" class="hide">
+			<ul id="available_sizes" class="unstyled">
+				<li id="add_sizeContainer"><span title="add new size" id="add_size">ADD SIZE</span><span class="add_size sprite"> </span></li>
+				<?foreach($this->_get('array_of_sizes') as $size):?>
+				<li class="size_list">
+					<div class="fleft delete_size">
+						<form method="POST">
+							<input type="hidden" name="album_id" value="<?=$size->__get('album_id')?>">
+							<input type="hidden" name="size_id" value="<?=$size->__get('size_id')?>">
+							<input class="fc_starfish_gray6 fwB" type="submit" name="view_size" value="<?=$size->__get('dimensions')?>">
+						</form>
+					</div>
+					<div class="fright edit_size">
+						<span title="resize image group" class="fc_starfish_gray7 resize">edit | </span>
+						<span title="delete image group" class="fc_starfish_gray7 delete">x</span>
+					</div>
+					<div class="popUp_delete">
+						<span class="deleteText">Are you sure you want to <span class="fc_starfish_red">DELETE</span> this size?</span>
+						<div id="button_container">
+							<form class="delete_image_size" method="POST">
+								<input type="hidden" name="size_id" value="<?=$size->__get('size_id')?>">
+								<input class="sprite fleft mTs" title="delete this size" type="submit" name="deleteSize" value=" ">
+								<span class="sprite keep_size pointer mTs fright" title="keep this album"></span>
+							</form>
+						</div>
+					</div>
+				</li>
+				<?endforeach;?>
+			</ul>
+		</div>
+	</div>
+</div>

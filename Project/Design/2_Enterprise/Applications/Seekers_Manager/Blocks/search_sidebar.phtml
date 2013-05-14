@@ -1,0 +1,68 @@
+<? 
+	$url	= request::getInstance()->getParametersArray();
+	$seeker = $this->_get('seeker');
+?>
+
+<form method="POST" action="/seekers/profile/edit/<?=$seeker->__get('seeker_id')?>" >
+	<div>
+		<label>Name:</label>
+		<input type="text" name="name" value="<?=$seeker->__get('name')?>">
+	</div>
+	
+	<div>
+		<label>Zip Code:</label>
+		<input type="text" name="zipcode" value="<?=$seeker->__get('zipcode')!=''?$seeker->__get('zipcode') . " - " . $seeker->__get('city') . ", " . $seeker->__get('state'):''?>">
+		<input type="hidden" name="zipcode_id" value = "<?=$seeker->__get('zipcode_id')?>">
+		<div id = "suggestion_list"></div> 
+	</div>
+	
+	<div>
+		<label>Mobile:</label>
+	<input type="text" name="telephone" value="<?=$seeker->__get('telephone')?>"> 
+	</div>
+	
+	<div>
+		<label>Email:</label>
+		<input type="text" name="email" value="<?=$seeker->__get('email')?>"> 
+	</div>
+	
+	<div>
+		<label>Interested in:</label>
+	<select name="house_type">
+		<option></option>
+	<?foreach($seeker->__get('house_types') as $house_types):?>
+		<option value="<?=$house_types["house_type_id"]?>" <?=$seeker->__get('house_type')==$house_types["house_type_id"] ? "selected='selected'" : "" ?>><?=$house_types["house_type"]?></option>
+	<?endforeach?>
+	</select> 
+	</div>
+	
+	<div>
+		<label>Consultant:</label>
+		<select name="staff_id" class="changeStaff">
+			<option value="null"></option>
+			<?php foreach($this->_get('staff') as $staff):?>
+				<option value="<?=$staff->__get('staff_id')?>" <?php if($staff->__get('staff_id')==$seeker->__get('staff_id')) echo "selected='selected'" ?>><?=$staff->__get('name')?></option>
+			<?php endforeach;?>
+		</select> 
+	</div>
+	
+	<div class="fright submit_container mTxxl">
+		<input class="saveChangesBtn fleft" type="submit" value=" ">
+		<span class="pointer fright deleteBigBtn deleteSeeker"></span>
+	</div>
+</form>
+	
+<div class="popupDialog deleteSeeker">
+	<h3>Delete Seeker</h3>
+	<form method="POST" action="/seekers/profile/delete" >
+		<div>
+			Are you sure you want to delete seeker <?=$seeker->__get('name')?>?
+		</div>
+		<input type="hidden" name="seeker_id" value="<?=$seeker->__get('seeker_id')?>">
+		
+		<div id="button_container" class="fright mTs">
+			<input class="sprite yes fleft mTs" type="submit" value=" " title="Delete this seeker">
+			<span class="sprite cancel fright pointer mTs" title="Keep this seeker"></span>
+		</div>
+	</form>
+</div>

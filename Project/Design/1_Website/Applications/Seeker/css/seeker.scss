@@ -1,0 +1,133 @@
+/**************************************/
+/*               SEEKER               */
+/**************************************/
+#seeker_content_wrapper{
+  #header_banner{
+    background:{
+      image:url('/Project/Design/1_Website/Applications/Seeker/images/search_header_banner.jpg');
+    }
+  }
+  #page_content{
+    .enlist_now{
+      width:705px;
+      height:60px;
+      background:{
+        position:-6px -787px;
+      }
+    }
+    #seekerInfo_column{
+     width:748px;
+     padding: 3px;
+     min-height:300px;
+     border:1px solid #CCCCCC;
+     h3{
+       background:{
+         color:#E7E8E8;
+       }
+       height:50px;
+       padding: 13px 20px;
+       box-shadow: 0 1px 2px #B9B9B9;
+       .lock{
+         background:{
+          position:-821px -430px;
+         }
+         width:190px;
+         height:15px;
+         display:inline-block;
+       }
+     }
+     form{
+       padding:20px;
+       div{
+         position:relative;
+         margin-bottom:15px;
+         label{
+           input,select{
+             margin-top:5px;
+             width:230px;
+             height:25px;
+             border:1px solid #CCCCCC;
+           }
+           select{
+             padding: 2px 0 0;
+           }
+         }
+         #suggestion_list{
+            background-color: white;
+            box-shadow: 0 3px 3px #333333;
+            display: none;
+            height: auto;
+            left: 1px;
+            min-width: 227px;
+            padding: 10px;
+            position: absolute;
+            top: 46px;
+            z-index: 2;
+           ul{
+             list-style: none outside none;
+              margin: 0;
+              padding: 0;
+              li{
+                color: #333333;
+                cursor:pointer;
+                &:hover{
+                  text-decoration:underline;
+                }
+              }
+           }
+         }
+         
+         #invalidZipcode {
+          left: 245px;
+          position: absolute;
+          top: 38px;
+          color: #29ABE2;           
+         }
+       }
+       input[type="submit"]{
+         margin: 25px 0;
+       }
+     }
+    }
+    #faq_column{
+     width:220px;
+     border-top: 1px solid  #CCCCCC;
+     h3{
+       padding: 13px 0;
+     }
+     ul{
+       color:#29ABE2;
+       margin: 0;
+       padding: 0 12px;
+       li{
+         margin-bottom: 15px;
+         a{
+           color:#29ABE2;
+         }
+       }
+     }
+    }
+  }
+}
+#cart{
+  width: 1024px;
+  margin:0 auto;
+}
+
+#seeker_container{
+  #congrats{
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    margin: 195px auto 0;
+    padding: 20px;
+    position: relative;
+    width: 1024px;
+    z-index: 100;
+  }
+}
+.continueSearching{
+  position:absolute;
+  bottom:20px;
+  margin-left: -87px;
+  left: 50%;
+}

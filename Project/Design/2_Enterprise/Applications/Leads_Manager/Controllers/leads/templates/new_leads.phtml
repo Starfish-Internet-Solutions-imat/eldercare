@@ -1,0 +1,17 @@
+<?foreach($this->_get('leads') as $lead):?>
+		<tr id="<?=$lead['lead_id']?>">
+			<td><?=date('M-d-y h:i:s A',strtotime($lead['date_of_inquiry']))?></td>
+			<td><?=$lead['name']?></td>
+			<td><?=$lead['city']?>, <?=$lead['state']?></td>
+			<td><?=$lead['house_type']?></td>
+			<td><?=$lead['relationship_to_patient']?></td>
+			<td>
+				<select name="staff_id" class="changeStaff">
+				<option>[Select Consultant]</option>
+					<?php foreach($this->_get('staffs') as $staff):?>
+						<option value="<?=$staff->__get('staff_id')?>" <?php if($staff->__get('staff_id')==$lead['staff_id']) echo "selected='selected'" ?>><?=$staff->__get('name')?></option>
+					<?php endforeach;?>
+				</select>
+			</td>
+		</tr>
+<?endforeach;?>

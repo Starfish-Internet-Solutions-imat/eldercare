@@ -1,0 +1,73 @@
+<?$params = $this->getArrayOfResults();?>
+	<form method="POST" class="w100">
+		<div class="clearfix borderTop">
+			<h4>Login Settings</h4>
+			<div class="fleft pBl">
+				<div class="mVxl">
+					<div>
+						<span class="fs-m">Admin Username</span><br>
+						<input type="text" name="username" value="<?=$params->getUsername(); ?>" />
+					</div>
+					<div class="mTl">
+						<span class="fs-m">Admin Password</span><br>
+						<input type="password" name="password"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix mTl pBl borderTop" id="smtp">
+			<h4>Email Settings</h4>
+			<div class="mVxl fleft">
+					<div>
+						<span class="fs-m">Email</span><br>
+						<input type="text" name="to_email" value="<?=$params->getToEmail(); ?>" />
+					</div>
+					<div class="mTl">
+						<span class="fs-m">Name</span><br>
+						<input type="text" name="to_name" value="<?=$params->getToName(); ?>" />
+					</div>
+			</div>
+			<div class="mLxxl mVxl fleft">
+					<div class="clearfix">
+						<div class="fleft">
+							<span class="fs-m">Use SMTP</span><br>
+							<select name="use_smtp">
+								<option value="1" <? if($params->getUseSmtp() == '1') echo 'selected'; ?>>YES</option>
+								<option value="0" <? if($params->getUseSmtp() !== '1') echo 'selected'; ?>>NO</option>
+							</select>
+						</div>
+						<div class="fleft pLxxl">
+							<span class="fs-m">SMTP Auth</span><br>
+							<select name="smtp_auth">
+								<option value="1" <? if($params->getSmtpAuth() == '1') echo 'selected'; ?>>YES</option>
+								<option value="0" <? if($params->getSmtpAuth() !== '1') echo 'selected'; ?>>NO</option>
+							</select>
+						</div>
+					</div>
+					<div class="mTl">
+						<div class="fleft">
+							<span class="fs-m">SMTP Host</span><br>
+							<input type="text" name="smtp_host" value="<?=$params->getHost(); ?>"/>
+						</div>
+						<div class="fleft pLxxl">
+							<span class="fs-m">SMTP Username</span><br>
+							<input type="text" name="smtp_user" value="<?=$params->getSmtpUsername(); ?>" />
+						</div>
+						<div class="clear fleft mTl">
+							<span class="fs-m">SMTP Password</span><br>
+							<input type="text" name="smtp_pass" value="<?=$params->getSmtpPassword(); ?>" />
+						</div>
+						<div class="fleft pLxxl mTl">
+							<span class="fs-m">SMTP Port</span><br>
+							<input type="text" name="smtp_port" value="<?=$params->getPort(); ?>" />
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="clearfix borderTop">
+		
+		<h4>Google Analytics</h4>
+			<div class="pTxl"><textarea class="expand170-250 pAm"  name="g_analytics" ><?=$params->getGoogleAnalytics(); ?></textarea></div>
+		</div>
+	<div class="pVxxl"><input class="sprite fright" type="submit" name="saveBtn" value=" " /></div>
+</form>

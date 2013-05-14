@@ -1,0 +1,26 @@
+<?
+	$application_id	= routes::getInstance()->getCurrentTopLevelURLName();
+	$controller_id	= applicationsRoutes::getInstance()->getCurrentControllerID();
+	
+	$controller_id = $application_id == 'your_leads'? '':'/'.$controller_id;
+?>
+<form method="POST" action="/<?=$application_id.$controller_id?>/add_alarm/<?=($application_id == 'hcps')? $this->_get('hcp_id') : $this->_get('lead_id')?>">
+	<h3><span class="sprite greenPlus mRxs"></span>Add Calendar Alarm</h3>
+	<div class="overflowAuto">
+		<div class="fleft">
+			<div class="date_textfield "></div>
+		</div>
+		<div class="fright">
+			<label>Set For Date</label><br>
+			<input id="alarm_set_for_date" type="text" name="set_for_date"><br><br>
+			<label>Action</label><br>
+			<textarea name="action"></textarea>
+		</div>
+		<input type="hidden" name="lead_id" value="<?=$this->_get('lead_id')?>">
+		<input type="hidden" name="hcp_id" value="<?=$this->_get('hcp_id')?>">
+	</div>
+	<div id="button_container" class="fright mTs">
+		<input class="saveBtn fleft mTs" type="submit" value=" ">
+		<span class="cancelBtn fright pointer mTs" title="cancel"></span>
+	</div>
+</form>

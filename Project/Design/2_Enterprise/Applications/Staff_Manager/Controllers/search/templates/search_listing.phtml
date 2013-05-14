@@ -1,0 +1,77 @@
+<?//var_dump($this->_get('staff_information'));?>
+<div class="align_r mBm"><span id="addStaff" class="addStaffBtn"></span></div>
+
+<h3 class="mBm fs-16">Consultants</h3>
+
+<table id="staff_table" class="tablesorter active">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Role</th>
+			<th>Cold Leads</th>
+			<th>Immediate Leads</th>
+			<th>Placed Leads</th>
+			<th>Closed Leads</th>
+			<th>Total Leads Assigned</th>
+		</tr>
+	</thead>
+	<tbody>
+	<? foreach($this->_get('staff_information') as $staff_information):?>
+		<tr id="<?=$staff_information->__get('staff_id');?>">
+			<td><span class="staff_name" ><?=$staff_information->__get('name');?></span></td>
+			<td><?=$staff_information->__get('role');?></td>
+			<td><?$status = $staff_information->__get('cold_leads_count'); echo $status['cold'];?></td>
+			<td><?$status = $staff_information->__get('immediate_leads_count');
+				if($status['immediate'] == null)
+					print '0';
+				else 
+					print $status['immediate'];
+			?></td>
+			<td><?$status = $staff_information->__get('placed_leads_count'); echo $status['placed'];?></td>
+			<td><?$status = $staff_information->__get('closed_leads_count'); echo $status['closed'];?></td>
+			<td><?$status = $staff_information->__get('total'); echo $status['total'];?></td>
+		</tr>
+	<?endforeach;?>
+	</tbody>
+</table>
+
+%%PAGINATION%%
+	
+<div class="popupDialog addStaffPopUp">
+	<h3><span class="sprite greenPlus mRxs"></span> Add New Staff Member</h3>
+	<form method = "POST" action = "/staff/add" >
+		<div>
+			<label>Name</label>
+			<input type = "text" name = "name" value = "">
+		</div>
+		<div>
+			<label>Password</label>
+			<input type = "password" name = "password" value = "">
+		</div>
+		<div>
+			<label>Confirm Password</label>
+			<input type = "password" name = "confirm_password" value = "">
+		</div>
+		<div>
+			<label>Role</label>
+			<select name = "role" >
+				<option value = "admin" >Administrator</option>
+				<option value = "consultant" >Consultant</option>
+			</select>
+		</div>
+		<div>
+			<label>Email</label>
+			<input type = "text" name = "email" value = "">
+		</div>
+		<div>
+			<label>Mobile</label>
+			<input type = "text" name = "telephone" value = "">
+		</div>
+	
+		<div id="button_container" class="fright mTs">
+			<input class="saveBtn addStaffPopUpSubmit mRs" type="submit" value=" " name="add_staff">
+			<span class="cancelBtn pointer cancel addStaffPopUpSubmit" title="cancel"></span>
+		</div>
+	
+	</form>
+</div>

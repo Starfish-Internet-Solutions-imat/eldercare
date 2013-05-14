@@ -1,0 +1,33 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper" class="clearfix">
+	<div id="header_banner">
+		<div class="semi_transparent"></div>
+	</div>
+	<div id="page_content" class="clearfix">
+		<a href = "/" class="back sprite">Back to Home</a>
+		<div class="pVxl clearfix">
+			<h1 class="helvetica77 mTl mBs">We value your feedback</h1>
+			<p class="gotham_book">For inquiries, please fill up the form below</p>
+			<div id="form_container" class="fleft">
+				<div class="mAuto pAm mTl">
+					<form id="contact_form" method="POST">
+						<div class="mBm"><label><span class="gotham_bold fs-s">First Name</span><br/><input type="text" name="name" class="required"/></label></div>
+						<div class="mBm"><label><span class="gotham_bold fs-s">Email</span><br/><input type="text" name="email" class="required email"/></label></div>
+						<div class="mBm"><label><span class="gotham_bold fs-s">Mobile</span><br/><input type="text" maxlength="12" onkeypress="return isNumberKey(event)" name="mobile" class="required"/></label></div>
+						<div class="mBm"><label><span class="gotham_bold fs-s">Inquiry</span><br/><textarea name="inquiry" class="required"></textarea></label></div>
+						<input type="submit" value="Send" name="submit_mail" class="sprite send fright"/>
+						<span id="sent-confirmation" class="hide">Your message was sent successfully.</span>
+					</form>
+				</div>
+			</div>
+			<div id="faq_column" class="fright clearfix">
+				<h3 class="helvetica77">FAQ</h3>
+				<ul>
+					<li><a href="/faq#what-is-assisted-living">What is Assisted Living?</a></li>
+					<li><a href="/faq#what-are-residential-care-homes">What are Residential Care Homes?</a></li>
+					<li><a href="/faq#what-are-home-care-providers">What are Home Care Providers?</a></li>
+				</ul>
+			</div>
+		</div>
+		<a href = "/" class="back sprite">Back to Home</a>
+	</div>	
+</div>

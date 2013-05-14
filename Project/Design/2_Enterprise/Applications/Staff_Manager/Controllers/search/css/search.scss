@@ -1,0 +1,29 @@
+/*----------------------------------------------------------------------
+		SEEKERS CSS
+----------------------------------------------------------------------*/
+
+input[type=text], input[type=password], select, textarea {
+	width: 200px;
+}
+
+#outer_wrapper {
+	background-image: none;
+	#contentColumn { 
+		float: none;
+		width: 100%;
+		#applicationContent {
+			width: 970px;
+			padding: 40px;
+		}
+	}
+}
+
+table {
+	width: 100%;
+	margin: 0;
+	th, td { min-width: 100px; }
+	th { cursor: pointer; }
+	border: 5px solid #E5E5E5;
+}
+
+.fs-16 { font-size: 16px; }

@@ -1,0 +1,33 @@
+/************************************** HEADER **************************************/
+#header {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-image: url("/Project/Design/1_Website/Panels/header/images/header-transparent-band.png"); }
+  #header > div {
+    padding: 0 61px;
+    width: 1024px;
+    margin: 0 auto; }
+
+/************************************** NAVIGATION DEFAULTS **************************************/
+#primary_nav {
+  margin: 4.5em 0 0; }
+
+#primary_nav, #secondary_nav {
+  list-style: none;
+  display: table;
+  float: right;
+  table-layout: fixed;
+  padding: 0; }
+  #primary_nav li, #secondary_nav li {
+    display: table-cell;
+    padding: 0 15px;
+    width: auto; }
+    #primary_nav li.last, #secondary_nav li.last {
+      border: none !important; }
+    #primary_nav li a, #secondary_nav li a {
+      display: block;
+      color: #FFFFFF;
+      text-align: center;
+      font-family: 'DINEngschriftStd';
+      font-size: 1.8em; }

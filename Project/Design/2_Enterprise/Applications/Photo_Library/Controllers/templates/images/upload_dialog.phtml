@@ -1,0 +1,14 @@
+<div id="upload-dialog" class="posRel popupDialog">
+	<h3>Upload Photo</h3>
+		<form id="upload_image" enctype="multipart/form-data" method="POST">
+			<input type="hidden" name="album_id" value="<?=$this->_get('size')->__get('album_id')?>">
+			<input type="hidden" name="size_id" value="<?=$this->_get('size')->__get('size_id')?>">
+			<input type="file" name="image_file[]" class="required trueInputFile" multiple>
+			<div class="fakeInputFile sprite"><div id="fakeInputFile-text"><span></span></div></div>
+			<div class="fright mVm">
+				<input class="sprite fleft mRxs mTs" type="submit" name="upload_photo" value=" ">
+				<span class="sprite cancelUpload pointer mTs fleft" title="cancel"></span>
+			</div>
+		</form>
+	<img id="loader" class="posAbs hide" src="/Project/Design/2_Enterprise/Applications/_Common/images/loader.png"/>
+</div>

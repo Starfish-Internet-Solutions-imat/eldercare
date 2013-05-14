@@ -1,0 +1,28 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+	<div id="header_banner">
+		<div class="semi_transparent"></div>
+	</div>
+	<div id="page_content">
+		<div id="login_container" class="mBl">	
+		
+			<form method="post" action="/account/login">
+				<h3>Healthcare Provider Login</h3>
+				
+				<?=$this->_get('login_error') ? 'Wrong username and/or password.' : ''?>
+				
+				<div id="form_fields">
+					<div><label>Email</label><input type="text" name="email"></div><br>
+					<div><label>Password</label><input type="password" name="password"></div>
+				</div>
+					
+				<input type="submit" name="login" value="login">
+			</form>
+			fghfgh
+		</div>
+		
+		<div id="register_container">	
+			<h3>Register</h3>
+			<a href="/account/register">CLICK HERE TO REGISTER</a>
+		</div>
+	</div>
+</div>

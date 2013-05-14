@@ -1,0 +1,32 @@
+<!-- CONVERSATION HISTORY----------------------------------------------------------------------------->
+<?php $conversations = $this->_get('conversations');?>
+<h3 class="fs-m notes mLxs mBs">Notes</h3><p>
+<div class="conversation_history">		
+<? $staff_name = staffAccount::getUserName(authorization::getUserID()); ?>	
+	<table class="tablesorter">
+		<tbody>
+			<tr>
+				<th>Date &amp; Time</th>
+				<th>Conversation Notes</th>
+				<th>Care Consultant</th> 
+			</tr>
+		<?if(count($conversations) != 0):?>
+			<?foreach($conversations as $conversation):?>
+				<tr>
+					<td><?=$conversation['timestamp']?></td>
+					<td><?=$conversation['conversation']?></td>
+					<td><?=$conversation['name']?></td>
+				</tr>
+			<?endforeach;?>
+		<?else:?>
+			<tr>
+				<td class="pAxl" colspan="3"><strong>(No conversation recorded)</strong></td>
+			</tr>
+		<?endif;?>
+		</tbody>
+	</table>
+	<form method="POST" action="/hcps/profile/add_conversation/<?=$this->_get('hcp')->__get('hcp_id')?>">
+			<textarea name="conversation"></textarea><br>
+		<input class="addConversationBtn fright mTm" type="submit" name="add_conversation" value=" ">
+	</form>
+</div>

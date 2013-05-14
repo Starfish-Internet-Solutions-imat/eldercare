@@ -1,0 +1,26 @@
+
+
+#suggestion_list {
+		color: black;
+		display:none;
+		background-color: white;
+		position: absolute;
+		height: 200px;
+		padding: 5px;
+		overall:scroll;
+		z-index: 2;
+		
+	}
+	#suggestion_list li:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+	
+	#suggestion_list li{
+		color: black;
+		overall:scroll;
+	}
+	
+	input[name="zipcode_id"] {
+		display:none;
+	}

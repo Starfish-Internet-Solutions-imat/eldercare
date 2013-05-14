@@ -1,0 +1,156 @@
+/* DOM Alignment */
+.fleft    { float:left;       }
+.fright   { float:right;      }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* Text alignments */
+.align_l  { text-align: left;   }
+.align_r  { text-align: right;  }
+.align_c  { text-align: center;   }
+.align_j  { text-align: justify;  }
+
+
+.wAuto    { width: auto; }
+.hAuto    { height:auto; overflow:auto; }
+.mAuto  { margin: 0 auto !important; }
+
+.w100   { width: 100% !important; }
+
+/* Positioning */
+
+.posAbs { position:absolute; }
+.posRel { position:relative; }
+.posFix { position:fixed;    }
+
+/*Display*/
+.hide     { display:none; }
+.show     { display:block; }
+
+/* Hide/Show visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+.visible   { visibility: visible; }
+
+.pointer  { cursor:pointer; }
+.block    { display:table-cell; }
+
+/* Margins and Paddings */
+
+
+/* Margin All Side */
+.mAxs { margin:5px;  }
+.mAs  { margin:10px; }
+.mAm  { margin:15px; }
+.mAl  { margin:20px; }
+.mAxl { margin:30px; }
+.mAxxl  { margin:50px; }
+
+/* Margin Horizonal */
+.mHxs { margin:left 5px; margin-right:5px; }
+.mHs  { margin:left 10px; margin-right:10px; }
+.mHm  { margin:left 15px; margin-right:15px; }
+.mHl  { margin:left 20px; margin-right:20px; }
+.mHxl { margin:left 30px; margin-right:30px; }
+.mHxxl  { margin:left 50px; margin-right:50px; }
+
+/* Margin Vertical */
+.mVxs { margin-top:5px; margin-bottom:5px;  }
+.mVs  { margin-top:10px; margin-bottom:10px; }
+.mVm  { margin-top:15px; margin-bottom:15px; }
+.mVl  { margin-top:20px; margin-bottom:20px; }
+.mVxl { margin-top:30px; margin-bottom:30px; }
+.mVxxl  { margin-top:50px; margin-bottom:50px; }
+
+/* Margin Left */
+.mLxs { margin-left:5px;  }
+.mLs  { margin-left:10px; }
+.mLm  { margin-left:15px; }
+.mLl  { margin-left:20px; }
+.mLxl { margin-left:30px; }
+.mLxxl  { margin-left:50px; }
+
+/* Margin Right */
+.mRxs { margin-right:5px  }
+.mRs  { margin-right:10px }
+.mRm  { margin-right:15px }
+.mRl  { margin-right:20px }
+.mRxl { margin-right:30px }
+.mRxxl  { margin-right:50px }
+
+/* Margin Top */
+.mTxs { margin-top:5px  }
+.mTs  { margin-top:10px }
+.mTm  { margin-top:15px }
+.mTl  { margin-top:20px }
+.mTxl { margin-top:30px }
+.mTxxl  { margin-top:50px }
+
+/* Margin Bottom */
+.mBxs { margin-bottom:5px  }
+.mBs  { margin-bottom:10px }
+.mBm  { margin-bottom:15px }
+.mBl  { margin-bottom:20px }
+.mBxl { margin-bottom:30px }
+.mBxxl  { margin-bottom:50px }
+
+
+/* Padding */
+
+/* Padding All Side */
+.pAxs { padding:5px;  }
+.pAs  { padding:10px; }
+.pAm  { padding:15px; }
+.pAl  { padding:20px; }
+.pAxl { padding:30px; }
+.pAxxl  { padding:50px; }
+
+/* Padding Horizonal */
+.pHxs { padding-left:5px; padding-right:5px; }
+.pHs  { padding-left:10px; padding-right:10px; }
+.pHm  { padding-left:15px; padding-right:15px; }
+.pHl  { padding-left:20px; padding-right:20px; }
+.pHxl { padding-left:30px; padding-right:30px; }
+.pHxxl  { padding-left:50px; padding-right:50px; }
+
+/* Padding Vertical */
+.pVxs { padding-top:5px; padding-bottom:5px;  }
+.pVs  { padding-top:10px; padding-bottom:10px; }
+.pVm  { padding-top:15px; padding-bottom:15px; }
+.pVl  { padding-top:20px; padding-bottom:20px; }
+.pVxl { padding-top:30px; padding-bottom:30px; }
+.pVxxl  { padding-top:50px; padding-bottom:50px; }
+
+/* Padding Left */
+.pLxs { padding-left:5px;  }
+.pLs  { padding-left:10px; }
+.pLm  { padding-left:15px; }
+.pLl  { padding-left:20px; }
+.pLxl { padding-left:30px; }
+.pLxxl  { padding-left:50px; }
+
+/* Padding Right */
+.pRxs { padding-right:5px;  }
+.pRs  { padding-right:10px; }
+.pRm  { padding-right:15px; }
+.pRl  { padding-right:20px; }
+.pRxl { padding-right:30px; }
+.pRxxl  { padding-right:50px; }
+
+/* Padding Top */
+.pTxs { padding-top:5px;  }
+.pTs  { padding-top:10px; }
+.pTm  { padding-top:15px; }
+.pTl  { padding-top:20px; }
+.pTxl { padding-top:30px; }
+.pTxxl  { padding-top:50px; }
+
+/* Padding Bottom */
+.pBxs { padding-bottom:5px;  }
+.pBs  { padding-bottom:10px; }
+.pBm  { padding-bottom:15px; }
+.pBl  { padding-bottom:20px; }
+.pBxl { padding-bottom:30px; }
+.pBxxl  { padding-bottom:50px; }      

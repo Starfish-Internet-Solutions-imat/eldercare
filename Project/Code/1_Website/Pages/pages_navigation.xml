@@ -1,0 +1,95 @@
+<!-- ******************************		NOTES    ***************************** -->
+<!-- Navigational links are grouped together into how they will be grouped together on the page							--> 
+<!-- Primary Navigation are the most important links of the website 													-->
+<!-- if you dont want the home page link on the primary navigation because its the logo then put it in the SXXDD 		-->
+
+<!-- *******************************	OPTIONS   ****************************************************-->
+<!-- default ="true display default page for website-->
+<!-- language ="en" -->
+<!-- frontend ="hide" if set to page - folder is not required in Design-->
+<!-- cms ="hide" hide page from CMS side navigation-->
+<!-- xml ="default" display default xml page for CMS-->
+<!-- **************************************************************************************************-->
+
+
+<pages>
+	<!-- ******************************		Primary Navigation    ************************************ -->
+	<navigation_group>
+		<navigation_group_id>primary</navigation_group_id>
+		<page xml ="default"  language="en" default="true">
+				<page_id>home</page_id>
+				<url_name>home</url_name>
+				<link_title>HOME</link_title>
+				<link_text>HOME</link_text>
+		</page>
+		<page>
+				<page_id>about</page_id>
+				<url_name>about</url_name>
+				<link_title>ABOUT</link_title>
+				<link_text>ABOUT</link_text>
+		</page>
+		<page>
+				<page_id>faq</page_id>
+				<url_name>faq</url_name>
+				<link_title>FAQ</link_title>
+				<link_text>FAQ</link_text>
+		</page>
+		<page cms="hide">
+				<page_id>browse</page_id>
+				<url_name>browse</url_name>
+				<link_title>Browse by City or State</link_title>
+				<link_text>Browse</link_text>
+		</page>
+		<page cms="hide">
+				<page_id>zipcode_search</page_id>
+				<url_name>zipcode-search</url_name>
+				<link_title>Zip Code Search</link_title>
+				<link_text>Zip Code Search</link_text>
+		</page>
+		<page cms="hide">
+				<page_id>seeker</page_id>
+				<url_name>seeker</url_name>
+				<link_title>Seeker</link_title>
+				<link_text>Seeker</link_text>
+		</page>
+		<page>
+				<page_id>contact_us</page_id>
+				<url_name>contact_us</url_name>
+				<link_title>CONTACT US</link_title>
+				<link_text>CONTACT US</link_text>
+		</page>
+		<page cms="hide">
+				<page_id>health_care_provider</page_id>
+				<url_name>health-care-provider</url_name>
+				<link_title>Health Care Provider</link_title>
+				<link_text>Health Care Provider</link_text>
+		</page>
+		
+	</navigation_group>
+	<!-- **********************************		Secondary Navigation    ******************************* -->	
+	<navigation_group>
+		<navigation_group_id>secondary</navigation_group_id>
+		<page>
+				<page_id>privacy_policy</page_id>
+				<url_name>privacy_policy</url_name>
+				<link_title>Privacy Policy</link_title>
+				<link_text>Privacy Policy</link_text>
+		</page>
+		<!-- ***************************************************************************************** -->
+		<page frontend="hide">
+				<page_id >terms_of_use</page_id>
+				<url_name>terms_of_use</url_name>
+				<link_title>Terms Of Use </link_title>
+				<link_text>Terms Of Use</link_text>
+		</page>
+		<!-- ***************************************************************************************** -->
+		<page cms="hide">
+				<page_id >sitemap</page_id>
+				<url_name>sitemap</url_name>
+				<link_title>sitemap</link_title>
+				<link_text>sitemap</link_text>
+		</page>
+	</navigation_group>
+	
+</pages>
+<!-- **************************************************************************************************-->

@@ -1,0 +1,37 @@
+<?//var_dump($this->_get('staff_information'));?>
+<div class="popupDialog">
+		<form method = "POST" action = "/staff/add" >
+			
+			Name: <br/>
+			<input type = "text" name = "name" value = "">
+			<br/>
+			<br/>
+			Password: <br/>
+			<input type = "password" name = "password" value = "">
+			<br/>
+			<br/>
+			Confirm Password: <br/>
+			<input type = "password" name = "confirm_password" value = "">
+			<br/>
+			<br/>
+			Role: <br/>
+			<select name = "role" >
+					<option value = "admin" >Administrator</option>
+					<option value = "consultant" >Consultant</option>
+			</select>
+			<br/>
+			<br/>
+			Email:<br/>
+			<input type = "text" name = "email" value = "">
+			<br/>
+			<br/>
+			Mobile:<br/>
+			<input type = "text" name = "telephone" value = "">
+			<br/>
+			<br/>
+			<input type = "submit" value = "ADD" name = "add_staff">
+			
+			<input type = "button" name = "cancel" value = "CANCEL">
+		
+		</form>
+</div>

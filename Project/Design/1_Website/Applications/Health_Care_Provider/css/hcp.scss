@@ -1,0 +1,147 @@
+[id*="_content_wrapper"]{
+  #header_banner{
+    background:{
+      image:url('/Project/Design/1_Website/Applications/Seeker/images/search_header_banner.jpg');
+    }
+  }
+  #page_content{
+  	
+    #search_result{
+      width:750px;
+      padding:5px;
+      border:1px solid #E0E0E0;
+      > div > div#img_full{
+        left: 50%;
+        width: 680px;
+        height: 390px;
+        position: relative;
+        margin: 20px 0 20px -340px;
+        background:{
+          size: contain;
+          repeat: no-repeat;
+          position: center;
+        }
+      }
+      div.result_heading{
+        padding:15px;
+        background:{
+          color:#E8E8E8;
+        }
+        box-shadow: 0 1px 2px #B9B9B9;
+        h1{
+          max-width:525px;
+          display:inline-block;
+        }
+      }
+      h3.result_heading{
+        padding:3px 15px;
+        background:{
+          color:#E8E8E8;
+        }
+        box-shadow: 0 1px 2px #B9B9B9;
+      }
+      form{
+        display:inline-block;
+      }
+			.amenities {
+				color: #1a1a1a;
+				display: inline-block;
+				float: left;
+				width: 350px;
+				height: auto;
+				.amenity {
+					margin-bottom: 23px;
+					width: 260px;
+					&:nth-of-type(3n) { margin-bottom: 0; }
+					ul {
+						padding-left: 20px;
+						margin: 5px 0;
+					}
+				}
+			}
+    }
+		.sprite.backtoProfile {
+		  width: 141px !important;
+		  height: 26px !important;
+		  border: none;
+		  vertical-align: middle;
+		  background-position: 0px -440px;
+		  background-image: url("/Project/Design/1_Website/Applications/User_Account/Controllers/profile/images/hcp_sprites.png");
+		  &:hover {
+	    	background-position: -141px -440px;
+			}
+		}
+  }
+}
+#media_carousel_container{
+  width:100%;
+  height: 86px;
+  margin:0 auto;
+  overflow:hidden;
+  #media_panLeft,#media_panRight{
+    width:31px;height:66px;
+  }
+  #media_panLeft{
+    background:{
+      position:-1085px -368px;
+    }
+  }
+  #media_panRight{
+    background:{
+      position:-1121px -368px;
+    }
+  }
+  #media_thumbnails_container{
+    height:66px;
+    width: 676px;
+    overflow:hidden;
+    background:{
+      image:url('/Project/Design/1_Website/Main_Layout/images/media_thumbnails_container_background.png');
+      repeat:repeat-x;
+    }
+    ul{
+      padding:0;
+      height: 66px;
+      margin-top:0;
+      margin-bottom:0;
+      li{
+        width:50px;
+        float:left;
+        cursor:pointer;
+        margin: 8px 10px;
+        position:relative;
+        span.overlay{
+          opacity:0.4;
+          width: 50px;
+          height: 50px;
+          position:absolute;
+          background-color:#000000;
+        }
+        div.img{
+          width: 50px;
+          height: 50px;
+          margin: 0 auto;
+          border: 1px solid #CCCCCC;
+          background:{
+             position:center;
+             repeat:no-repeat;
+             size:cover;
+          }
+        }
+        &:hover,&.active{
+          span.overlay{
+            display:none;
+          }
+        }
+        &.active{
+          div.img{
+            border:2px solid #F7931E;
+          }
+        }
+      }
+    }
+  }
+}
+#short_list_column{
+  margin:0;
+}

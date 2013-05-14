@@ -1,0 +1,37 @@
+<?$seeker = seekerSession::getSeekerSession();?>
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper" class="pAm">
+<h3>Your List</h3>
+		<?=$seeker->__get('name')?><br>
+		<hr>
+		<?if ($this->_get('array_of_homes') != null):?>
+		
+			List: 
+			
+			<br />
+			<br />
+			
+			<form>
+			<?//var_dump($this->_get('array_of_homes'));?>
+				
+				
+					<?foreach($this->_get('array_of_homes') as $provider):?>
+						Home: <a href = "/health-care-provider/<?=handler::link_builder($provider['name'], $provider['hcp_id']) ?>"><?=$provider['name']?></a>
+						<br />
+						<img width="150" src="<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$provider['hcp_id'].'/'.hcp_image::selectFilename($provider['image_id'])?>">
+						<br />
+						<a href = "/seeker/removeFromList/id/<?=$provider['hcp_id'];?>">Remove From List</a>
+						<br />
+						<br />
+						
+					<?endforeach;?>
+					
+						<a href = "/seeker/submit_list"> Submit List </a>
+					
+		<?else:?>	
+			
+				List empty
+					
+		<?endif; ?>	
+		
+		</form>
+</div>

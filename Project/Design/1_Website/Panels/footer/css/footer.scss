@@ -1,0 +1,58 @@
+/**************************************/
+/*               FOOTER           	  */
+/**************************************/
+#footer{
+  height:190px;
+  width:100%;
+  min-width:1024px;
+  position:relative;
+  background:{
+    image:url('/Project/Design/1_Website/Panels/footer/images/footer-background.png');
+    repeat:repeat-x;
+  }
+  > div{
+    width:1024px;
+    margin:0 auto;
+    p{
+      color:#FFFFFF;
+    }
+  }
+  a[href*='facebook'],a[href*='twitter']{
+    display:inline-block;
+    height:28px;
+    width:28px;
+    margin-top:37px;
+  }
+  a[href*='facebook']{
+    background-position: -52px -28px;
+  }
+  a[href*='twitter']{
+    background-position: -16px -28px;
+  }
+  #footer_nav {
+    display: table;
+    margin: 0 auto;
+    padding: 45px 0 25px;
+    table-layout: fixed;
+    li {
+      display:table-cell;
+      overflow: hidden;
+      width: auto;
+      line-height:0;
+      border-right:2px solid #FFFFFF;
+      &.last {
+        border:none !important;
+        margin:0 !important;
+      }
+      a {
+        display:block;
+        font-weight: bold;
+        padding: 0 5px;
+        float:none;
+        font-size:14px;
+        color:#FFFFFF;
+        text-align: center;
+      }
+    }
+  }
+}

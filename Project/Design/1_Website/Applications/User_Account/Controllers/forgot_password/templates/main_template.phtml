@@ -1,0 +1,32 @@
+<div id="login_content_wrapper">
+
+	<div id="header_banner">
+		<div class="semi_transparent"></div>
+	</div>
+	
+	<div id="page_content" class="clearfix">
+		<a class="back sprite mBxl" href="/"></a>
+		<h1 class="pTl helvetica77">Forgot your <span class="fcBlue">Password?</span></h1>
+		<span class="gotham_bold fs-m">Here are the instructions if you are having trouble signing in.</span>
+		
+		<ol class="gotham_bold fs-m pVl">
+			<li>Type in your email.</li>
+			<li>An email containing a link to reset your password will be sent.</li>
+			<li>Click the link and follow the instructions given.</li>
+		</ol>
+		
+		<div class="clearfix mTl mBxxl">
+			<form method='post' action='/account/forgot_password/requestPassword'> 
+				 <p class="gotham_bold fs-m">Enter your Email address</p>
+				 <input type='text' name='email' /> 
+				 <input class=" sprite submitBtn" type='submit' name='request' />
+				<span id="sending" class="hide">Sending...</span>
+			</form>
+		</div>
+		<div id="confirmation" class="pBxxl gotham_bold align_c">
+			<h2><small class="fcBlue">An Email has been sent to you</small></h2>
+			<p>Click on the link in the Email to reset your password.</p>
+		</div>
+		<a class="back sprite mBxl" href="/"></a>
+	</div>
+</div>

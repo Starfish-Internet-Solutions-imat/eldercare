@@ -1,0 +1,50 @@
+<?$seeker = seekerSession::getSeekerSession();?>
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+	<div id="header_banner"></div>
+	<div id="page_content">
+	<?if($seeker->__get('name') == ''):?>
+		<h3>Seeker Info:</h3>
+		<form method="POST">
+		
+			<div><label>Name: </label><input type="text" name="name"></div><br>
+			<div><label>Email: </label><input type="text" name="email"></div><br>
+			<div><label>Mobile #: </label><input type="text" name="telephone"></div><br>
+			<div><label>Relationship to patient: </label><input type="text" name="relationship_to_patient"></div><br/>
+			<div><label>Zipcode: </label><input type = "text" name = "query" value = "<?echo (isset($_GET['query']))?  $_GET['query']: "";?>" ><input type = "hidden" name = "zipcode_id" value = "<?echo (isset($_GET['query']))?  $_GET['zipcode_id']: "";?>"><div id = "suggestion_list"></div></div><br/>
+			<div><label>Loooking For: </label>
+				<select name = "house_type">
+					<option value = "1" <?echo (isset($_GET['house_type']))?  ($_GET['house_type'] == "Assisted Living" ? "SELECTED" : "" ): "";?>>Assisted Living</option>
+					<option value = "2" <?echo (isset($_GET['house_type']))?  ($_GET['house_type'] == "Home Care" ? "SELECTED" : "" ): "";?>>Home Care</option>
+					<option value = "3" <?echo (isset($_GET['house_type']))?  ($_GET['house_type'] == "Memory Care" ? "SELECTED" : "" ): "";?>>Memory Care</option>
+					<option value = "4" <?echo (isset($_GET['house_type']))?  ($_GET['house_type'] == "Residential Care" ? "SELECTED" : "" ): "";?>>Residential Care</option>
+				</select></div><br>
+			<input type="submit" name="submit" value="submit">
+		</form>
+		
+	<?else:?>
+		Seeker Info: <?=$seeker->__get('name')?><br>
+		<hr>
+		Seeker Homes: <br>
+		
+		<?foreach($seeker->__get('array_of_homes') as $elder_home):?>
+			Home: <?=$elder_home->__get('name')?>
+			<input type="hidden" name="home_id" value="<?=$elder_home->__get('hcp_id')?>"><br>
+		<?endforeach;?>
+		
+	<?endif;?>
+	
+	<a href = "<?=$seeker->getUri('back_url');?>">back to search</a>
+	</div>
+</div>
+
+<? $provider = $this->_get('hcp_info'); ?>
+
+<?if (count($provider) != 0): ?>
+	
+	Home: <?=$provider['name']?>
+	<br/>
+	<img width="150" src="<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$provider['hcp_id'].'/'.hcp_image::selectFilename($provider['image_id'])?>">
+	<br/>
+	Description: <?=$provider['description']?><br>
+
+<?endif;?>

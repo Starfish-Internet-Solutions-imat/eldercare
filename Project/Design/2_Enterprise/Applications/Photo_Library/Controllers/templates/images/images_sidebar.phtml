@@ -1,0 +1,55 @@
+<div id="photo_details_holder" >
+	<?if($this->_get('image') !== NULL):?>
+		<form id="image_sidebar" method="POST">
+			<div id="image_title" class="clearfix pTxs">
+				<textarea class="expand50-100 fs-m fwB fc_starfish_gray9 imageTitleEditor" name="image_filename" placeholder="Place title here"><?=str_replace("_"," ", $this->_get('image')->__get('filename'))?></textarea>
+			</div>
+			<div id="image_caption" class="clearfix pTxl">
+				Photo Caption
+				<textarea class="mTs expand100-250 fs-s fc_starfish_gray7 imageCaptionEditor" name="image_caption"><?=$this->_get('image')->__get('image_caption')?></textarea>
+			</div>
+			<table class="fc_starfish_gray7 mTl">
+				<tbody>
+					<tr class="fs-s"><td><span class="fwB fc_starfish_gray9">Image ID:</span></td><td><span id="sidebar_image_id" class="fc_starfish_gray7 fleft"><?=$this->_get('image')->__get('image_id')?></span></td></tr>
+					<tr class="fs-s"><td><span class="fwB fcs_starfish_gray9">Album Size:</span></td><td><span class="fc_starfish_gray7 fleft">
+								<?foreach($this->_get('array_of_sizes') as $size):
+									if($size->__get('size_id') == $this->_get('image')->__get('size_id')):	
+								?>
+									<?=$size->__get('dimensions')?>
+								<?endif; endforeach;?>
+							</span></td></tr>
+				</tbody>
+			</table>
+			<input type="hidden" name="image_id" value="<?=$this->_get('image')->__get('image_id')?>">
+			<input type="hidden" name="album_id" value="<?=$this->_get('image')->__get('album_id')?>">
+			<input id="imageAction" type="hidden" name="edit_photo" value="edit">
+			<div class="fright sideBar_actionsContainer mTxl">
+				<input class="fleft sprite" type="submit" name="save" value="save">
+				<span class="fright sprite deletePhoto pointer" id="deletePhoto"></span>
+			</div>
+			<div class="popupDialog popUp_delete">
+				<span class="deleteText fwB">Are you sure you want to <span class="fc_starfish_red">DELETE</span> this photo?</span>
+				<div id="button_container">
+					<input class="sprite fleft mTs" title="delete this image" type="submit" value="delete" name="delete">
+					<span class="sprite fright keep_photo pointer mTs" title="keep this image"></span>
+				</div>
+			</div>
+			<!-- IMAGE IS USED -->
+			<div class="popupDialog imageId_error">
+			    <span class="deleteText fwB"><span class="fc_starfish_red">DELETE FAILED!</span><br />Image is used by other modules.</span>
+		    	<div id="button_container">
+		        	 <span class="sprite pointer mTs" title="abort delete"></span>
+		    	</div>
+			</div>
+		
+			<!-- IMAGE IS USED -->
+			<div class="popupDialog imageName_error">
+			    <span class="deleteText fwB"><span class="fc_starfish_red">UPDATE FAILED!</span><br />Filename is used by other images.</span>
+			    <div id="button_container">
+			         <span class="sprite pointer mTs" title="abort delete"></span>
+			    </div>
+			</div>
+			
+		</form>
+	<?endif;?>
+</div>

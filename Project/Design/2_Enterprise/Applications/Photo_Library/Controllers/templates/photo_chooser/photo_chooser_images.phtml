@@ -1,0 +1,40 @@
+<div id="contentColumn" class="fright">
+	<div id="applicationHeader" class="clearfix">
+		<h3 class="fc_starfish_gray7 fleft"><?=$this->_get('album')->__get('album_title')?><span>&#91; SELECT PHOTO &#93;</span></h3>
+	</div>
+	<div id="applicationContent" class="clearfix">
+		<div class="clearfix" id="images_listing_container">
+			<?$size = '';?>
+			<?foreach($this->_get('array_of_images') as $image):?>
+			
+				<?if($size != $image->__get('dimensions')):
+				 	$size = $image->__get('dimensions'); ?>
+				 	<div class="size_heading clearfix">
+						<h3 class="fc_starfish_gray7 clearfix "><?=$size?></h3>
+					</div>
+				<?endif;?>
+				
+				<?$class_selected = '';?>
+				<?if($image->__get('image_id') == $this->_get('image')->__get('image_id')) { $class_selected = 'class="active"'; }?>
+				
+				<div class="fleft pAxs mBm clearfix">
+					<div id="<?=$image->__get('image_id')?>" class="image_holder mBs pointer">
+						<div <?=$class_selected?>>
+							<div style="background-image:url(/Data/Images/<?=$image->__get('album_folder')?>/<?=$image->__get('dimensions')?>_thumb/<?=$image->__get('filename')?><?=$image->__get('filename_ext')?>)" id="img"></div>
+						</div>
+					</div>
+					<div class="text_container ">
+						<span class="clearfix image_title fc_starfish_gray6 fwB fs-m"><?=str_replace("_"," ", $image->__get('filename'))?></span>
+					</div>
+				</div>
+				
+			<?endforeach;?>
+		</div>
+		<?if (count($this->_get('array_of_images')) > 0):?>
+		<div class="fright actions">
+			<span id="<?=$this->_get('image')->__get('image_id')?>" class="sprite fleft  pointer chosen_image" title="/Data/Images/<?=$image->__get('album_folder')?>/<?=$image->__get('dimensions')?>_thumb/<?=$image->__get('filename')?><?=$image->__get('filename_ext')?>"></span>
+			<span class="fleft sprite close_photo_chooser pointer"></span>
+		</div>
+		<?endif;?>
+	</div>
+</div>

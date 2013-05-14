@@ -1,0 +1,11 @@
+<!-- outer wrapper start-->
+<?php $isCompleted = $this->_get('is_completed_mark');?>
+<?$tab = $this->_get('template')?>
+<ul class="unstyled">
+	<li><a <?=$tab=='name_description_tab'? 'class="active"':''?> href="/account/profile/tab/name_description" id="name_description_tab_template">Name and Description<span class="sprite fright <?php echo $isCompleted[0] == 0?"grayCircle":"check"?>"></span></a></li>
+	<li><a <?=$tab=='house_details_tab' ? 'class="active"':''?> href="/account/profile/tab/house_details" id="house_details_tab_template">House Details<span class="sprite fright <?php echo $isCompleted[1] == 0?"grayCircle":"check"?>"></span></a></li>
+	<li><a <?=$tab=='amenities_tab' ? 'class="active"':''?> href="/account/profile/tab/amenities" id="amenities_tab_template">Amenities<span class="sprite fright <?php echo $isCompleted[2] == 0?"grayCircle":"check"?>"></span></a></li>
+	<li><a <?=$tab=='photos_tab' ? 'class="active"':''?> href="/account/profile/tab/photos_tab" id="photos_tab_template">Photos<span class="sprite fright <?php echo $isCompleted[3] == 0?"grayCircle":"check"?>"></span></a></li>
+	<span class="sprite fieldLegend mVl"></span>
+</ul>
+<!-- outer  wrapper end-->

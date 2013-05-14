@@ -1,0 +1,84 @@
+<div id="albums_container" class="pBl">
+<?if(count($this->_get('array_of_albums')) > 0):?>
+
+<?$count = 1; ?>
+
+	<?foreach($this->_get('array_of_albums') as $album):?>
+		<?if($count == 1){
+			echo '<div id="button_container" class="fleft mRxxl mBxl"><div id="add_album">
+			<span class="sprite"></span>
+			</div></div>';
+		}?>
+		<div class="fleft mRxxl mBxl">
+			<div id="album_container" class="sprite">
+				<form id="album_<?=$count?>" class="album_form" method="POST">
+				<? 
+					$image_preview	= $album->__get('image_preview');
+					$size_preview	= $album->__get('size_preview');
+				?>
+				
+					<div class="image_holder">
+						<div id="img" style="background-image:url(/Data/Images/<?=$album->__get('album_folder')?>/<?=$size_preview->__get('dimensions')?>_thumb/<?=$image_preview->__get('filename')?><?=$album->__get('image_extension');?>)"></div>
+						<input type="submit" name="view_album" value="VIEW ALBUM" title="view album images">
+					</div>
+				
+					<div class="clear text_container posRel">
+						<input id="albumActionType" type="hidden" name="album_action" value="view">
+						<input type="hidden" name="album_id" value="<?=$album->__get('album_id')?>">
+						<div class="fleft">
+							<div class="posRel clearfix">
+								<strong class="fleft"><?=$album->__get('album_title')?></strong>
+								<span class="sprite fleft posRel" title="edit album title"></span>
+							</div>
+							<span class="image_quantity fc_starfish_gray7 fwB fs-s posAbs"><?=images::selectCountInAlbum($album->__get('album_id'))?> photo/s</span>
+						</div>
+						<div class="fright">
+							<span class="sprite" id="deleteAlbum" title="delete this album"></span>
+						</div>
+					</div>
+					
+					<div class="popUp_delete deleteAlbum_popUp">
+						<span class="deleteText fwB">Are you sure you want to <span class="fc_starfish_red">delete</span> this album?</span>
+						<div id="button_container">
+								<input class="sprite fleft mTs" title="delete this album" type="submit" name="delete_album" value=" ">
+								<span class="sprite fright keep_album pointer mTs" title="keep this album"></span>
+						</div>
+					</div>
+					
+				</form>	
+				
+					<div class="popupDialog renameAlbum_popUp">
+						<form method="POST">
+							<h3>Rename Album</h3>
+						    <div class="fright clearfix">
+						    	<input type="text" maxlength="45" name="album_title" value="<?=$album->__get('album_title')?>" class=""/>
+							</div>
+							<input type="hidden" name="album_id" value="<?=$album->__get('album_id')?>">
+							<input type="hidden" name="redirect_to_albums" value="yes">
+						    <div id="button_container" class="clearfix fright pVl">
+									<input class="sprite fleft mTs mRm" title="rename this album" type="submit" name="rename_album" value=" ">
+									<span class="sprite fright cancelAlbum pointer mTs" title="cancel rename"></span>
+							</div>
+						</form>
+					</div>
+					
+					
+			</div>
+		</div>
+		<?/* if($count % 4 == 0){ echo "</div>";}$count++; */?>
+		<?$count++;?>
+	<?endforeach;?>
+		
+		<!-- IMAGE IS USED -->
+		<div class="popupDialog imageId_error">
+		    <span class="deleteText fwB"><span class="fc_starfish_red">DELETE FAILED!</span><br /> Album is used by other modules.</span>
+		    <div id="button_container">
+		         <span class="sprite pointer mTs" title="abort delete"></span>
+		    </div>
+		</div>
+	
+<?else:?>
+		<div id="button_container" class="fleft mRxxl mBxl"><div id="add_album"><span class="sprite"></span></div></div>
+	
+<?endif;?>
+</div>

@@ -1,0 +1,18 @@
+<div id="resize_dialog" class="popupDialog">
+	<h3>Resize Image Group</h3>
+	<div class="pVm">
+		<form id="resize_album_form" method="POST">
+			<input type="hidden" name="album_id" value="<?=$this->_get('album')->__get('album_id')?>">
+			<input type="hidden" name="size_id" value="<?=$this->_get('size')->__get('size_id')?>">
+			<strong class="fleft">Resize Album</strong>
+			<div class="fright mBl">
+				<div class="fleft"><strong class="fs-m">w:</strong><input type="text" name="width" class="fright validate[required,custom[integer],max[1024]]"></div>
+				<div class="fright"><strong class="fs-m">h:</strong><input type="text" name="height" class="fright validate[required,custom[integer],max[1024]]"></div>
+			</div>
+			<div class="fright mRs mVs">
+				<input class="sprite fleft mRs mTs" title="resize image group" type="submit" name="resize" value=" ">
+				<span class="sprite cancelResize pointer mTs fleft" title="cancel"></span>
+			</div>
+		</form>
+	</div>
+</div>

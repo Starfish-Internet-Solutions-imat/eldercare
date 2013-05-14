@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Looking for ElderCare<sup class="fs-xxs">TM</sup> Mail</title>
+</head>
+<body style="font-family:'arial',verdana; box-sizing:border-box !important; -moz-box-sizing: border-box !important;	-webkit-box-sizing: border-box !important;	-o-box-sizing: border-box !important;">
+	<table id="wrapper" width="600px" cellpadding="0"  style="margin:0; padding:0; position:relative; font-family:Arial,Verdana,sans-serif">
+		<tr align="center"><td>
+			<!-- Start of Header -->
+			<table id="header" width="100%" height="95px" style="margin-bottom: 40px; min-width:510px; height:148px;overflow: hidden; box-shadow: 0 2px 5px #CCC;">
+				<tr>
+					<td style="background-image:url('http://eldercare.starfi.sh/Project/Design/1_Website/Applications/Seeker/images/Eldercare-email-template-banner.png'); background-repeat:no-repeat; text-align: right; padding: 40px 35px; font-size: 9px;" width="600" height="100%" >
+						<a style="color:transparent;text-indent: -999999999px;display: inline-block;" href="http://www.eldercare.starfi.sh/">www.lookingforeldercare.com</a>
+					</td>
+				</tr>
+			</table>
+		<table id="content" style="min-width:510px;width:90%;color:#333333;margin:0 auto;">
+			<tr><td style="color:#29ABE2;margin-bottom: 30px;">
+				<h2 style="font-size:17px;">Thank you for using <span style="color:#F7931E;">Looking for ElderCare<sup class="fs-xxs">TM</sup></span> to find the best care for your loved one.</h2>
+			</td></tr>
+			<tr>
+				<td><img style="float:left" src="http://eldercare.starfi.sh/Project/Design/1_Website/Applications/Seeker/images/Eldercare-email-template-icon.png"/><h3 style="font-size:15px;padding: 5px;margin:0 0 0 25px;">We would like to introduce you to:</h3></td>
+			</tr>
+			<tr><td>
+				<table width="80%" style="font-size:13px;margin-bottom:50px;">
+					<?$email_info=$this->_get('email_info'); ?>
+					<?if($this->_get('email_to') == 'hcp'):?>
+				
+					<tr><td style="padding: 8px 20px;background-color:#E6E6E6;min-width:155px;">Seeker Name:</td><td style="padding: 8px 20px;background-color:#F2F2F2;min-width:355px;font-weight:bold;"><?=$email_info['seeker_name']?></td></tr>
+					<tr><td style="padding: 8px 20px;background-color:#E6E6E6;min-width:155px;">Seeker Email:</td><td style="padding: 8px 20px;background-color:#F2F2F2;min-width:355px;font-weight:bold;"><?=$email_info['seeker_email']?></td></tr>
+					<tr><td style="padding: 8px 20px;background-color:#E6E6E6;min-width:155px;">Seeker Telephone Number: </td><td style="padding: 8px 20px;background-color:#F2F2F2;min-width:355px;font-weight:bold;"><?=$email_info['seeker_telephone']?></td></tr>
+					<tr><td style="padding: 8px 20px;background-color:#E6E6E6;min-width:155px;">Seeker Relationship to Patient:</td><td style="padding: 8px 20px;background-color:#F2F2F2;min-width:355px;font-weight:bold;"><?=$email_info['seeker_relation']?></td></tr>
+					<? else:?>
+					<tr><td style="padding: 8px 20px;background-color:#E6E6E6;min-width:155px;">Health Care Provider Name:</td><td style="padding: 8px 20px;background-color:#F2F2F2;min-width:355px;font-weight:bold;"><?=$email_info['hcp_name']?></td></tr>
+					<tr><td style="padding: 8px 20px;background-color:#E6E6E6;min-width:155px;">Health Care Provider House Type:</td><td style="padding: 8px 20px;background-color:#F2F2F2;min-width:355px;font-weight:bold;"><?=$email_info['hcp_house_type']?></td></tr>
+					<tr><td style="padding: 8px 20px;background-color:#E6E6E6;min-width:155px;">Health Care Provider Email:</td><td style="padding: 8px 20px;background-color:#F2F2F2;min-width:355px;font-weight:bold;"><?=$email_info['hcp_email']?></td></tr>
+					<tr><td style="padding: 8px 20px;background-color:#E6E6E6;min-width:155px;">Health Care Provider Telephone Number:</td><td style="padding: 8px 20px;background-color:#F2F2F2;min-width:355px;font-weight:bold;"><?=$email_info['hcp_telephone']?></td></tr>
+					<tr><td style="padding: 8px 20px;background-color:#E6E6E6;min-width:155px;">Health Care Provider Address:</td><td style="padding: 8px 20px;background-color:#F2F2F2;min-width:355px;font-weight:bold;"><?=$email_info['hcp_location']?></td></tr>
+					<?endif;?>
+				</table>
+			</td></tr>
+			<tr><td style="font-size:13px;font-weight:bold;">
+				<p>Regards,</p>
+				<p>Looking for ElderCare<sup class="fs-xxs">TM</sup> Team</p>
+			</td></tr>
+		</table>
+		<table id="footer" style="background-color:#28A2D6;color:#FFFFFF !important;font-size:10px;width:100%;min-width:510px;margin-top:80px;padding: 15px 25px;text-align:center;">
+			<tr><td>Copyright &copy; 2013 Looking for ElderCare<sup class="fs-xxs">TM</sup>, Inc. All rights reserved. We are paid by our participating communities and providers, therefore this service is offered at no charge to families. Lookingforeldercare.com complies with the Can-Spam Act of 2003.</tr></td>
+		</table>
+		</td></tr>
+	</table>
+</body>
+</html>

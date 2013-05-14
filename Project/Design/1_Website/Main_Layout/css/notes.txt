@@ -1,0 +1,29 @@
+/*
+ *	OPACITY FOR IE
+ */
+ opacity:0.5; ->equivalent:  filter: alpha(opacity = 50);   ||  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20)
+
+/*
+ *	TEXT SHADOW FOR IE
+ */
+ text-shadow: #0000ff 0px 0px 3px; ->equivalent:  filter: glow(color=#0000ff,strength=3); 
+
+/*
+ *	RGBA SUPPORT FOR IE
+ */
+ background-color: rgba(0, 0, 255, 0.2); ->equivalent:  background:transparent;    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr=#99000050,endColorstr=#99000050);    zoom: 1; 
+
+/*
+ *	BOX SHADOW FOR IE
+ */
+ box-shadow: 2px 2px 3px #969696; ->equivalent:  filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+
+/*
+ *	ROTATE FOR IE
+ */
+ transform: rotate(240deg); ->equivalent:  filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.86602540, M12=0.50000000, M21=-0.50000000, M22=0.86602540); 
+ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+ 
+/*  Flip horizontal. Negate the M11 and M12 entry values.
+    Flip vertical. Negate the M21 and M22 entry values.
+*/

@@ -1,0 +1,27 @@
+<?$seeker = seekerSession::getSeekerSession();?>
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper" class="pAm">
+	
+		<?if($seeker->__get('name') == ''):?>
+			<h3>Seeker Info:</h3>
+			<form method="POST">
+				<div><label>Name: </label><input type="text" name="name"></div><br>
+				<div><label>Email: </label><input type="text" name="email"></div><br>
+				<div><label>Mobile #: </label><input type="text" name="mobile_number"></div><br>
+				<div><label>Relationship to patient </label><input type="text" name="relation"></div><br>
+				
+				<input type="submit" name="submit" value="submit">
+			</form>
+			
+		<?else:?>
+			Seeker Info: <?=$seeker->__get('name')?><br>
+			<hr>
+			Seeker Homes: <br>
+			
+			<?foreach($seeker->__get('array_of_homes') as $elder_home):?>
+				Home: <?=$elder_home->__get('name')?>
+				<input type="hidden" name="home_id" value="<?=$elder_home->__get('provider_id')?>"><br>
+			<?endforeach;?>
+			
+		<?endif;?>
+	</div>
+</div>

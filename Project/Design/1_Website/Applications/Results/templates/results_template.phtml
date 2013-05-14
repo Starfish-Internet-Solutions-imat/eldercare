@@ -1,0 +1,54 @@
+<?$seeker = seekerSession::getSeekerSession();
+$seeker->setUri('back_url', $_SERVER['REQUEST_URI']); 
+
+?>
+
+	<? $properties = $this->_get('array_of_properties');?>
+	<?if(count($properties) == 0):?>
+	<h4 class="clearfix fleft"><span class="sprite alert fleft pRxxl"></span><span class="fs-p1 fleft">No Care Homes were found in your area. Please refine your search.</span></h4>
+<?else:?>
+	<div class="clearfix pVm">
+		<h6 class="fs-b helvetica77"><?php echo strtoupper($this->_get('city')).", ".strtoupper($this->_get('state'))?> has at least <?=count($properties)?> <?=$this->_get('housing_type')?> communities</h6>
+		<span class="sprite price_legend fright"></span>
+	</div>
+	<div class="clearfix fleft " id="search_result">
+		<? foreach ($properties as $property): ?>
+			<div class="clearfix">
+				<?if(!empty($property['image_id'])):?>
+					<div class="fleft" id="img" style="background-image:url(<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.$property['hcp_id'].'/'.hcp_image::selectFilename($property['image_id'])?>)"></div>
+				<?else:?>
+					<div class="fleft" id="img" style="background-image:url('/Project/Design/1_Website/Main_Layout/images/hcp_gallery_image.png	')"></div>
+				<?endif;?>
+				<div class="fright">
+					<?if(resultsModule::isShortListed($property['hcp_id'])):?>
+						<span class="sprite shortlisted">Shorlisted</span>
+					<?else:?>
+						<form method="POST" action="/seeker/add_hcp_to_list">
+							<input type="hidden" name="home_id" value="<?=$property['hcp_id']?>">
+							<input type="hidden" name="name" value="<?=$property['name']?>">
+							<input type="hidden" name="area" value="<?=$property['city'].", ".$property['state']?>">
+							<input class="sprite add_home" type="submit" name="submit" value="add home to list">
+						</form>
+					<?endif;?>
+					<h4><a class="helvetica77" href = "/health-care-provider/<?=handler::link_builder($property['name'], $property['hcp_id']) ?>"><?=$property['name']?></a></h4>
+					<br/><br/><?php echo zipcode::selectZipcodeById($property['zipcode']).' - '.$property['city'].", ".$property['state']?>
+					<br/><br/><span class="gotham_bold fs-p1">Pricing:</span> <?=resultsModule::pricingMarking($property['pricing'])?><br/><br/>
+					<p><?=$property['description']?></p>
+					<a class="sprite view_property" href = "/health-care-provider/<?=handler::link_builder($property['name'], $property['hcp_id']) ?>">View Property</a>
+				</div>
+			</div>
+		<? endforeach;?>
+			<div id="pagination" class="align_r">
+			<?php if ($this->_get('pagination_pages')>1):?>
+				<!-- Mon Please add class="pageActive" to "a" tags WHEN PAGE IS ACTIVE-->
+				<?php for($x = 1; $x <= $this->_get('pagination_pages'); $x++):?>
+								
+					<a href = "<?php echo $x?>"><?php echo $x?> </a>
+				<?php endfor;?>
+					<!-- <a href="#"  id="nextPage">Previous page</a> ********** NEED HANS TO CONFIRM IF THERE IS A PREVIOUS PAGE BUTTON **********--> 
+					<a href="<?=$this->_get('active_page')+1?>"  id="nextPage">Next page</a>
+					<?php //echo $this->_get('active_page'); ### This is for the active page!!! ###?>
+			<?php endif;?>
+			</div>
+	</div>
+<? endif;?>

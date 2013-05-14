@@ -1,0 +1,444 @@
+/********************************* Photo library *********************************/
+#nav_list{
+ padding:0 0 0 25px;
+ form{
+   span{
+     padding: 6px 23px !important;
+   }
+ }
+}
+#applicationContent{
+  #albums_container{
+   > #button_container{
+      width: 232px;
+      height:216px;
+      #add_album{
+        width:100%;
+        height:100%;
+        cursor:pointer;
+        span.sprite{
+          width:100%;
+          height:100%;
+          display:block;
+          background-position: -7px -146px;
+        }
+      }
+    }
+    #album_container{
+      padding:3px;
+      width: 232px;
+      height:216px;
+      border:1px solid #ccc;
+      background-position: -243px -146px;
+      form{
+        .image_holder{
+          width: 223px;
+          height: 141px;
+          position:relative;
+          #img{
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+          }
+          input[type="submit"][name="view_album"]{
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            position: absolute;
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+          }
+        }
+        .text_container{
+          height: 71px;
+          padding: 10px 0;
+          line-height: 10px;
+          > .fleft{
+            max-width:190px;
+            strong{
+              color:#4D4D4D;
+              font-size:14px;
+              max-width: 170px;
+              font-weight:bold;
+              line-height: 13px;
+              word-wrap: break-word;
+            }
+            .sprite{
+              width: 15px;
+              height: 15px;
+              margin-left:5px;
+              cursor: pointer;
+              display: inline-block;
+              background-position: -1181px -112px;
+            }
+            .image_quantity{
+              bottom:10px;
+              left:0;
+            }
+          }
+          > .fright{
+            width:25px;
+            .sprite{
+               width: 15px;
+               height: 15px;
+               cursor:pointer;
+               display: inline-block;
+               background-position: -1206px -92px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #imagesColumn{
+    width:655px;
+    #applicationHeader{
+      form{
+        .box{
+          z-index:10;
+          width:380px;
+          padding: 5px;
+          color: #706F6F;
+          position: relative;
+          background-color: white;
+          border: 1px solid #B2B2B2;
+          textarea{
+            height: 58px;
+            width: 368px;
+          }
+          input[type="submit"]{
+            width: 81px;
+            height: 31px;
+            background-position: -904px -40px;
+            &:active{
+              background-position: -904px -6px;
+            }
+          }
+          span{
+            width: 81px;
+            height: 31px;
+            display:inline-block;
+            background-position: -373px -40px;
+            &:active{
+              background-position: -373px -6px;
+            }
+          }
+        }
+      }
+      #header_actions{
+        top:0;
+        right:65px;
+        position:absolute;
+        #availableSize{
+          width: 156px;
+          height: 31px;
+          background-position: -1378px -40px;
+          &:active{
+            background-position: -1378px -6px;
+          }
+          #available_sizesContainer{
+            top: 29px;
+            z-index: 999;
+            width: 156px;
+            height: auto;
+            overflow: auto;
+            position: relative;
+            background-color: white;
+            border: 1px solid #9D9D9D;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+            ul{
+              margin:0;
+              padding:0;
+              li{
+                width: 100%;
+                height: 30px;
+                padding: 7px;
+                font:{
+                  size:12px;
+                  weight:bold;
+                }
+                span#add_size{
+                  font:{
+                    size:12px;
+                    weight:bold;
+                  }
+                }
+                span.add_size{
+                  top: 0;
+                  right: 0;
+                  width: 29px;
+                  height: 30px;
+                  position: absolute;
+                  background-position: -1140px -94px;
+                }
+                &#add_sizeContainer{
+                  background-color: #95C11F;
+                  color: white;
+                }
+                &.sizelist{
+                  &:hover{
+                    background-color:#DADADA;
+                    .edit_size{
+                      top: -1px;
+                      width: 40px;
+                      position: relative;
+                      vertical-align: middle;
+                      span{
+                        color:#36A9E1;
+                      }
+                    } 
+                  }
+                }
+                .delete_size{
+                  > form{
+                    input{
+                      background:none;
+                      box-shadow:none;
+                    }
+                  }
+                }
+                &.active,&:hover{
+                  background: #CCC;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #images_listing_container{
+      height: 428px !important;
+      .image_details_form{
+        input[type="submit"][name="view_image_info"]{
+          top:0;
+          left:0;
+          width:100%;
+          height:100%;
+          background:none;
+          position:absolute;
+          border:none !important;
+          border-color:transparent;
+        }
+      }
+    }
+  }
+  #upload{
+    height: 31px;
+    width: 161px;
+    cursor:pointer;
+    background-position: -1210px -40px;
+    &:active{
+      background-position: -1210px -5px;
+    }
+  }
+}
+/* PHOTO LIBRARY POPUP DIALOGS **********************************************************************************************************/
+#new_album_dialog{
+  padding: 15px 20px 10px;
+  //background-image:url("/Project/Design/2_Enterprise/Applications/Photo_Library/Main_App_Layout/images/new_album_dialog_bakground.png");
+  h3{
+    color:#8CC63F;
+    margin-bottom:20px;
+  }
+  #add_album_form
+  {
+    line-height:20px;
+    input{
+      height:31px;
+      &[type="text"][name="album_title"]{
+        width:297px;
+        border-radius: 0;
+      }
+      &[type="text"][name="height"],&[type="text"][name="width"]{
+        width:120px;
+        margin: 0 10px;
+        border-radius: 0;
+        text-align: center;
+      }
+      &[type="text"][name="height"]{
+        margin-right: 0;
+      }
+      &[type="submit"]{
+        width:108px;
+        background-position: -784px -39px;
+        &:active{
+          background-position: -784px -6px;
+        }
+      }
+    }
+    span.sprite{
+      top:0;
+      width:81px;
+      height:31px;
+      display:inline-block;
+      background-position: -373px -39px;
+      &:active{
+        background-position: -373px -6px;
+      }
+    }
+  }
+}
+
+#upload-dialog{
+  padding: 25px 22px 10px;
+  //background-image:url("/Project/Design/2_Enterprise/Applications/Photo_Library/Main_App_Layout/images/Enterprise-Pop-ups-add-photo.png");
+  h3{
+    color:#8CC63F;
+    margin-bottom:20px;
+  }
+  #upload_image{
+    input[name="image_file[]"]{
+      opacity: 0;
+      float:right;
+      z-index:998;
+      width: 219px;
+      cursor: pointer;
+      position:relative;
+    }
+    .fakeInputFile{
+      width:426px;
+      height: 31px;
+      z-index: 997;
+      background-position: -252px -91px;
+      position:relative;
+      #fakeInputFile-text {
+        height:100%;
+        cursor: text;
+        z-index: 999;
+        width: 346px;
+        padding: 7px 5px;
+        text-align: left;
+        overflow: hidden;
+        position:absolute;
+        border-right: 0 none;
+        border-radius: 0 0 0 0;
+        background: none repeat scroll 0 0 transparent;
+        span{
+          width: 100%;
+          height: 18px;
+          color: #333333;
+          overflow: hidden;
+          white-space:nowrap;
+          display: inline-block;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    input.sprite{
+      width:81px;
+      height:31px;
+      background-position: -1121px -40px;
+      &:active{
+        background-position: -1121px -6px;
+      }
+    }
+    span.sprite{
+      width:81px;
+      height:31px;
+      background-position: -373px -40px;
+      &:active{
+        background-position: -373px -6px;
+      }
+    }
+  }
+  #loader{
+    top:50%;
+    left:50%;
+    z-index:1005;
+    margin-top:-55px;
+    margin-left:-55px;
+  }
+}
+
+#new_size_dialog,#resize_dialog{
+  padding: 25px 22px 10px;
+  h3{
+    color:#8CC63F;
+    margin-bottom:20px;
+  }
+  form{
+    input{
+      &[type="text"][name="height"],&[type="text"][name="width"]{
+        width: 120px;
+        height: 30px;
+        margin: -5px 10px;
+        text-align: center;
+        border-radius: 0;
+      }
+      &[type="text"][name="height"]{
+        margin-right: 0;
+      }
+    }
+    span.sprite{
+      width:81px;
+      height:31px;
+      background-position: -373px -40px;
+      &:active{
+        background-position: -373px -6px;
+      }
+    }
+  }
+}
+#new_size_dialog{
+  //background-image:url("/Project/Design/2_Enterprise/Applications/Photo_Library/Main_App_Layout/images/Enterprise-Pop-ups-new-size.png");
+  form{
+    input.sprite{
+      width:106px;
+      height:31px;
+      background-position: -1540px -40px;
+      &:active{
+        background-position: -1540px -6px;
+      }
+    }
+  }
+}
+#resize_dialog{
+  //background-image:url("/Project/Design/2_Enterprise/Applications/Photo_Library/Main_App_Layout/images/Enterprise-Pop-ups-resize.png");
+  form{
+    input.sprite{
+      width:106px;
+      height:31px;
+      background-position: -1744px -40px;
+      &:active{
+        background-position: -1744px -6px;
+      }
+    }
+  }
+}
+
+.renameAlbum_popUp{
+  padding: 25px 22px 10px;
+ // background-image:url("/Project/Design/2_Enterprise/Applications/_Common/images/rename_background.png");
+  h3{
+    color:#8CC63F;
+    margin-bottom:20px;
+  }
+  div.fright{
+    input{
+      height: 30px;
+      width: 425px;
+    }
+  }
+  #button_container{
+    width:180px;
+    input.sprite{
+        width:81px;
+        height:31px;
+        background-position: -904px -40px;
+        &:active{
+          background-position: -904px -6px;
+        }
+      }
+      span.sprite{
+        width:81px;
+        height:31px;
+        background-position: -373px -40px;
+        &:active{
+          background-position: -373px -6px;
+        }
+     }
+  }
+}

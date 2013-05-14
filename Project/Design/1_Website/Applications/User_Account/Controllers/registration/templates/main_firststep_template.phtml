@@ -1,0 +1,91 @@
+<?php $registration_data = userSession::getTemporarySessionData('reg_first_part');?>
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+	<div id="header_banner">
+		<div class="semi_transparent"></div>
+	</div>
+	<div id="page_content" class="clearfix">
+		<a href = "/" class="back sprite"></a>
+		<div class="clearfix pBl">
+			<div class="clearfix">
+				<div class="clearfix fleft">
+					<h1 class="helvetica77 mTxxl mBm welcome"><span>Welcome</span> Health Care Providers!</h1>
+					<span class="gotham_book fs-m">Let's get your home in our Network in </span><span class="gotham_bold">two easy steps</span>
+					<ol class="gotham_bold fs-m">
+						<li onclick="scrollTo('input[name=location]')" class="pointer">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register your facility <span>(See below to start)</span></li>
+						<li>2.&nbsp;&nbsp;&nbsp;&nbsp;Follow the prompts and create your own profile</li>
+					</ol>
+					<span class="gotham_book fs-s"><span class="fs-m1">(Remember, the more pictures and information you tell us about your services, the better we can market for you)</span></span>
+				</div>
+				<div class="fright posRel">
+					<span class="sprite arrow_right fleft mRm">arrow right</span>
+					<div class="transparent_gray fright align_c ">
+						<a href="/health-care-provider/eldercarehomefacility-1"><span class="sprite view_sample_listing">View sample Listing</span></a>
+					</div>
+					<img class="posAbs" src="/Project/Design/1_Website/Applications/User_Account/Controllers/registration/images/Eldercare_HCP-sample-listing-image.gif"/>
+				</div>
+			</div>
+			<h4 class="gotham_bold fs-m mVxxl">Already have your home listed?<a href="/account/login" class="fs-m mLxs">Log-in here.</a></h4>
+			
+			<div id="register_column" class="clearfix fleft mTm">	
+				<h3 class="helvetica77">Where can we find your Care Home? <span class="sprite lock2 mLm"></span></h3>
+				<form method="post" action="/account/register" id="hcpRegistrationFirstPhase">
+				
+				<?if($this->_get('has_error') == TRUE):?>
+					<div class="fs-b helvetica77 fcBlue">Please fill in all the fields.</div>
+				<?endif;?>
+				
+					<div><label><span class="gotham_bold">Street and House Number</span><br /><input type="text" name="location" class="required" value="<?echo isset($registration_data['location'])?$registration_data['location']:''?>"></label></div>
+					
+					<div class="posRel">
+						<label>
+							<span class="gotham_bold">Zipcode </span><span class="gotham_book fs-s ">(Please select from the dropdown list.)</span><br /><p id="invalidZipcode" class="error"></p>
+							<input type="text" name="zipcode" onkeypress="return isNumberKey(event)" autocomplete="off" class="required" value="<?echo isset($registration_data['zipcode'])?$registration_data['zipcode']:''?>"/>
+						</label>
+						
+						<input type="hidden" name="zipcode_id" value="<?echo isset($registration_data['zipcode_id'])?$registration_data['zipcode_id']:''?>"/>
+						<div id="zipcode_list"></div>
+					</div>
+					
+					<div>
+						<span class="gotham_bold">Facility Type </span><span class="gotham_book fs-s ">(Select any that applies)</span><br /><br />
+						<label class="gotham_book fs-s "><input type="checkbox" name="house_type[]" value="1">Assisted Living</label><br/>
+						<label class="gotham_book fs-s "><input type="checkbox" name="house_type[]" value="2">In-home Care</label><br/>
+						<label class="gotham_book fs-s "><input type="checkbox" name="house_type[]" value="3">Residential Care/ Group Setting</label><br/>
+						<label class="gotham_book fs-s "><input type="checkbox" name="house_type[]" value="4">Memory Care</label><br/>
+					</div>
+					<div>
+						<label><span class="gotham_bold">Type of Accomodation</span><br /><br />
+							<select name="accommodation_type" class="required">
+								<option value=""></option>
+								<option value="Small Assisted Living/ Group Homes">Small Assisted Living/ Group Homes</option>
+								<option value="Large Assisted Living Home">Large Assisted Living Home</option>
+								<option value="Senior Apartments/ Independent Living">Senior Apartments/ Independent Living</option>
+								<option value="Senior Communities">Senior Communities</option>
+								<option value="Hospice Units">Hospice Units</option>
+								<option value="In Home Non-Medical Care Giving">In Home Non-Medical Care Giving</option>
+							</select>
+						</label>
+					</div>
+					<div>
+						<label>
+							<span class="gotham_bold">Pricing</span>
+							<br/><br/>
+							<select name="pricing" class="required">
+								<option value="conservative">Conservative ($900-$2,500)</option>
+								<option value="moderate">Moderate ($2,500-$5,000)</option>
+								<option value="expensive">Exclusive ($5,500-$12,000)</option>
+							</select>
+						</label>
+					</div>
+					<span class="sprite mTxxl mBl"></span>
+					<input type="submit" name="proceed_next_step" value="PROCEED TO NEXT STEP" class="sprite proceed_to_next fright"/>
+				</form>
+			</div>
+			<div id="faq_column" class="fright clearfix mTm">
+				<a href="/about"><h2 class="fs-b helvetica77 fcBlue">Why does Looking for ElderCare<sup class="fs-xxs">TM</sup> stand out?</h2></a>
+				<p class="gotham_book">Health Care Providers find it more efficient to find potential seekers through Looking for ElderCare<sup class="fs-xxs">TM</sup>'s system.</p>
+			</div>
+		</div>
+		<a href = "/" class="back sprite"></a>
+	</div>
+</div>

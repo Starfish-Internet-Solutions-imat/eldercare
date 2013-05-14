@@ -1,0 +1,142 @@
+[id*="_content_wrapper"] {
+  border: none !important; }
+  [id*="_content_wrapper"] #header_banner {
+    background-image: url("/Project/Design/1_Website/Applications/Seeker/images/search_header_banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 449px !important;
+    width: 100%; }
+    [id*="_content_wrapper"] #header_banner .semi_transparent {
+      bottom: 0;
+      left: 50%;
+      width: 1032px;
+      height: 200px;
+      position: absolute;
+      margin-left: -516px; }
+  [id*="_content_wrapper"] #page_content {
+    z-index: 100;
+    padding: 20px;
+    width: 1024px;
+    position: relative;
+    margin: -195px auto 0;
+    border: 1px solid #CCCCCC;
+    background-color: #FFFFFF; }
+
+#short_list_column {
+  width: 220px;
+  padding: 3px;
+  margin: 10px 0;
+  background-color: #EDEDED;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 4px 10px #999999; }
+  #short_list_column .shortlist {
+    width: 112px;
+    height: 15px;
+    font-size: 0px;
+    margin: 10px 50px;
+    background-position: -141px -37px; }
+  #short_list_column span.helvetica77 {
+    color: #CCCCCC;
+    display: block;
+    margin: 37px 23px; }
+  #short_list_column form > ul {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    border: 1px solid #E6E6E6; }
+    #short_list_column form > ul > li > div {
+      padding: 15px 8px; }
+      #short_list_column form > ul > li > div #shortlist_img {
+        width: 65px;
+        height: 45px;
+        padding: 2px;
+        margin-top: 6px;
+        border: 1px solid #CCCCCC;
+        background-size: 61px 41px;
+        background-position: center;
+        background-repeat: no-repeat; }
+      #short_list_column form > ul > li > div > div.fright {
+        width: 125px;
+        line-height: 15px; }
+        #short_list_column form > ul > li > div > div.fright span.fs-m1, #short_list_column form > ul > li > div > div.fright span {
+          color: #4D4D4D;
+          font-size: 10px; }
+    #short_list_column form > ul > li a.remove_list {
+      top: 5px;
+      right: 5px;
+      width: 8px;
+      margin: 5px;
+      height: 8px;
+      z-index: 100;
+      display: block;
+      font-size: 0px;
+      position: relative;
+      background-position: -823px -407px; }
+    #short_list_column form > ul > li div.shortlist_action {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; }
+    #short_list_column form > ul > li div.shortlist_action ul {
+      width: 424px;
+      margin: 0;
+      padding: 0;
+      top: 10px;
+      z-index: 100; }
+      #short_list_column form > ul > li div.shortlist_action ul li {
+        width: 212px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center; }
+        #short_list_column form > ul > li div.shortlist_action ul li a, #short_list_column form > ul > li div.shortlist_action ul li span, #short_list_column form > ul > li div.shortlist_action ul li button {
+          font-size: 0px; }
+        #short_list_column form > ul > li div.shortlist_action ul li .sprite {
+          top: 50%;
+          left: 50%; }
+    #short_list_column form > ul > li .sprite.view_property {
+      height: 25px;
+      width: 155px;
+      background-position: -897px -400px; }
+    #short_list_column form > ul > li .sprite.remove_list_text {
+      width: 194px;
+      height: 37px;
+      background-position: -808px -693px; }
+    #short_list_column form > ul > li .sprite.yes, #short_list_column form > ul > li .sprite.no {
+      width: 50px;
+      height: 22px;
+      background-color: transparent; }
+    #short_list_column form > ul > li .sprite.yes {
+      background-position: -953px -605px; }
+    #short_list_column form > ul > li .sprite.no {
+      background-position: -953px -631px; }
+    #short_list_column form > ul > li .view_property_background {
+      top: 0;
+      left: 0;
+      z-index: 90;
+      width: 100%;
+      height: 100%;
+      background-image: url("/Project/Design/1_Website/Main_Layout/images/shortlist-view-backgound.png"); }
+    #short_list_column form > ul > li:hover div.shortlist_action {
+      display: block; }
+    #short_list_column form > ul > li:hover a.remove_list {
+      background-position: -832px -407px; }
+
+#pagination {
+  border: none !important; }
+  #pagination a {
+    color: #333333;
+    font-size: 12px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #F2F2F2;
+    border: 1px solid #999999;
+    margin-right: 12px; }
+    #pagination a#nextPage {
+      margin: 0; }
+    #pagination a.pageActive {
+      border: 1px solid #4D4D4D;
+      background-color: #4D4D4D;
+      color: #FFFFFF; }

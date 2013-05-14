@@ -1,0 +1,3 @@
+<?phprequire_once FILE_ACCESS_CORE_CODE.'/Framework/MVC_superClasses_Core/controllerSuperClass_Core/controllerSuperClass_Core.php';require_once('Model.php');require_once('View.php');
+class controller extends controllerSuperClass_Core
+{		public function indexAction()	{		$pageURL = ltrim(rtrim($_SERVER["REQUEST_URI"], '/'),'/');				$view = new view();				$view->_set('list_of_states', $this->showStates());				$view->showHome();		$view->renderAll();					}		public function showStates()	{				require_once 'Project/Code/System/ZipCodes/zipcodes.php';				$zipcodes = new zipcodes();		return $zipcodes->selectStates();			}	}?>

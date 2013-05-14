@@ -1,0 +1,8 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+
+	<h3>Browse by City</h3>
+	<?foreach($this->_get('array_of_cities') as $city):?>
+		<a href="/assisted-living/<?=str_replace(" ", "-", strtolower($this->_get('state')))?>/<?=str_replace(" ", "-", strtolower($city['city']))?>/"><?=$city['city']?></a><br />
+		
+	<?endforeach;?>
+</div>

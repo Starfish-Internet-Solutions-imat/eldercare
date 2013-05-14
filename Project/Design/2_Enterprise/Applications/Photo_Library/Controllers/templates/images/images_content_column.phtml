@@ -1,0 +1,21 @@
+<div id="applicationContainer">
+	<div id="applicationContent">
+		<div id="imagesColumn" class="fleft fleft pVl pLl">
+			<div id="applicationHeader" class="clearfix">
+				%%APPLICATION_HEADER%%
+			</div>
+			<?if(count($this->_get('array_of_sizes')) > 0):?>
+					%%IMAGES%%
+			<?else:?>
+                    <div id="add_size" class="fleft fwB fc_starfish_gray2 pointer"><span>No existing image sizes. </span><span id="add_size" class="pointer">Add Size<span class="sprite addAPhoto"></span></span></div>
+			<?endif;?>
+        </div>
+		<div id="applicationSideBar" class="fright posRel">
+			%%IMAGES_SIDEBAR%%
+		</div>
+	</div>
+</div>
+
+%%UPLOAD_DIALOG%%
+%%ADD_SIZE_DIALOG%%
+%%RESIZE_DIALOG%%

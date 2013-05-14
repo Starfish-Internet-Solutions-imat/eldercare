@@ -1,0 +1,33 @@
+<table id = "seeker_table" class = "tablesorter">
+	<thead>
+		<tr>
+			<th>Seeker Name</th>
+			<th>Joined EC</th>
+			<th>Status</th>
+			<th>State</th>
+			<th>Zip Code</th>
+			<th>Consultant</th>
+			<th></th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<?foreach($this->_get('seekers') as $seeker):?>
+		<tr id="<?=$seeker->__get('seeker_id')?>">
+			<td>
+				<span class="seeker_name"><?=strtoupper($seeker->__get('name'))?></span>
+				<!-- (</?=$seeker->__get('email')?>) -->
+			</td>
+			<td><?=date('M-d-y h:i:s A',strtotime($seeker->__get('date_of_inquiry')))?></td>
+			<td><?=str_replace('_', '', $seeker->__get('status'));?></td>
+			<td><?=$seeker->__get('state')?></td>
+			<td><?=$seeker->__get('zipcode')?></td>
+			<td><?=$seeker->__get('consultant') === null? 'unassigned' : $seeker->__get('consultant')?></td>
+			<td class="underline" ><a class="fwB" href="/seekers/profile/view/<?=$seeker->__get('seeker_id')?>">view profile</a></td>
+		</tr>
+		<?endforeach;?>
+	</tbody>
+</table>
+
+%%PAGINATION%%
+

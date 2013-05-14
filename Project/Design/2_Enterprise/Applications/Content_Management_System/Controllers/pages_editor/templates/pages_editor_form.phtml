@@ -1,0 +1,66 @@
+<?$i = 1;$count = 0;?>
+<!--FOR PHOTO CHOOSER-->
+<form method="post" action="" class="clearfix">
+	<div class="hAuto overflow" id="editor_container">
+<!--XML NODES!-->
+	<?foreach($this->_get('array_of_xml') as $node):?>
+		<?if($node['name'] !== 'data' && $node['tag'] != 'END'):?>
+		
+		 <!--IF NODE IS AN IMAGE-->
+		  <?if($node['name'] === 'image_id'):$count++;?>
+			<div class="clearfix pTm image_group" id="node_<?=$i?>">
+				<div class="posRel clearfix">
+				<div class="image_holder fleft mRl">
+					 <div id="image_overflow">		
+						<div id="img" style="background-image:url(<?='http://'.$_SERVER['SERVER_NAME'].'/'.PHOTO_LIBRARY_DIRECTORY.'/'.$node['image_path']?>)"></div>
+					</div>
+				</div>
+					<input type="hidden" name="<?=$i?>" value="<?=$node['value']?>">
+					<span class="show_photo_chooser fleft sprite posAbs" id="node_<?=$i?>"></span>
+					</div>
+			</div>
+			<?$i++;?>
+		      
+		  <?else:$count = 0;?>
+			<div class="clearfix pTm">
+				<span class="element_description fleft pTxs"><?=str_replace('_', ' ', $node['name'])?></span>
+				
+				<?if($node['value'] !== ''):?>
+				<div class="element_content fright">
+					<? if(preg_match('/meta|element|link/i', $node['name'])):?>
+					<input type="text" class=" pHs w100 expand25-250"  name="<?=$i?>" value="<?=$node['value']?>"/>
+					<?else:?>
+					<textarea id="<?=$node['name'] ?>" class="htmlbox expand25-250"  name="<?=$i?>"><?=$node['value']?></textarea>
+					<?endif;?>
+				</div>
+				<?$i++;?>
+				<?endif;?>
+				
+			</div>
+			<?endif;?>	
+		
+		<?endif;?>
+	<?endforeach;?>
+	</div>
+	<input class="sprite mAl" type="submit" name="save"/>
+</form>
+<div class="popupDialog imageId_error hide">
+    <span class="deleteText fc_starfish_gray8 fwB"><span class="fc_starfish_red">ERROR</span> retrieving albums, check image_id.</span>
+    <div id="button_container">
+         <span class="sprite pointer mTs" title="check XML file"></span>
+    </div>
+</div>
+
+<div class="popupDialog table_dialog">
+	<h3>Create Table</h3>
+	<div class="pVm">
+			<div class="fright clearfix">
+				<div class="fleft"><strong class="fs-s pHm">Rows:</strong><input type="text" id="rows" name="rows" class="validate[custom[integer]] align_c"/></div>
+				<div class="fright"><strong class="fs-s pHm">Columns:</strong><input type="text" name="columns" class="validate[custom[integer]] fright align_c"/></div>
+			</div>
+			<div class="fright mTl">
+				<span class="sprite create_table pointer mTs fleft mRs" title="create"></span>
+				<span class="sprite cancel_table pointer mTs fleft" title="cancel"></span>
+			</div>
+	</div>
+</div>

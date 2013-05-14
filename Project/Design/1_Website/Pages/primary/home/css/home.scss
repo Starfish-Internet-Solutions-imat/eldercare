@@ -1,0 +1,234 @@
+/**************************************/
+/*               home                 */
+/**************************************/  
+div[id*='content_wrapper']{
+  > div:first-child{
+    background:{
+      image:url('/Project/Design/1_Website/Pages/primary/home/images/header_banner.jpg');
+      repeat:no-repeat;
+      position:center;
+      size: cover;
+    }
+    > div{
+      background:{
+        image:url('/Project/Design/1_Website/Pages/primary/home/images/header_orange_band.png');
+        repeat:repeat-x;
+      }
+      left:0;
+      bottom:0;
+      width:100%;
+      height:108px;
+      position:absolute;
+      min-width: 1024px;
+      > div{
+        height: 108px;
+        width: 1024px;
+        margin: 0 auto;
+        padding: 50px 0;
+        position:relative;
+      }
+      form{
+        label{
+          padding: 0 0 0 20px;
+          margin-top: -15px;
+          width:auto;
+          input[type="text"],select{
+            width:200px;
+            height:25px;
+            color:#B3B3B3;
+            font-size:14px;
+            margin-top: 5px;
+            padding: 0 0 0 5px;
+            vertical-align:middle;
+            border:1px solid #999999;
+          }
+          select{
+            option{
+              color:#333333;
+            }
+          }
+          span.gotham_bold{
+            color:#1A1A1A;
+          }
+        }
+        label[for="query"][class="error"]{
+          position: absolute;
+          top: 69px;
+          width: 150px;
+          left: 1px;
+        }
+        input[type="submit"]{
+          margin-top: -10px;
+        }
+        #suggestion_list {
+          z-index: 2;
+          top: 6.8em;
+          height: auto;
+          display: none;
+          padding: 10px;
+          left: 35.9579em;
+          min-width: 198px;
+          position: absolute;
+          background-color: white;
+          box-shadow: 0 3px 3px #333333;
+          ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+            li{
+              color:#333333;
+              &:hover{
+                cursor: pointer;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  div.gray_background{
+    background-color:#F2F2F2;
+    border-bottom:1px solid #CCCCCC;
+    #easy_steps{
+      width:485px;
+      height:230px;
+      background:{
+        position: -311px -544px;
+      }
+    }
+    #health_provider{
+      width:480px;
+      height:130px;
+      background:{
+        position: -311px -356px;
+      }
+    }
+    #list_your_home{
+      display:inline-block;
+      width:485px;
+      height:80px;
+      background:{
+        position: -275px -21px;
+      }
+      &:hover{
+        background:{
+          position: -275px -103px;
+        }
+      }
+    }
+  }
+  div.gray_background:last-child{
+    border-bottom:none;
+    border-top:1px solid #CCCCCC;
+    a{
+      color:#4D4D4D;
+      font-size:14px;
+    }
+    h1 small{
+      color:#333333;
+    }
+  }
+  > div{
+    width:100%;
+    min-width:1024px;
+    min-height:372px;
+    > div {
+      width:1024px;
+      margin:0 auto;
+    }
+  }
+  
+  div.mid_section_columns{
+    height:380px !important;
+    width:280px !important;
+    position:relative;
+    margin-right:88px;
+    float:left;
+    &:last-child{
+      margin:0;
+    }
+    img{
+      border:1px solid #CCCCCC;
+      margin: 10px 0;
+      padding: 3px;
+    }
+    h3{
+      a{
+        color:#29ABE2;
+        margin:5px 0;
+        font-size:18px;
+      }
+    }
+    p{
+      font-size:12px;
+      height: 55px;
+      overflow: hidden;
+    }
+  }
+}
+.assisted_living{
+  background:{
+    position: -320px -503px;
+  }
+    display: inline-block;
+    height: 30px;
+    width:390px;
+}
+.search{
+  display:inline-block;
+  height:41px !important;
+  width:121px !important;
+  background:{
+    position: -143px -80px;
+  }
+  &:hover{
+    background:{
+      position: -143px -139px;
+    }
+  }
+}
+.US_map{
+  height:380px !important;
+  width:280px !important;
+  span{
+  display:inline-block;
+  width:100%;
+  height:100%;
+    background:{
+      position: -7px -223px;
+    }
+  }
+}
+.learn_more{
+  display:inline-block;
+  height: 32px !important;
+  width: 113px !important;
+  background:{
+    position: -14px -86px;
+  }
+  &:hover{
+    background:{
+      position: -14px -141px;
+    }
+  }
+}
+.looking_for_eldercare{
+  height: 100px;
+  margin-right: -470px;
+  position: absolute;
+  right: 50%;
+  top: 186px;
+  width: 470px;
+  background:{
+    position: -315px -220px;
+  }
+}
+#cart
+{
+  display:none;
+}
+
+
+
+

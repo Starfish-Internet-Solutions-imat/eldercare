@@ -1,0 +1,10 @@
+<?foreach($this->_get('array_of_calendar_events') as $calendar_event):?>
+<?php date_default_timezone_set('Asia/Manila'); $date_today = date("Y-m-d"); $date = substr($calendar_event->__get('set_for_date'), 0, 10);?>		
+<tr class="<?=($calendar_event->__get('status')=='active')?'new':''?>">
+	<td><?php if($date_today<$date) echo "<b>"; ?><?=date('M-d-y h:i:s A',strtotime($calendar_event->__get('set_for_date')))?><?php if($date_today<$date) echo "</b>"; ?></td>
+	<td><?php if($date_today<$date) echo "<b>"; ?><?=$calendar_event->__get('staff_name') ?><?php if($date_today<$date) echo "</b>"; ?></td>
+	<td><?php if($date_today<$date) echo "<b>"; ?><?=$calendar_event->__get('lead_id')==NULL ? $calendar_event->__get('hcp_name') : $calendar_event->__get('seeker_name') ?><?php if($date_today<$date) echo "</b>"; ?></td>
+	<td><?php if($date_today<$date) echo "<b>"; ?><?=$calendar_event->__get('action')?><?php if($date_today<$date) echo "</b>"; ?></td>
+	<td class="underline"><?php if($date_today<$date) echo "<b>"; ?><a href="<?=$calendar_event->__get('lead_id')==NULL ? "/hcps/profile/view/".$calendar_event->__get('hcp_id') : "/seekers/profile/view/".$calendar_event->__get('lead_id') ?>">View Profile</a><?php if($date_today<$date) echo "</b>"; ?></td>
+</tr>
+<?endforeach;?>

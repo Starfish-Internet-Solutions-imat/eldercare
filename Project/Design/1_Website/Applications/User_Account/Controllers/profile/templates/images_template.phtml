@@ -1,0 +1,41 @@
+<!-- outer wrapper start-->
+<div id="content_wrapper" class="pAm">
+	<?$provider = $this->_get('provider');?>
+	
+	<div id="images_container" class="fleft">	
+	
+		<form enctype="multipart/form-data" method="POST" action="/account/images/upload">
+			<input type="file" name="image_file[]" multiple>
+			<input type="submit" name="upload_photo" value="Upload">
+		</form>
+		
+		<br><br>
+		
+		<?foreach($this->_get('array_of_images') as $image):?>
+		
+			<div class="image_frame mHm">
+			
+				<div class="image_holder">
+					<img src="<?=HEALTHCARE_PROVIDER_IMAGES_SITE.'/'.userSession::getUserID().'/'.$image->__get('filename')?>">
+				</div>
+				
+				<?if($this->_get('provider')->__get('image_id') != $image->__get('image_id')):?>
+					<form method="POST" action="/account/images/update_logo">
+						<input type="hidden" name="image_id" value="<?=$image->__get('image_id')?>">
+						<input type="submit" value="Set as logo">
+					</form>
+				<?else:?>
+					Default logo
+				<?endif;?>
+				
+				<form method="POST" action="/account/images/delete">
+					<input type="hidden" name="image_id" value="<?=$image->__get('image_id')?>">
+					<input type="submit" value="Delete">
+				</form>
+				
+			</div>
+			
+		<?endforeach;?>
+	</div>
+</div>
+<!-- outer  wrapper end-->

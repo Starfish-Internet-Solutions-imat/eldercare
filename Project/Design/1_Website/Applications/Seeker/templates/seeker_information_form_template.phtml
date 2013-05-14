@@ -1,0 +1,70 @@
+<?$seeker = seekerSession::getSeekerSession();?>
+<div class="clearfix mBxl">
+	<a href = "/" class="back sprite"></a>
+	<h1 title="Enlist now to see homes in your area" class="enlist_now sprite clearfix mBl mTxl"></h1>
+	<div id="seekerInfo_column" class="fleft clearfix">
+	<?if($seeker->__get('name') == ''):?>
+	
+		<h3 class="helvetica77">Basic Information <span class="sprite lock mLxl"></span></h3>
+		<form method="POST" id="seekerInformation">
+			<div><label><span class="gotham_bold">Full Name</span><br /><input type="text" name="name" class="required" value="<?php echo (isset($_GET['name']))?  $_GET['name']: "";?>" tabindex="1" /></label></div>
+			<div><label><span class="gotham_bold">Mobile Number</span><br /><span class="gotham_book fs-s ">(xxx-xxx-xxxx, including 3-digit area code)</span><br /><input onkeypress="return isNumberKey(event)" type="text" maxlength="12" name="telephone" class="required" value="<?php echo (isset($_GET['telephone']))?  $_GET['telephone']: "";?>" tabindex="2" /></label></div>
+			<div><label><span class="gotham_bold">Email</span><br /><input type="text" name="email" class="required email" value="<?php echo (isset($_GET['email']))?  $_GET['email']: "";?>" tabindex="3" /></label></div>
+			<div>
+				<label><span class="gotham_bold">Zipcode </span><br/><span class="gotham_book fs-s ">(Please select from the dropdown list)</span><br /><input type = "text" name = "query" value = "<?php echo (isset($_GET['zipcode']))?  $_GET['zipcode']: "";?>" onkeypress="return isNumberKey(event)" class="required" autocomplete="off" tabindex="4" /></label>
+				<p id="invalidZipcode"><?php if (isset($_GET['zipcode_id'])) if ($_GET['zipcode_id'] == ''):?>Invalid zipcode<?php endif;?></p>
+				<input type = "hidden" name = "zipcode_id" value = "<?php echo (isset($_GET['zid']))?  $_GET['zid']: "";?>" class="required" id="zipid">
+				<div id = "suggestion_list"></div></div>
+			<div><label><span class="gotham_bold">Housing Type</span><br />
+				<select name = "housing_type" class="required" tabindex="5">
+					<option value = "Assisted Living" <?php echo (isset($_GET['housing_type']))?  ($_GET['housing_type'] == "assisted living" ? "SELECTED" : "" ): "";?>>Assisted Living</option>
+					<option value = "Memory Care" <?php echo (isset($_GET['housing_type']))?  ($_GET['housing_type'] == "home care" ? "SELECTED" : "" ): "";?>>Home Care</option>
+					<option value = "Residential Care" <?php echo (isset($_GET['housing_type']))?  ($_GET['housing_type'] == "memory care" ? "SELECTED" : "" ): "";?>>Memory Care</option>
+					<option value = "Home Care" <?php echo (isset($_GET['housing_type']))?  ($_GET['housing_type'] == "residential care" ? "SELECTED" : "" ): "";?>>Residential Care</option>
+				</select></label></div>
+				<!-- input type="text" name="relationship_to_patient" -->
+			<div><label><span class="gotham_bold">A house for my</span><br />
+				<select name="relationship_to_patient" class="required" tabindex="6">
+					<option value="Mother">Mother</option>
+					<option value="Father">Father</option>
+					<option value="Aunt">Aunt</option>
+					<option value="Uncle">Uncle</option>
+					<option value="Cousin">Cousin</option>
+					<option value="Nephew">Nephew</option>
+					<option value="Brother">Brother</option>
+					<option value="Sister">Sister</option>
+					<option value="Close Friend">Close Friend</option>
+					<option value="Partner">Partner</option>
+					<option value="For Both Mother And Father">For Both Mother And Father</option>
+					<option value="Grand Mother">Grand Mother</option>
+					<option value="Grand Father">Grand Father</option>
+					<option value="Grand Mother And Grand Father">Grand Mother And Grand Father</option>
+					<option value="Other">Other</option>
+				</select></label></div>
+			<input type="submit" name="submit" value=" " class="sprite finish fright" tabindex="7" />
+		</form>
+		
+	<?php else:?>
+	
+		Seeker Info: <?php echo $seeker->__get('name');?><br>
+		<hr>
+		Seeker Homes: <br>
+		
+		<?php foreach($seeker->__get('array_of_homes') as $elder_home):?>
+			Home: <?php echo $elder_home->__get('name');?>
+			<input type="hidden" name="home_id" value="<?php echo $elder_home->__get('hcp_id');?>"><br>
+		<?php endforeach;?>
+		
+	<?php endif;?>
+	</div>
+	<div id="faq_column" class="fright clearfix">
+		<h3 class="helvetica77">FAQ</h3>
+		<ul>
+			<li><a href="/faq#what-is-assisted-living">What is Assisted Living?</a></li>
+			<li><a href="/faq#what-are-residential-care-homes">What are Residential Care Homes?</a></li>
+			<li><a href="/faq#what-are-home-care-providers">What are Home Care Providers?</a></li>
+		</ul>
+	</div>
+</div>
+	<a href = "/" class="back sprite"></a>
+

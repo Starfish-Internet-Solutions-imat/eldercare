@@ -1,0 +1,38 @@
+<div id="<?=routes::getInstance()->getCurrentTopLevelPageID();?>_content_wrapper">
+
+	<div id="header_banner">
+		<div class="semi_transparent"></div>
+	</div>
+	
+	<div id="page_content" class="clearfix">
+		<div class="mBxl"><a class="back sprite" href="/"></a></div>
+		<div class="mBxl">
+			<h1 class="mBs helvetica77">Frequently Asked Questions</h1>
+			<p class="gotham_book" >Here are some questions regularly asked from us.</p>
+		</div>
+		
+		<div id="faq_container" class="clearfix mBl">
+			<h3><?=$this->displayElement('heading', 0)?></h3>
+			<ul class="unstyled">
+				<?for($i = 0; $i < 5; $i++):?>
+				<li id="<?=$this->createRoute($this->displayElement('question', $i))?>">
+					<label><?=$this->displayElement('question', $i)?></label><strong><?=$this->displayElement('question', $i)?></strong>
+					<div class='ans'><?=$this->displayElement('answer', $i)?></div>
+				</li>
+				<?endfor;?>
+			</ul>
+			<h3><?=$this->displayElement('heading', 1)?></h3>
+			<ul class="unstyled">
+				<?for($i = 5; $i < 9; $i++):?>
+				<li id="<?=$this->createRoute($this->displayElement('question', $i))?>">
+					<label><?=$this->displayElement('question', $i)?></label><strong><?=$this->displayElement('question', $i)?></strong>
+					<div class='ans'><?=$this->displayElement('answer', $i)?></div>
+				</li>
+				<?endfor;?>
+			</ul>
+		</div>
+		
+		<div class="mBm"><a  class="back sprite" href="/"></a></div>
+	</div>
+
+</div>

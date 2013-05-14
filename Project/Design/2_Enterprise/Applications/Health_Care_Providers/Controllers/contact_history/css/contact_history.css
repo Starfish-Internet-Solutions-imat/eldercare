@@ -1,0 +1,9 @@
+/*----------------------------------------------------------------------
+		SEEKERS CSS
+----------------------------------------------------------------------*/
+.table_container table {
+  width: 100%; }
+.table_container td, .table_container th {
+  min-width: 100px; }
+.table_container .pagination {
+  width: 823px; }

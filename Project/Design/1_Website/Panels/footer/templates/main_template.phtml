@@ -1,0 +1,25 @@
+<div id="footer" class="align_c">
+	<div>
+		<a class="sprite fright" href="https://twitter.com/lookingforcare" target="_blank"></a>
+		<a class="sprite fright mRm" href="http://www.facebook.com/pages/Looking-For-Eldercare/468489746532887" target="_blank"></a>
+		
+		<ul id="footer_nav" class="pBxl unstyled clearfix">
+			<li><a href="/about">About</a></li>
+			<li><a href="/contact_us">Contact Us</a></li>
+			
+			<?if(userSession::getUserAccountID()):?>	
+				<li><a href="/account/profile">List Your Property</a></li>
+			<?else:?>
+				<li><a href="/account/register">List Your Property</a></li>
+			<?endif?>
+		
+			<li><a href="/faq">FAQ</a></li>
+			<li><a href="/privacy_policy" target="_blank">Privacy Policy</a></li>
+			<li><a href="/terms_of_use" target="_blank">Terms of Use</a></li>
+			<li class="last"><a href="/sitemap.xml">Site Map</a></li>
+		</ul>
+		
+		
+		<p class="fs-m clearfix">Copyright &copy; 2013 Looking for ElderCare<sup class="fs-xxs">TM</sup>, Inc. All rights reserved. We are paid by our participating communities and providers, Therefore this service is offered at no charge to families. Lookingforeldercare.com complies with the Car-Spam Act of 2003.</p>
+	</div>
+</div>

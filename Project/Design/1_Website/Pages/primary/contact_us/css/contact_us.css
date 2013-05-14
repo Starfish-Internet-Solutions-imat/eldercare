@@ -1,0 +1,44 @@
+#faq_column {
+  width: 220px;
+  border-top: 1px solid  #CCCCCC; }
+  #faq_column h3 {
+    padding: 13px 0; }
+  #faq_column ul {
+    color: #29ABE2;
+    margin: 0;
+    padding: 0 12px; }
+    #faq_column ul li {
+      margin-bottom: 15px; }
+      #faq_column ul li a {
+        color: #29ABE2; }
+
+#form_container {
+  border: 1px solid #CCCCCC; }
+
+form {
+  padding: 20px; }
+  form div {
+    position: relative;
+    margin-bottom: 15px; }
+    form div label input, form div label select {
+      margin-top: 5px;
+      width: 400px;
+      height: 30px;
+      border: 1px solid #CCCCCC; }
+    form div label input[name="mobile"] {
+      width: 350px; }
+    form div label textarea {
+      resize: none;
+      width: 675px;
+      height: 225px;
+      margin-top: 5px;
+      border: 1px solid #CCCCCC; }
+    form div label select {
+      padding: 2px 0 0; }
+  form input[type="submit"] {
+    margin: 25px 0; }
+
+label.error {
+  left: 75px;
+  position: absolute;
+  top: 2px; }

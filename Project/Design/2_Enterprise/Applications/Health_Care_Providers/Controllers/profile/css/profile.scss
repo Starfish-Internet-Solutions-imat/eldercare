@@ -1,0 +1,115 @@
+/*----------------------------------------------------------------------
+		SEEKERS CSS
+----------------------------------------------------------------------*/
+
+#applicationContent {
+	min-height: 600px;
+ 	& >.fright {
+		width: 500px;
+	}
+	
+	#button_container {
+		bottom: 20px;
+		right: 20px;
+		text-align: right;
+	}
+}
+
+.table_container {
+	table { width: 100%; }
+	td, th { min-width: 100px; }
+}
+
+table#placements {
+	width: 575px;
+	th { height: 30px; }
+	td {
+		height: 25px;
+		color: #333;
+	}
+	tr:nth-of-type(odd) td { background-color: #f1f1f1; }
+	tr:nth-of-type(odd):hover td { background-color: #989898; }
+}
+
+.profile_info table td:nth-of-type(2) div {
+	display: inline-block;
+	width: 33%;
+	text-align: center;
+}
+.profile_info{
+  width:100%;
+  >div:first-child{
+    width:100%;
+  }
+  > div h3 {
+    display:inline;
+  }
+  a{
+    text-decoration:underline;
+    font-size:12px;
+  }
+  table{
+    width:355px;
+  }
+  >div:nth-of-type(2) {
+    background-color:#E5E5E5;
+    width:188px;
+    span {
+      width:80px;
+      height:25px;
+      background-color:#1A1A1A;
+      margin:7px;
+      padding-top:2px;
+    }
+  }
+  
+}
+
+.image_holder {
+	background-color: #f7f7f7;
+	border: 1px solid #cbcbcb;
+  margin-left: 25px;
+	div {
+		border: 1px solid #cbcbcb;
+		background-size: cover;
+		background-position: center;
+		height: 170px;
+    width: 180px;
+	}
+}
+
+.amenities {
+	display: inline-block;
+	float: left;
+	width: 280px;
+	height: auto;
+	.amenity {
+		margin-bottom: 20px;
+		width: 260px;
+		&:nth-of-type(3n) { margin-bottom: 0; }
+		ul {
+			padding-left: 20px;
+			color: #808080;
+			li:first-of-type { margin-top: 10px; }
+		}
+	}
+}
+
+div.description {
+	height: 190px;
+	width: 582px;
+	border: 1px solid #e5e5e5;
+	background-color:#f7f7f7;
+	color: #808080;
+	overflow-y: scroll;
+}
+
+////--POP UPS--////
+.approvePopUp {
+  color:#29AAE1;
+  font-size:15px;
+  .okBtn {
+    width:80px;
+    height:25px;
+  }
+}

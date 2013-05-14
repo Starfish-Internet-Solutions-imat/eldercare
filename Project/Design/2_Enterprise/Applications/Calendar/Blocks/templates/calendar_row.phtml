@@ -1,0 +1,16 @@
+<?
+	$application_id	= routes::getInstance()->getCurrentTopLevelURLName();
+	$controller_id	= applicationsRoutes::getInstance()->getCurrentControllerID();
+?>
+		
+<?foreach($this->_get('calendar_events') as $calendar):?>
+	<tr>
+		<td><?=date('M-d-y h:i:s A',strtotime($calendar->__get('set_for_date')))?></td>
+		<td><?=$calendar->__get('action')?></td>
+		<?php if ($application_id == 'your_leads'):?>
+			<td><a href="/<?=$application_id?>/delete_alarm/<?=$this->_get('lead_id')?>?calendar_alert_id=<?=$calendar->__get('calendar_alert_id')?>">[delete]</a></td>
+		<?php else:?>
+			<td><a href="/<?=$application_id.'/'.$controller_id?>/delete_alarm/<?=($application_id == 'hcps')? $this->_get('hcp_id') : $this->_get('lead_id')?>?calendar_alert_id=<?=$calendar->__get('calendar_alert_id')?>">[delete]</a></td>
+		<?php endif;?>
+	</tr>
+<?endforeach;?>

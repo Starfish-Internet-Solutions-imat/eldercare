@@ -1,0 +1,88 @@
+<? if($this->_get('is_approved') == 2):?>
+	%%APPROVED_POPUP%%
+	<div id="blocker" style="width:100%; height:100%; position:absolute; top:0px; left:0px; z-index:998">
+	</div>
+	<?php else:?> 
+	<div class="popupDialogNotApproved hide" >
+		<span class="close gotham_book pointer">x</span>
+		<p class="gotham_bold fwB">Your account is being reviewed by Looking For ElderCare<sup class="fs-xxs">TM</sup> Team. It can't be viewed Online.</p>
+		<form  method='post'> 
+			<span class="gotham_bold"><input type='button' name='proceed' id='proceed' value='Proceed Now' />Click here to Proceed</span>
+		</form>
+	</div>
+<?endif?>
+
+<!-- outer wrapper start-->
+<?php $section = $this->_get('current_tab') == null?"name_description":$this->_get('current_tab')?>
+<?$zip = $this->_get('zipcode'); ?>
+<?php $provider = $this->_get('provider');?>
+
+<? if($this->_get('is_new')):?>
+	%%THANK_YOU%%
+<?endif?>
+
+<? if($this->_get('is_suspended') == 1):?>
+	%%SUSPENDED%%
+<?endif?>
+
+
+<div id="header_banner">
+	<div class="semi_transparent"></div>
+</div>
+<form method="POST" action="/account/profile/newhcp">
+	<input type="submit" name="create_new_hcp" value="Add care Home"/>
+</form>
+
+<?php if($section != 'photos_tab'):?>
+	<?php if ($this->_get('account_settings')):?>
+		<form id="accountDetails" method="post" id="info_action" action="/account/profile/save/tab/my_account_details">
+	<?php else:?>
+		<form id="accountDetails" method="post" id="info_action" action="/account/profile/save/tab/<?php echo $section;?>">
+	<?php endif;?>
+<?php endif;?>
+		<div id="page_content" class="clearfix">
+		<div class="mBl">
+			<? if($this->_get('is_suspended_notif') == 1):?>
+				<b>Your Account is suspended</b>
+			<?endif?>
+				<div class="fleft">
+					<a  class="back sprite mBm" href="/"></a>
+					<h1 class="mBs helvetica77 fleft">DASHBOARD</h1>
+					<input type="hidden" value="<?=$this->_get('is_approved')?>" name='published' id='published' />
+					<a class="sprite viewOnline" href="/health-care-provider/<?=handler::link_builder($provider->__get('name'), $provider->__get('hcp_id'))?>"></a><br/><br/>
+					
+					<p class="gotham_book" >Please complete all the details before publishing your Assisted Living Home.</p>
+				</div>
+				<div class="fright">
+					<div class="align_r mBl"><span class="sprite human mRs"></span><span class="fcBlue fwB gotham_bold">Hello</span>, <span class="gotham_book"><?php echo $provider->__get('name');?></span></div>
+					<div>
+					<?php if($this->_get('is_approved_publish') == 2 ||$this->_get('is_approved_publish') == 1):?>
+						<?if($provider->__get('published') == 1):?>
+							<a class="sprite unpublishBtn mLl" href="/account/profile/unpublish/<?=$section?>"></a>
+						<?else:?>
+							<a class="sprite publishBtn mLl" href="/account/profile/publish/<?=$section?>"></a>
+						<?endif;?>
+					<?php endif?>
+					</div>
+				</div>
+			</div>
+		
+			<div id="leftside_navigation" class="fleft"> %%LEFTSIDE_NAVIGATION%%</div>
+			
+			<div id="profile_tab_container" class="fleft">
+				<div id="tab_content" class="pHl pVxs">
+				%%TAB_CONTENT%%
+				</div>
+			</div>
+			<div class="fright mTxl mB-100">
+				<?//php if($section != 'photos_tab'):?>	
+					<input class="sprite saveBtn" type="submit" name="profile" value=" "> 
+				<?//php endif;?>
+			</div>
+			
+		</div>
+<?php if($section != 'photos_tab'):?>
+	</form>
+<?php endif;?>	
+<!-- outer  wrapper end-->
+
