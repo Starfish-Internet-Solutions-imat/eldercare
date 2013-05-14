@@ -1,5 +1,5 @@
 <?php
-
+die;
 //helps find zend session
 
 //Load Common Project Paramaters 
