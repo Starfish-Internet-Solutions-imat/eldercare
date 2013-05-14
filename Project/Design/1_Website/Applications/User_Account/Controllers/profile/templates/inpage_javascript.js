@@ -9,8 +9,18 @@ $(document).ready(function(){
 				$("input[name='profile']").attr('disabled', 'disabled');
 		}
 	});
+	$('div.ScrollPane').jScrollPane();
 	
 	$('.popupDialog').fadeIn();
+	
+	$('.showFacilities').click(function(){
+		$('#facilitiesList, #facilityPopupBackground').fadeIn();
+		$('div.ScrollPane').jScrollPane();
+		
+	});
+	$('#facilitiesHeader #close').click(function(){
+		$('#facilitiesList, #facilityPopupBackground').fadeOut();
+	});
 	
 	$('.popupDialog .close').click(function(){
 		$('.popupDialog').fadeOut();

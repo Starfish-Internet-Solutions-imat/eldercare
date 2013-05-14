@@ -29,9 +29,6 @@
 <div id="header_banner">
 	<div class="semi_transparent"></div>
 </div>
-<form method="POST" action="/account/profile/newhcp">
-	<input type="submit" name="create_new_hcp" value="Add care Home"/>
-</form>
 
 <?php if($section != 'photos_tab'):?>
 	<?php if ($this->_get('account_settings')):?>
@@ -47,6 +44,7 @@
 			<?endif?>
 				<div class="fleft">
 					<a  class="back sprite mBm" href="/"></a>
+					<span class="showFacilities fleft">YOUR FACILITIES</span>
 					<h1 class="mBs helvetica77 fleft">DASHBOARD</h1>
 					<input type="hidden" value="<?=$this->_get('is_approved')?>" name='published' id='published' />
 					<a class="sprite viewOnline" href="/health-care-provider/<?=handler::link_builder($provider->__get('name'), $provider->__get('hcp_id'))?>"></a><br/><br/>
@@ -86,3 +84,4 @@
 <?php endif;?>	
 <!-- outer  wrapper end-->
 
+%%FACILITIES_POPUP%%

@@ -47,6 +47,9 @@ class profileView extends applicationsSuperView
 		$content = $this->renderTemplate($templates_folder.'main_template.phtml');
 		response::getInstance()->addContentToTree(array('MAIN_CONTENT'=>$content));
 		
+		$content = $this->renderTemplate($templates_folder.'facilities_popup.phtml');
+		response::getInstance()->addContentToTree(array('FACILITIES_POPUP'=>$content));
+		
 		$content = $this->renderTemplate($templates_folder.'leftside_navigation_template.phtml');
 		response::getInstance()->addContentToTree(array('LEFTSIDE_NAVIGATION'=>$content));
 		
@@ -102,6 +105,19 @@ class profileView extends applicationsSuperView
 		
 		$content = $this->renderTemplate($templates_folder.'inpage_javascript.js');
 		response::getInstance()->addContentToStack('inpage_javascript_top',array('CURRENT SECTION CSS'=>$content));
+		
+		$content = $this->renderTemplate(FILE_ACCESS_CORE_DESIGN.'/Libraries/JCustomScrollBar/templates/JCustomScrollBar_script_link.phtml');
+		response::getInstance()->addContentToStack('css_and_javascript_links_for_this_page_only',array('JCustomScrollBar SCRIPT'=>$content));
+		
+		$content = $this->renderTemplate(FILE_ACCESS_CORE_DESIGN.'/Libraries/JCustomScrollBar/templates/JCustomScrollBar_css_link.phtml');
+		response::getInstance()->addContentToStack('css_and_javascript_links_for_this_page_only',array('JCustomScrollBar CSS'=>$content));
+		
+		$content = $this->renderTemplate(FILE_ACCESS_CORE_DESIGN.'/Libraries/JEasing/templates/jeasing_link.phtml');
+		response::getInstance()->addContentToStack('css_and_javascript_links_for_this_page_only',array('JEASING SCRIPT'=>$content));
+		
+		$content = $this->renderTemplate(FILE_ACCESS_CORE_DESIGN.'/Libraries/JMouseWheel/templates/JMouseWheel_script_link.phtml');
+		response::getInstance()->addContentToStack('css_and_javascript_links_for_this_page_only',array('JMOUSEWHEEL SCRIPT'=>$content));
+		
 	}
 	
 //-------------------------------------------------------------------------------------------------

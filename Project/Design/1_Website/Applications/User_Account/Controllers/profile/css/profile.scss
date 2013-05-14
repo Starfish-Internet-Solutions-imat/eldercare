@@ -76,6 +76,11 @@ body { background-color: #f2f2f2; }
 		&:first-child {
 			height: 120px;
 			width: 983px;
+			.showFacilities{
+			  position:absolute;
+        top: 21px;
+        left: 185px;
+			}
 		}
 	.fcBlue { color: #29ABE2; }	
 	}
@@ -275,4 +280,130 @@ body { background-color: #f2f2f2; }
 		.sprite.deletePhotoBtn	{ @include imageBtnPosition(3px, 175px); }
 	}
 
+}
+
+#facilitiesList{
+  border-box:0 0 15px #000;
+  position:fixed;
+  top:2%;
+  left:50%;
+  width:938px;
+  margin-left:-469px;
+  z-index:99999;
+  height: 905px;
+  overflow: hidden;
+  background:{
+    color:#FFFFFF;
+  }
+  #facilitiesHeader{
+    background:{
+      color:#29ABE2;
+      image:url('/Project/Design/1_Website/Applications/User_Account/Controllers/profile/images/facilities-popup-heading-background.png');
+      repeat:repeat-x;
+    }
+    color:#FFFFFF;
+    height:80px;
+    position: relative;
+    padding: 20px;
+    >h1{
+      display:inline-block;
+      .header-icon{
+        @include spriteImage(30px, 27px, -213px, -308px);
+        margin-right:15px;
+      }
+    }
+    > span{
+       @include spriteImage(40px, 40px, -209px, -253px);
+       text-indent:-9999999px;
+       float:right;
+       margin-top:-5px;
+       cursor:pointer;
+    }
+  }
+  #listingContainer{
+    padding:22px;
+    input[type="submit"]{
+      color:#FF931E;
+      text-indent:-9999999px;
+      box-shadow:none;
+      float:right;
+      display:block;
+      font:{
+        size:24px;
+        weight:bold;
+      }
+      @include spriteImage(214px, 19px, -181px, -536px);
+    }
+    form{
+      display: block;
+      height: 25px;
+    }
+    > div{
+      overflow:auto;
+      height: 750px;
+      margin:15px 0;
+      width:895px;
+    }
+    .facility-Item{
+      margin-bottom: 15px;
+      border:1px solid #CCCCCC;
+      border-radius:15px;
+      padding: 15px 0 15px 15px;
+      width: 850px;
+      span.image_holder{
+        display:inline-block;
+        width:299px;
+        height:207px;
+      }
+      > div{
+        padding:20px;
+        position: relative;
+        width: 520px;
+        min-height: 207px;
+        height:207px;
+         a {
+           position:absolute;
+           right:0;
+           bottom:0;
+          text-indent:-9999999px;
+          @include spriteImage(168px, 35px, -5px, -532px);
+        }
+        p{
+          margin:0;
+          color:#808080;
+          font-size:18px;
+          strong{
+            font-size:18px;
+            color:#000000;
+            text-align:right;
+            min-width: 70px;
+            display: inline-block;
+            margin-right:15px;
+          }
+        }
+      }
+    }
+  }
+}
+#facilityPopupBackground{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;left:0;
+  z-index:99998;
+  background-color:rgba(0,0,0,0.8);
+}
+
+.jspDrag{
+  background: #29ABE2 !important;
+  width: 15px !important;
+  border-radius: 8px !important;
+}
+.jspTrack{
+  background:none !important;
+  width: 15px !important;
+}
+.jspVerticalBar{
+  width:15px !important;
+  right:3px !important;
 }

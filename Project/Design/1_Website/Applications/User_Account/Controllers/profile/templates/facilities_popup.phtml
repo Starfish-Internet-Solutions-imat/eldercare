@@ -1,0 +1,22 @@
+<div id="facilitiesList" class="hide">
+	<div id="facilitiesHeader"><h1 class="helvetica77"><span class="header-icon"></span>YOUR FACILITIES</h1><span id="close">X</span></div>
+	<div id="listingContainer">
+		<form method="POST" action="/account/profile/newhcp">
+			<input type="submit" name="create_new_hcp" value="ADD NEW FACILITY"/>
+		</form>
+		<div class="clearfix ScrollPane">
+			<?for($i=0;$i<=5;$i++):?>
+			<div class="facility-Item clearfix">
+				<span class="image_holder fleft" style="background-image: url('/Project/Design/1_Website/Main_Layout/images/temporary/account-housing-list.jpg')"></span>
+				<div class="fleft posRel helvetica77">
+					<p><strong>Name :</strong>Insert Name Here</p>
+					<p><strong>Zip Code :</strong> 12345</p>
+					<p><strong>Pricing :</strong> $1.00</p>
+					<a class="fright" href="#" >view dashboard</a>
+				</div>
+			</div>
+			<?endfor;?>
+		</div>
+	</div>
+</div>
+<div id="facilityPopupBackground" class="hide"></div>
